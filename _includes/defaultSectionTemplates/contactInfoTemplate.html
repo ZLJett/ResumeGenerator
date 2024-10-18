@@ -1,0 +1,52 @@
+<div class="contact-element resume-head">
+    <!-- SWITCH: unless "page.includeContactElementTitle" is set to "true", the contact element title
+    will NOT be included. This means DEFAULT is not to include the element title. -->
+    {% if page.includeContactElementTitle %}
+    <div class="content-element-head">
+        <div class="contact-element-title">Contact Info</div>
+    </div>
+    {% endif %}
+
+    <div class="contact-element-body">
+        <!-- SWITCH: if Contact Section Entry name in "page.skipContactEntry: []" then the Section entry 
+        will be skipped. Note: each Section Entry name is the string in the liquid "assign" block above 
+        the Section Entry -->
+        {% assign phoneNum = "PhoneNum" %}
+        {% unless page.skipContactEntry contains phoneNum %}
+        <div class="contact-section-entry">
+            <div class="contact-entry-desc">Phone: </div>
+            <div class="contact-entry-value">{{site.data.defaultResumeData.contactInfoData.phone }}</div>
+        </div>
+        {% endunless %}
+
+        {% assign emailAdd = "EmailAdd" %}
+        {% unless page.skipContactEntry contains emailAdd %}
+        <div class="contact-section-entry">
+            <div class="contact-entry-desc">Email: </div>
+            <div class="contact-entry-value">{{site.data.defaultResumeData.contactInfoData.email }}</div>
+        </div>
+        {% endunless %}
+
+        {% assign currLocation = "currLocation" %}
+        {% unless page.skipContactEntry contains currLocation %}
+        <div class="contact-section-entry location-entry">
+            <!-- DEFAULT is just location value, no description, i.e. no "Location: value" -->
+            <div class="contact-entry-value">{{site.data.defaultResumeData.contactInfoData.location }}</div>
+        </div>
+        {% endunless %}
+
+        {% for website in site.data.defaultResumeData.contactInfoData.websites %}
+        <!-- SWITCH: if website name in "page.skipContactWebsite: []" then website Section Entry will be skipped
+        Note: each website name is the "websiteDesc" value for the website in the "contactInfoData.json" data 
+        file  -->
+        {% unless page.skipContactWebsite contains website.websiteDesc %}
+        <div class="contact-section-entry">
+            <div class="contact-entry-desc">{{website.websiteDesc}}: </div>
+            <a href="{{website.websiteLink}}" class="contact-entry-value">{{website.websiteLinkValue}}</a>
+        </div>
+        {% endunless %}
+
+        {% endfor %}
+    </div>
+
+</div>

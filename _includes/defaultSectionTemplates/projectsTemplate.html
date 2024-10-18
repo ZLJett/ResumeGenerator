@@ -1,0 +1,145 @@
+<!-- The Projects Templates file uses only data from "majorProjectsData.json" and does NOT include data
+from "minorProjectsData.json" which will have its own template that is designed to'slot' under the HTML
+produced by this template. The goal is that this template can be used exclusively when I move past the 
+point of including 'minor projects' on my resume. -->
+<div class="projects-element element-block">
+    <div class="element-head">
+        <h2 class="projects-element-title element-title">Projects</h2>
+    </div>
+
+    <div class="projects-element-body">
+        {% for project in site.data.defaultResumeData.majorProjectsData %}
+        <!-- Setup each variable used in main loop -->
+        {% assign CurrentProject = project.name | replace: " ", "_" %}
+        <!-- SWITCH: if "project" in "page.skipProject: []" then project Section Entry will be skipped
+        Note: each position name must include an underscore instead of a whitespace, 
+        e.g. "Financial_Trade_Message_Router" -->
+        {% unless page.skipProject contains CurrentProject %}
+        <div class="project-section-entry">
+            <div class="project-head">
+                <div class="project-title-block">
+                    <div class="project-title">{{project.name}}</div>
+                    {% assign ProjectTitleDivider = page.projectTitleDivider | default: " &ndash; " %}
+                    <div class="project-title-divider">{{ProjectTitleDivider}}</div>
+                    <div class="project-link-block">
+                        <div class="project-link-desc">{{project.githubLinkDesc}}: </div>
+                        <a href="{{project.githubLink}}" class="contact-entry-value">{{project.githubLinkValue}}</a>
+                    </div>
+                </div>
+                <div class="project-date">{{project.endDate}}</div>
+            </div>
+            <div class="project-body">
+                <!-- SWITCH: if "page.modifiedProject" exists, the for loop will check if the current "project" Section
+                Entry should be MODIFIED. Each MODIFIED project Section Entry only includes the Data Entries specified 
+                as "true" in  the modifiedProject yaml object. If "page.page.modifiedProject" does not exist, the 
+                "else" will generate DEFAULT HTML for each "project", i.e. including all project data. -->
+                {% for entry in page.modifiedProject %}
+                <!-- Generate HTML for MODIFIED Section Entries -->
+                {% if entry.name == CurrentProject %}
+                {% if entry.takeaways == true %}
+                <div class="project-takeaways">
+                    <div class="project-takeaways">Takeaways: </div>
+                    <div class="project-takeaways-list">
+                        {{project.takeaways | join: "; "}}
+                    </div>
+                </div>
+                {% endif %}
+                {% if entry.technologies == true %}
+                <div class="project-technologies">
+                    <div class="project-technologies">Languages and Tools: </div>
+                    <div class="project-technologies-list">
+                        {{project.technologies | join: ", "}}
+                    </div>
+                </div>
+                {% endif %}
+                {% if entry.summary == true %}
+                <div class="project-summary">
+                    <p class="project-summary-body">{{ project.summary }}</p>
+                </div>
+                {% endif %}
+                {% if entry.highlights == true %}
+                <div class="project-highlights">
+                    {% if page.includeProjectHighlightsTitle %}
+                    <div class="project-highlights-title">Highlights: </div>
+                    {% endif %}
+                    <ul class="project-highlights-list">
+                        {% for item in project.highlights %}
+                        <li class="project-highlights-list-item">
+                            {{ item }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                <!-- Generate DEFAULT HTML for Section Entries NOT in "page.modifiedProject" list, i.e.
+                all items that are to be generated with full content. -->
+                {% else %}
+                <div class="project-takeaways">
+                    <div class="project-takeaways">Takeaways: </div>
+                    <div class="project-takeaways-list">
+                        {{project.takeaways | join: "; "}}
+                    </div>
+                </div>
+                <div class="project-technologies">
+                    <div class="project-technologies">Languages and Tools: </div>
+                    <div class="project-technologies-list">
+                        {{project.technologies | join: ", "}}
+                    </div>
+                </div>
+                <div class="project-summary">
+                    <p class="project-summary-body">{{ project.summary }}</p>
+                </div>
+                <div class="project-highlights">
+                    {% if page.includeProjectHighlightsTitle %}
+                    <div class="project-highlights-title">Highlights: </div>
+                    {% endif %}
+                    <ul class="project-highlights-list">
+                        {% for item in project.highlights %}
+                        <li class="project-highlights-list-item">
+                            {{ item }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                <!-- DEFAULT Section Entry generation if "page.modifiedProject" Switch does not exist -->
+                {% else %}
+                <div class="project-takeaways">
+                    {% if project.takeaways.size > 0 %}
+                    <div class="project-takeaways">Takeaways: </div>
+                    {% endif %}
+                    <div class="project-takeaways-list">
+                        {{project.takeaways | join: "; "}}
+                    </div>
+                </div>
+                <div class="project-technologies">
+                    {% if project.technologies.size > 0 %}
+                    <div class="project-technologies">Languages and Tools: </div>
+                    {% endif %}
+                    <div class="project-technologies-list">
+                        {{project.technologies | join: ", "}}
+                    </div>
+                </div>
+                <div class="project-summary">
+                    <p class="project-summary-body">{{ project.summary }}</p>
+                </div>
+                <div class="project-highlights">
+                    {% if page.includeProjectHighlightsTitle %}
+                    <div class="project-highlights-title">Highlights: </div>
+                    {% endif %}
+                    <ul class="project-highlights-list">
+                        {% for item in project.highlights %}
+                        <li class="project-highlights-list-item">
+                            {{ item }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endunless %}
+        {% endfor %}
+    </div>
+
+</div>

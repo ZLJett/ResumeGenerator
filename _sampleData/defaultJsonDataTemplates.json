@@ -1,0 +1,134 @@
+{
+    "contactInfo": {
+        "phone": "",
+        "email": "",
+        "location": "",
+        "websites": [
+            {
+                "websiteDesc": "",
+                "websiteLinkValue": "",
+                "websiteLink": ""
+            }
+        ]
+    },
+    "skillSets": [
+        {
+            "skill_title": "",
+            "skills": [
+                ""
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "",
+            "endDate": "",
+            "takeaways": [
+                ""
+            ],
+            "technologies": [
+                ""
+            ],
+            "summary": "",
+            "highlights": [
+                ""
+            ],
+            "githubLinkDesc": "",
+            "githubLinkValue": "",
+            "githubLink": ""
+        }
+    ],
+    "minorProjects": [
+        {
+            "category": [
+                {
+                    "name": "",
+                    "endDate": "",
+                    "takeaways": [
+                        ""
+                    ],
+                    "technologies": [
+                        ""
+                    ],
+                    "summary": "",
+                    "highlights": [
+                        ""
+                    ],
+                    "githubLinkValue": "",
+                    "githubLink": "",
+                    "sourceLinkValue": "",
+                    "sourceLink": ""
+                }
+            ]
+        }
+    ],
+    "certs": [
+        {
+            "name": "",
+            "issuer": "",
+            "endDate": "",
+            "summary": [
+                ""
+            ],
+            "highlights": [
+                ""
+            ],
+            "certId": "",
+            "certLinkTitle": "",
+            "certLink": ""
+        }
+    ],
+    "education": [
+        {
+            "school": "",
+            "location": "",
+            "degree": "",
+            "major": "",
+            "minors": [],
+            "endDate": "",
+            "summary": [],
+            "highlights": [],
+            "minorHighlights": [],
+            "papers": [],
+            "courses": [],
+            "thesisTitle": "",
+            "thesisLink": ""
+        }
+    ],
+    "professionalBackground": [
+        {
+            "position": "",
+            "company": "",
+            "location": "",
+            "startDate": "",
+            "endDate": "",
+            "summary": "",
+            "highlights": []
+        }
+    ],
+    "awards": [
+        {
+            "name": "",
+            "issuer": "",
+            "endDate": "",
+            "summary": [
+                ""
+            ],
+            "highlights": [
+                ""
+            ]
+        }
+    ],
+    "communityService": [
+        {
+            "role": "",
+            "organization": "",
+            "startDate": "",
+            "endDate": "",
+            "summary": [
+                ""
+            ],
+            "highlights": []
+        }
+    ]
+}

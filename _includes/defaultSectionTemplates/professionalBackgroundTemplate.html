@@ -1,0 +1,82 @@
+<div class="background-section section-block">
+    <div class="section-head">
+        <h2 class="background-section-title section-title">Professional Background</h2>
+    </div>
+
+    <div class="background-section-body">
+        {% for job in site.data.defaultResumeData.professionalBackgroundData %}
+        <!-- Setup each variable used in main loop -->
+        {% assign CurrentJob = job.position | replace: " ", "_" %}
+        <!-- SWITCH: if "position" in "page.skipProfessionalBackground: []" then position Section Entry will be skipped
+        Note: each position name must include an underscore instead of a whitespace, e.g. "Graduate_Assistant" -->
+        {% unless page.skipProfessionalBackground contains CurrentJob %}
+        <div class="background-entry">
+            <div class="background-head">
+                <div class="background-title">{{job.company}} &ndash; {{job.position}}</div>
+                <div class="background-dates">{{job.startDate}} to {{job.endDate}}</div>
+            </div>
+            <div class="background-body">
+                <!-- SWITCH: if "page.modifiedProfessionalBackground" exists, the for loop will check if the current "position" Section
+                Entry should be MODIFIED. Each MODIFIED position Section Entry only includes the Data Entries specified as "true" in 
+                the modifiedProfessionalBackground yaml object. If "page.modifiedProfessionalBackground" does not exist, the "else" 
+                will generate DEFAULT HTML for each "position", i.e. including all professional background data. -->
+                {% for entry in page.modifiedProfessionalBackground %}
+                <!-- Generate HTML for MODIFIED Section Entries -->
+                {% if entry.position == CurrentJob %}
+                {% if entry.summary == true %}
+                <div class="background-summary">
+                    <p class="background-summary-body">{{ job.summary }}</p>
+                </div>
+                {% endif %}
+                {% if entry.highlights == true %}
+                <div class="background-highlights">
+                    <ul class="background-highlights-list">
+                        {% for item in job.highlights %}
+                        <li class="background-highlights-list-item">
+                            {{ item }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                <!-- Generate DEFAULT HTML for Section Entries NOT in "page.modifiedProfessionalBackground" list, i.e.
+                 all items that are to be generated with full content. -->
+                {% else %}
+                <div class="background-summary">
+                    <p class="background-summary-body">{{ job.summary }}</p>
+                </div>
+                <div class="background-highlights">
+                    <ul class="background-highlights-list">
+                        {% for item in job.highlights %}
+                        <li class="background-highlights-list-item">
+                            {{ item }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                <!-- DEFAULT Section Entry generation if "page.modifiedProfessionalBackground" Switch does not exist -->
+                {% else %}
+                <div class="background-summary">
+                    <p class="background-summary-body">{{ job.summary }}</p>
+                </div>
+                <div class="background-highlights">
+                    {% if page.includeBackgroundHighlightsTitle %}
+                    <div class="background-highlights-title">Highlights: </div>
+                    {% endif %}
+                    <ul class="background-highlights-list">
+                        {% for item in job.highlights %}
+                        <li class="background-highlights-list-item">
+                            {{ item }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endunless %}
+        {% endfor %}
+    </div>
+
+</div>

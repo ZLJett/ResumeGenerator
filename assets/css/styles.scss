@@ -1,0 +1,17 @@
+---
+---
+// For how this file works see the README and the _config.yml file.
+// MUST SAVE WITHOUT FORMATTING, shortcut: first "ctrl + k" then "ctrl + shift + s"
+
+{% if site.replace_default_style == true %}
+    {%- for entry in site.style_list -%}
+        @import "{{ entry.filename }}";
+    {%- endfor -%}
+{% elsif site.additional_styles == true %}
+    {%- for entry in site.style_list -%}
+        @import "{{ entry.filename }}";
+    {%- endfor -%}
+    @import "{{ site.default-style }}";
+{% else %}
+    @import "{{ site.default-style }}";
+{% endif %}

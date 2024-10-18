@@ -1,0 +1,58 @@
+# TODO ADD comment on each switch below and what it does/where it goes... 
+
+
+# Resume Title Switches
+includeProfessionalTitle: true
+
+
+# Contact Info Switches 
+includeContactElementTitle: true
+
+skipContactEntry: ["PhoneNum", "EmailAdd", "currLocation"]
+
+skipContactWebsite: ["LinkedIn", "GitHub", "Portfolio"]
+
+
+# Summary Switches
+includeSummaryElementTitle: true
+
+
+# Skill Sets Switches
+skipSkillSet: ["Disciplines", "Languages", "Environments", "Tools"]
+
+
+# Projects Switches 
+skipProject: ["Financial_Trade_Message_Router"]
+
+projectTitleDivider: " " # Single space removes whole line
+
+includeProjectHighlightsTitle: true
+
+modifiedProject:
+  - name: Financial_Trade_Message_Router
+    takeaways: true
+    technologies: true
+    summary: true
+    highlights: true
+
+
+# Minor Projects Switches
+skipMinorProject: []
+
+
+# Professional Background Switches
+skipProfessionalBackground: ["Graduate_Assistant", "Assistant-Director_of_Communication"]
+
+includeBackgroundHighlightsTitle: true
+
+modifiedProfessionalBackground:
+  - position: Graduate_Assistant
+    summary: true
+    highlights: true
+
+
+
+
+
+# ALternatives: 
+

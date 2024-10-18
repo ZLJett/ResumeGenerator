@@ -1,0 +1,22 @@
+<!--
+STATIC: Default Layout is intended to be boilerplate HTML that must be on all documents.
+IF YOU WANT A LAYOUT with resume specific information, create that layout separately and 
+add then add the default layout with its boilerplate to that layout (so the new layout only
+contains HTML relevant to that specific resume), then add the new layout to the Resume 
+index.html document. 
+-->
+<!doctype html>
+<html lang="en">
+
+{%- include defaultPageElements/defaultHeadContents.html -%}
+
+<body>
+
+    <section>
+        <p>Test Layout Included</p>
+        {{ content }}
+    </section>
+
+</body>
+
+</html>

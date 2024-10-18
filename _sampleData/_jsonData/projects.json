@@ -1,0 +1,33 @@
+{
+	"Java Projects": {
+		"Financial Trade Message Router": {
+			"link": "https://github.com/ZLJett/trade-message-router",
+			"date": "Jan. 2024",
+			"description": "A financial trade routing system built for a practical development exercise designed by a senior developer who worked in that industry. It was built in a Java/Camel based tech stack and supported: XSLT based XML conversion, JPA/Hibernate based database management, JSON based application configuration, and a JUnit based testing suite. As part of the exercise, I was wholly responsible for designing the routing application, including the evaluation, selection, and integration of 3rd party technologies."
+		}
+	},
+	"Web-Development Projects": {
+		"Calculator Webpage": {
+			"link": "https://github.com/ZLJett/calculator-page",
+			"date": "Aug. 2022",
+			"description": "Features: Keyboard inputs, built-in error handling, and history tracker"
+		},
+		"Etch-a-Sketch Webpage": {
+			"link": "https://github.com/ZLJett/Etch-a-Sketch",
+			"date": "Jul. 2022",
+			"description": "Features: Styled like classic Etch-a-Sketch, user can set ‘pixel’ count"
+		},
+		"Rock Paper Scissors Webpage": {
+			"link": "https://github.com/ZLJett/UI-rock-paper-scissors",
+			"date": "Jun. 2022",
+			"description": "Features: Displays images of player inputs with delay to keep surprise"
+		}
+	},
+	"Python Projects": {
+		"Budgeting App Project": {
+			"link": "https://github.com/ZLJett/Budget-App-Project",
+			"date": "Oct. 2021",
+			"description": "Features: Tracks debts and credits to account, displays percentage spent by category as bar chart"
+		}
+	}
+}

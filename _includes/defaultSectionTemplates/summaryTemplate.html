@@ -1,0 +1,14 @@
+<div class="summary-element element-block">
+    <!-- SWITCH: unless "page.includeSummaryElementTitle" is set to "true", the summary element title
+    will NOT be included. This means DEFAULT is not to include the element title. -->
+    {% if page.includeSummaryElementTitle %}
+    <div class="element-head">
+        <h2 class="summary-element-title element-title">Summary</h2>
+    </div>
+    {% endif %}
+
+    <div class="summary-element-body">
+        <p class="summary-element-content">{{site.data.defaultResumeData.summaryData.summary}}</p>
+    </div>
+
+</div>

@@ -1,0 +1,66 @@
+[
+    {
+        "Web-Development Projects": [
+            {
+                "name": "Calculator Webpage",
+                "endDate": "Aug. 2022",
+                "takeaways": [],
+                "technologies": [],
+                "summary": "My implementation of the 'Project: Calculator' from The Odin Project's 'Foundations' course, with all 'extra credit' assignments implemented a well as a history tracker.",
+                "highlights": [
+                    "Features: Keyboard inputs, built-in error handling, and history tracker."
+                ],
+                "githubLinkValue": "@calculator-page",
+                "githubLink": "https://github.com/ZLJett/calculator-page",
+                "sourceLinkValue": "@TheOdinProject",
+                "sourceLink": "https://www.theodinproject.com/lessons/foundations-calculator"
+            },
+            {
+                "name": "Etch-a-Sketch Webpage",
+                "endDate": "Jul. 2022",
+                "takeaways": [],
+                "technologies": [],
+                "summary": "My implementation of the 'Project: Etch-a-Sketch' from The Odin Project's 'Foundations' course, with additional functionality to allow user to input 'pixel' count of Etch-a-Sketch display. All while carefully styled to look like a classic Etch-a-Sketch.",
+                "highlights": [
+                    "Features: Styled like classic Etch-a-Sketch, user can set &lsquo;pixel&rsquo; count."
+                ],
+                "githubLinkValue": "@Etch-a-Sketch",
+                "githubLink": "https://github.com/ZLJett/Etch-a-Sketch",
+                "sourceLinkValue": "@TheOdinProject",
+                "sourceLink": "https://www.theodinproject.com/lessons/foundations-etch-a-sketch"
+            },
+            {
+                "name": "Rock Paper Scissors Webpage",
+                "endDate": "Jun. 2022",
+                "takeaways": [],
+                "technologies": [],
+                "summary": "My implementation of the 'Project: Rock Paper Scissors' from The Odin Project's 'Foundations' course, with additional functionality to display game on webpage with images of player choices.",
+                "highlights": [
+                    "Features: Displays images of player inputs with delay to keep surprise."
+                ],
+                "githubLinkValue": "@UI-rock-paper-scissors",
+                "githubLink": "https://github.com/ZLJett/UI-rock-paper-scissors",
+                "sourceLinkValue": "@TheOdinProject",
+                "sourceLink": "https://www.theodinproject.com/lessons/foundations-rock-paper-scissors"
+            }
+        ]
+    },
+    {
+        "Python Projects": [
+            {
+                "name": "Budgeting App Project",
+                "endDate": "Oct. 2021",
+                "takeaways": [],
+                "technologies": [],
+                "summary": "My implementation of the 'Build a Budget App Project' from freeCodeCamp's 'Scientific Computing with Python' course.",
+                "highlights": [
+                    "Features: Tracks debts and credits to account, displays percentage spent by category as bar chart."
+                ],
+                "githubLinkValue": "@Budget-App-Project",
+                "githubLink": "https://github.com/ZLJett/Budget-App-Project",
+                "sourceLinkValue": "@freeCodeCamp",
+                "sourceLink": "https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-budget-app-project/build-a-budget-app-project"
+            }
+        ]
+    }
+]
