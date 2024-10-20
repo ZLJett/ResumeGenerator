@@ -37,11 +37,63 @@ modifiedProject:
 
 
 # Minor Projects Switches
-skipMinorProject: []
+skipMinorProjectCategory: ["Web-Development_Projects", "Python_Projects"]
+
+skipMinorProject: ["Calculator_Webpage", "Etch-a-Sketch_Webpage", "Rock_Paper_Scissors_Webpage", "Budgeting_App_Project"]
+
+includeMinorProjectHighlightsTitle: true
+
+includeMinorProjectSourceLink: true
+
+modifiedMinorProject:
+  - name: Calculator_Webpage
+    takeaways: true
+    technologies: true
+    summary: true
+    highlights: true
+
+
+# Certs Switches
+skipCert: ["Google_IT_Automation_with_Python", "Scientific_Computing_with_Python", "Preparing_for_Google_Cloud_Certification:_Cloud_Engineer"]
+
+certTitleDivider: " " # Single space removes whole line
+
+includeCertHighlightsTitle: true
+
+includeCertLinkAndId: true
+
+modifiedCert:
+  - name: Google_IT_Automation_with_Python
+    summary: true
+    highlights: true
+
+
+# Education Switches
+skipEducation: ["Master_of_Arts", "Bachelors_of_Arts", "Associate_of_Arts_and_Sciences"]
+
+degreeTitleDivider: " " # Single space removes whole line
+
+degreeSchoolDivider: " " # Single space removes whole line
+
+includeEducationHighlightsTitle: true
+
+includeEducationDetailList: true
+
+includeEducationThesisLink: true
+
+modifiedEducation:
+  - degree: Master_of_Arts
+    minors: true
+    summary: true
+    highlights: true
+    detailList: true  # Item will be included if EITHER this or "includeEducationDetailList" set to "true"
+    thesisLink: true # Item will be included if EITHER this or "includeEducationThesisLink" set to "true"
 
 
 # Professional Background Switches
 skipProfessionalBackground: ["Graduate_Assistant", "Assistant-Director_of_Communication"]
+
+backgroundDateDivider: " " # Single space removes whole line
 
 includeBackgroundHighlightsTitle: true
 
@@ -51,8 +103,31 @@ modifiedProfessionalBackground:
     highlights: true
 
 
+# Community Service Switches 
+skipCommunityService: ["Trustee"]
+
+serviceTitleDivider: " " # Single space removes whole line
+
+serviceDateDivider: " " # Single space removes whole line
+
+includeServiceHighlightsTitle: true
+
+modifiedCommunityService:
+  - role: Trustee
+    summary: true
+    highlights: true
 
 
+# Awards Switches
+includeAwardsElementTitle: true
 
-# ALternatives: 
+skipAward: ["William_T._Hornaday_Award_for_Environmental_Conservation", "Eagle_Scout"]
 
+includeAwardsIssuer: true
+
+includeAwardHighlightsTitle: true
+
+modifiedAward:
+  - role: William_T._Hornaday_Award_for_Environmental_Conservation
+    summary: true
+    highlights: true

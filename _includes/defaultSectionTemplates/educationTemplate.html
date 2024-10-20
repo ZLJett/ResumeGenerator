@@ -1,0 +1,202 @@
+<div class="education-element element-block">
+    <div class="element-head">
+        <h2 class="education-element-title element-title">Education</h2>
+    </div>
+
+    <div class="education-element-body">
+        <!-- * Loop through education Section Entries, i.e. degrees -->
+        {% for education in site.data.defaultResumeData.educationData %}
+        <!-- Setup each variable used in main loop -->
+        {% assign CurrentDegree = education.degree | replace: " ", "_" %}
+        <!-- SWITCH: if "degree" in "page.skipEducation: []" then the Education Section Entry, 
+        i.e. degree, will be skipped.
+        Note: each degree must include an underscore instead of a whitespace, e.g. "Master_of_Arts" -->
+        {% unless page.skipEducation contains CurrentDegree %}
+        <div class="education-section-entry">
+            <div class="education-head">
+                <div class="education-title-block">
+                    <div class="education-degree">{{education.degree}}</div>
+                    {% assign DegreeTitleDivider = page.degreeTitleDivider | default: " &ndash; " %}
+                    <div class="education-title-divider">{{DegreeTitleDivider}}</div>
+                    <div class="education-major">{{education.major}}</div>
+                </div>
+                <div class="education-date">{{education.endDate}}</div>
+            </div>
+            <div class="education-school-block">
+                <div class="education-school">{{education.school}}</div>
+                {% assign DegreeSchoolDivider = page.degreeSchoolDivider | default: " &ndash; " %}
+                <div class="education-school-divider">{{DegreeSchoolDivider}}</div>
+                <div class="education-location">{{education.location}}</div>
+            </div>
+            <div class="education-body">
+                <!-- SWITCH: if "page.modifiedEducation" exists, the for loop will check if the current "education" Section
+                Entry should be MODIFIED. Each MODIFIED education Section Entry only includes the Data Entries specified 
+                as "true" in the modifiedEducation yaml object. If "page.modifiedEducation" does not exist, this for loop's 
+                "else" will generate DEFAULT HTML for each "degree", i.e. including all degree data. -->
+                {% for entry in page.modifiedEducation %}
+                <!-- Generate HTML for MODIFIED Section Entries -->
+                <!-- * Loop through modifiedEducation objects, if "education" not in modifiedEducation then go to 
+                 * ELSE for "if entry.name" loop. -->
+                {% if entry.degree == CurrentDegree %}
+                {% if entry.minors == true %}
+                <div class="education-minors">
+                    {% if education.minors.size == 1 %}
+                    <div class="education-minors-desc">Minor: </div>
+                    {% elsif education.minors.size > 1 %}
+                    <div class="education-minors-desc">Minors: </div>
+                    {% endif %}
+                    <div class="education-minors-list">
+                        {{education.minors | join: "; "}}
+                    </div>
+                </div>
+                {% endif %}
+                {% if entry.summary == true %}
+                <div class="education-summary">
+                    <p class="education-summary-body">{{ education.summary }}</p>
+                </div>
+                {% endif %}
+                {% if entry.highlights == true %}
+                <div class="education-highlights">
+                    <!-- SWITCH: unless "page.includeEducationHighlightsTitle" is set to "true", the "education" highlights 
+                    title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
+                    {% if page.includeEducationHighlightsTitle %}
+                    <div class="education-highlights-title">Highlights: </div>
+                    {% endif %}
+                    {% for item in education.detailedHighlights %}
+                    <div class="education-highlights-item">
+                        <div class="education-highlight">{{item.highlight}}</div>
+                        <!-- Modified SWITCH: unless "page.modifiedEducation" entry for "detailList" OR "page.includeEducationDetailList" 
+                        is set to "true", the highlight's extra details will NOT be included. This means DEFAULT is not to include
+                        the highlight's extra details. -->
+                        {% if entry.detailList == true or page.includeEducationDetailList %}
+                        <ul class="education-highlight-details-list">
+                            {% for point in item.details %}
+                            <li class="education-highlight-detail">
+                                {{ point }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <!-- Modified  SWITCH: unless "page.modifiedEducation" entry for "thesisLink" OR "page.includeEducationThesisLink" 
+                is set to "true", the "Education" Thesis Link will NOT be included. This means DEFAULT is not to include the 
+                "Education" Thesis Link. -->
+                {% if entry.thesisLink == true or page.includeEducationThesisLink %}
+                <div class="education-thesis-link-block">
+                    {% if education.thesisLink.size > 0 %}
+                    <div class="education-thesis-link-desc">{{education.thesisDesc}}: </div>
+                    {% endif %}
+                    <a href="{{education.thesisLink}}" class="education-thesis-link-value">{{education.thesisValue}}</a>
+                </div>
+                {% endif %}
+                <!-- * ELSE for "if entry.degree" loop, i.e. if "education" not in modifiedEducation then go to this ELSE.
+                Generate DEFAULT HTML for Section Entries NOT in "modifiedEducation" list, i.e.
+                all items that are to be generated with full content. -->
+                {% else %}
+                <div class="education-minors">
+                    {% if education.minors.size == 1 %}
+                    <div class="education-minors-desc">Minor: </div>
+                    {% elsif education.minors.size > 1 %}
+                    <div class="education-minors-desc">Minors: </div>
+                    {% endif %}
+                    <div class="education-minors-list">
+                        {{education.minors | join: "; "}}
+                    </div>
+                </div>
+                <div class="education-summary">
+                    <p class="education-summary-body">{{ education.summary }}</p>
+                </div>
+                <div class="education-highlights">
+                    <!-- SWITCH: unless "page.includeEducationHighlightsTitle" is set to "true", the "education" highlights 
+                    title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
+                    {% if page.includeEducationHighlightsTitle %}
+                    <div class="education-highlights-title">Highlights: </div>
+                    {% endif %}
+                    {% for item in education.detailedHighlights %}
+                    <div class="education-highlights-item">
+                        <div class="education-highlight">{{item.highlight}}</div>
+                        <!-- SWITCH: unless "page.includeEducationDetailList" is set to "true", the highlight's extra details 
+                        will NOT be included. This means DEFAULT is not to include the highlight's extra details. -->
+                        {% if page.includeEducationDetailList %}
+                        <ul class="education-highlight-details-list">
+                            {% for point in item.details %}
+                            <li class="education-highlight-detail">
+                                {{ point }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <!-- SWITCH: unless "page.includeEducationThesisLink" is set to "true", the "Education" Thesis Link will 
+                NOT be included. This means DEFAULT is not to include the "Education" Thesis Link. -->
+                {% if page.includeEducationThesisLink %}
+                <div class="education-thesis-link-block">
+                    {% if education.thesisLink.size > 0 %}
+                    <div class="education-thesis-link-desc">{{education.thesisDesc}}: </div>
+                    {% endif %}
+                    <a href="{{education.thesisLink}}" class="education-thesis-link-value">{{education.thesisValue}}</a>
+                </div>
+                {% endif %}
+                {% endif %}
+                <!-- * ELSE for "for entry in" loop, i.e.modifiedEducation front matter is not being used.
+                DEFAULT Section Entry generation if "page.modifiedEducation" Switch does not exist -->
+                {% else %}
+                <div class="education-minors">
+                    {% if education.minors.size == 1 %}
+                    <div class="education-minors-desc">Minor: </div>
+                    {% elsif education.minors.size > 1 %}
+                    <div class="education-minors-desc">Minors: </div>
+                    {% endif %}
+                    <div class="education-minors-list">
+                        {{education.minors | join: "; "}}
+                    </div>
+                </div>
+                <div class="education-summary">
+                    <p class="education-summary-body">{{ education.summary }}</p>
+                </div>
+                <div class="education-highlights">
+                    <!-- SWITCH: unless "page.includeEducationHighlightsTitle" is set to "true", the "education" highlights 
+                    title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
+                    {% if page.includeEducationHighlightsTitle %}
+                    <div class="education-highlights-title">Highlights: </div>
+                    {% endif %}
+                    {% for item in education.detailedHighlights %}
+                    <div class="education-highlights-item">
+                        <div class="education-highlight">{{item.highlight}}</div>
+                        <!-- SWITCH: unless "page.includeEducationDetailList" is set to "true", the highlight's extra details 
+                        will NOT be included. This means DEFAULT is not to include the highlight's extra details. -->
+                        {% if page.includeEducationDetailList %}
+                        <ul class="education-highlight-details-list">
+                            {% for point in item.details %}
+                            <li class="education-highlight-detail">
+                                {{ point }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <!-- SWITCH: unless "page.includeEducationThesisLink" is set to "true", the "Education" Thesis Link will 
+                NOT be included. This means DEFAULT is not to include the "Education" Thesis Link. -->
+                {% if page.includeEducationThesisLink %}
+                <div class="education-thesis-link-block">
+                    {% if education.thesisLink.size > 0 %}
+                    <div class="education-thesis-link-desc">{{education.thesisDesc}}: </div>
+                    {% endif %}
+                    <a href="{{education.thesisLink}}" class="education-thesis-link-value">{{education.thesisValue}}</a>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endunless %}
+        {% endfor %}
+    </div>
+
+</div>

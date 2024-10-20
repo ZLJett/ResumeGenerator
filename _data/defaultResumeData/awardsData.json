@@ -1,20 +1,22 @@
-{
-  "awards": [
-    {
-      "name": "William T. Hornaday Award for Environmental Conservation",
-      "issuer": "Boy Scouts of America",
-      "endDate": "2011",
-      "summary": [
-        "Silver Badge"
-      ],
-      "highlights": []
-    },
-    {
-      "name": "Eagle Scout",
-      "issuer": "Boy Scouts of America",
-      "endDate": "2011",
-      "summary": [],
-      "highlights": []
-    }
-  ]
-}
+[
+  {
+    "name": "William T. Hornaday Award for Environmental Conservation",
+    "issuer": "Boy Scouts of America",
+    "endDate": "2011",
+    "summary": [
+      "Silver Badge"
+    ],
+    "highlights": [
+      "test1",
+      "test2",
+      "test3"
+    ]
+  },
+  {
+    "name": "Eagle Scout",
+    "issuer": "Boy Scouts of America",
+    "endDate": "2011",
+    "summary": [],
+    "highlights": []
+  }
+]

@@ -1,52 +1,50 @@
-{
-  "certs": [
-    {
-      "name": "Google IT Automation with Python",
-      "issuer": "Google Cloud",
-      "endDate": "Jul. 2021",
-      "summary": [
-        "Online non-credit Professional Certificate authorized by Google and offered through Coursera."
-      ],
-      "highlights": [
-        "Automating Real-World Tasks with Python",
-        "Using Python to Interact with the Operating System",
-        "Troubleshooting and Debugging Techniques"
-      ],
-      "certId": "LTPLSJNZEA8P",
-      "certLinkTitle": "Coursera Certificate",
-      "certLink": "https://www.coursera.org/account/accomplishments/specialization/23D7RQW57S2G"
-    },
-    {
-      "name": "Scientific Computing with Python",
-      "issuer": "freeCodeCamp",
-      "endDate": "Oct. 2021",
-      "summary": [
-        "FreeCodeCamp certification covering the fundamentals of Python up to complex data structures, networking, relational databases, and data visualization."
-      ],
-      "highlights": [
-        "Networking with Python",
-        "Regular Expressions",
-        "Relational Databases and SQLite"
-      ],
-      "certId": "zljett-scwp",
-      "certLinkTitle": "freeCodeCamp Certificate",
-      "certLink": "https://freecodecamp.org/certification/zljett/scientific-computing-with-python-v7"
-    },
-    {
-      "name": "Preparing for Google Cloud Certification: Cloud Engineer",
-      "issuer": "Google",
-      "endDate": "Dec. 2021",
-      "summary": [
-        "Online non-credit Professional Certificate authorized by Google and offered through Coursera"
-      ],
-      "highlights": [
-        "Essential Google Cloud Infrastructure: Core Services",
-        "Elastic Google Cloud Infrastructure: Scaling and Automation",
-        "Architecting with Google Kubernetes Engine: Foundations"
-      ],
-      "certId": "23D7RQW57S2G",
-      "certLinkTitle": "Coursera Certificate",
-      "certLink": "https://www.coursera.org/account/accomplishments/specialization/LTPLSJNZEA8P"
-    }
-  ]
-}
+[
+  {
+    "name": "Google IT Automation with Python",
+    "issuer": "Google Cloud",
+    "endDate": "Jul. 2021",
+    "summary": [
+      "Online non-credit Professional Certificate authorized by Google and offered through Coursera."
+    ],
+    "highlights": [
+      "Automating Real-World Tasks with Python",
+      "Using Python to Interact with the Operating System",
+      "Troubleshooting and Debugging Techniques"
+    ],
+    "certId": "LTPLSJNZEA8P",
+    "certLinkValue": "Coursera Certificate",
+    "certLink": "https://www.coursera.org/account/accomplishments/specialization/23D7RQW57S2G"
+  },
+  {
+    "name": "Scientific Computing with Python",
+    "issuer": "freeCodeCamp",
+    "endDate": "Oct. 2021",
+    "summary": [
+      "FreeCodeCamp certification covering the fundamentals of Python up to complex data structures, networking, relational databases, and data visualization."
+    ],
+    "highlights": [
+      "Networking with Python",
+      "Regular Expressions",
+      "Relational Databases and SQLite"
+    ],
+    "certId": "zljett-scwp",
+    "certLinkValue": "freeCodeCamp Certificate",
+    "certLink": "https://freecodecamp.org/certification/zljett/scientific-computing-with-python-v7"
+  },
+  {
+    "name": "Preparing for Google Cloud Certification: Cloud Engineer",
+    "issuer": "Google",
+    "endDate": "Dec. 2021",
+    "summary": [
+      "Online non-credit Professional Certificate authorized by Google and offered through Coursera"
+    ],
+    "highlights": [
+      "Essential Google Cloud Infrastructure: Core Services",
+      "Elastic Google Cloud Infrastructure: Scaling and Automation",
+      "Architecting with Google Kubernetes Engine: Foundations"
+    ],
+    "certId": "23D7RQW57S2G",
+    "certLinkValue": "Coursera Certificate",
+    "certLink": "https://www.coursera.org/account/accomplishments/specialization/LTPLSJNZEA8P"
+  }
+]

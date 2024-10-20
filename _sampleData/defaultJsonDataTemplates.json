@@ -33,7 +33,6 @@
             "highlights": [
                 ""
             ],
-            "githubLinkDesc": "",
             "githubLinkValue": "",
             "githubLink": ""
         }
@@ -74,7 +73,7 @@
                 ""
             ],
             "certId": "",
-            "certLinkTitle": "",
+            "certLinkValue": "",
             "certLink": ""
         }
     ],
@@ -86,12 +85,15 @@
             "major": "",
             "minors": [],
             "endDate": "",
-            "summary": [],
-            "highlights": [],
-            "minorHighlights": [],
-            "papers": [],
-            "courses": [],
-            "thesisTitle": "",
+            "summary": "",
+            "detailedHighlights": [
+                {
+                    "highlight": "",
+                    "keyPoints": []
+                }
+            ],
+            "thesisDesc": "",
+            "thesisValue": "",
             "thesisLink": ""
         }
     ],
@@ -106,6 +108,18 @@
             "highlights": []
         }
     ],
+    "communityService": [
+        {
+            "role": "",
+            "organization": "",
+            "startDate": "",
+            "endDate": "",
+            "summary": [
+                ""
+            ],
+            "highlights": []
+        }
+    ],
     "awards": [
         {
             "name": "",
@@ -117,18 +131,6 @@
             "highlights": [
                 ""
             ]
-        }
-    ],
-    "communityService": [
-        {
-            "role": "",
-            "organization": "",
-            "startDate": "",
-            "endDate": "",
-            "summary": [
-                ""
-            ],
-            "highlights": []
         }
     ]
 }

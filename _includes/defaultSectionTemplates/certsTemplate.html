@@ -1,0 +1,135 @@
+<div class="certs-element element-block">
+    <div class="element-head">
+        <h2 class="certs-element-title element-title">Certifications</h2>
+    </div>
+
+    <div class="certs-element-body">
+        <!-- * Loop through certs. -->
+        {% for cert in site.data.defaultResumeData.certsData %}
+        <!-- Setup each variable used in main loop -->
+        {% assign CurrentCert = cert.name | replace: " ", "_" %}
+        <!-- SWITCH: if cert "name" in "page.skipCert: []" then the cert's Section Entry 
+        will be skipped.
+        Note: each cert name must include an underscore instead of a whitespace, 
+        e.g. "Google_IT_Automation_with_Python" -->
+        {% unless page.skipCert contains CurrentCert %}
+        <div class="cert-section-entry">
+            <div class="cert-head">
+                <div class="cert-title-block">
+                    <div class="cert-title">{{cert.name}}</div>
+                    {% assign CertTitleDivider = page.certTitleDivider | default: " &ndash; " %}
+                    <div class="cert-title-divider">{{CertTitleDivider}}</div>
+                    <div class="cert-issuer">{{cert.issuer}}</div>
+                </div>
+                <div class="cert-date">{{cert.endDate}}</div>
+            </div>
+            <div class="cert-body">
+                <!-- SWITCH: if "page.modifiedCert" exists, the for loop will check if the current "cert" Section
+                Entry should be MODIFIED. Each MODIFIED cert Section Entry only includes the Data Entries specified 
+                as "true" in the modifiedCert yaml object. If "page.modifiedCert" does not exist, this for loop's 
+                "else" will generate DEFAULT HTML for each "cert", i.e. including all cert data. -->
+                {% for entry in page.modifiedCert %}
+                <!-- Generate HTML for MODIFIED Section Entries -->
+                <!-- * Loop through modifiedCert objects, if cert not in modifiedCert then go to ELSE for "if entry.name" loop. -->
+                {% if entry.name == CurrentCert %}
+                {% if entry.summary == true %}
+                <div class="cert-summary">
+                    <p class="cert-summary-body">{{ cert.summary }}</p>
+                </div>
+                {% endif %}
+                {% if entry.highlights == true %}
+                <div class="cert-highlights">
+                    <!-- SWITCH: unless "page.includeCertHighlightsTitle" is set to "true", the project highlights 
+                    title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
+                    {% if page.includeCertHighlightsTitle %}
+                    <div class="cert-highlights-title">Highlights: </div>
+                    {% endif %}
+                    <ul class="cert-highlights-list">
+                        {% for item in cert.highlights %}
+                        <li class="cert-highlights-list-item">
+                            {{ item }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                <!-- SWITCH: unless "page.includeCertLinkAndId" is set to "true", the Cert Link and ID will 
+                NOT be included. This means DEFAULT is not to include the Cert Link and ID. -->
+                {% if page.includeCertLinkAndId %}
+                <div class="cert-link-id-block">
+                    {% if cert.certId.size > 0 %}
+                    <div class="cert-id-desc">{{cert.certLinkValue}} ID#: </div>
+                    {% endif %}
+                    <a href="{{cert.certLink}}" class="cert-link-value">{{cert.certId}}</a>
+                </div>
+                {% endif %}
+                <!-- * ELSE for "if entry.name" loop, i.e. if cert not in modifiedCert then go to this ELSE.
+                Generate DEFAULT HTML for Section Entries NOT in "page.modifiedCert" list, i.e.
+                all items that are to be generated with full content. -->
+                {% else %}
+                <div class="cert-summary">
+                    <p class="cert-summary-body">{{ cert.summary }}</p>
+                </div>
+                <div class="cert-highlights">
+                    <!-- SWITCH: unless "page.includeCertHighlightsTitle" is set to "true", the project highlights 
+                    title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
+                    {% if page.includeCertHighlightsTitle %}
+                    <div class="cert-highlights-title">Highlights: </div>
+                    {% endif %}
+                    <ul class="cert-highlights-list">
+                        {% for item in cert.highlights %}
+                        <li class="cert-highlights-list-item">
+                            {{ item }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- SWITCH: unless "page.includeCertLinkAndId" is set to "true", the Cert Link and ID will 
+                NOT be included. This means DEFAULT is not to include the Cert Link and ID. -->
+                {% if page.includeCertLinkAndId %}
+                <div class="cert-link-id-block">
+                    {% if cert.certId.size > 0 %}
+                    <div class="cert-id-desc">{{cert.certLinkValue}} ID#: </div>
+                    {% endif %}
+                    <a href="{{cert.certLink}}" class="cert-link-value">{{cert.certId}}</a>
+                </div>
+                {% endif %}
+                {% endif %}
+                <!-- * ELSE for "for entry in" loop, i.e. modifiedCert front matter is not being used.
+                DEFAULT Section Entry generation if "page.modifiedCert" Switch does not exist -->
+                {% else %}
+                <div class="cert-summary">
+                    <p class="cert-summary-body">{{ cert.summary }}</p>
+                </div>
+                <div class="cert-highlights">
+                    <!-- SWITCH: unless "page.includeCertHighlightsTitle" is set to "true", the cert highlights 
+                    title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
+                    {% if page.includeCertHighlightsTitle %}
+                    <div class="cert-highlights-title">Highlights: </div>
+                    {% endif %}
+                    <ul class="cert-highlights-list">
+                        {% for item in cert.highlights %}
+                        <li class="cert-highlights-list-item">
+                            {{ item }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- SWITCH: unless "page.includeCertLinkAndId" is set to "true", the Cert Link and ID will 
+                NOT be included. This means DEFAULT is not to include the Cert Link and ID. -->
+                {% if page.includeCertLinkAndId %}
+                <div class="cert-link-id-block">
+                    {% if cert.certId.size > 0 %}
+                    <div class="cert-id-desc">{{cert.certLinkValue}} ID#: </div>
+                    {% endif %}
+                    <a href="{{cert.certLink}}" class="cert-link-value">{{cert.certId}}</a>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endunless %}
+        {% endfor %}
+    </div>
+
+</div>
