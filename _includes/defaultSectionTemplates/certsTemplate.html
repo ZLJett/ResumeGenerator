@@ -41,7 +41,7 @@
                 <div class="cert-highlights">
                     <!-- SWITCH: unless "page.includeCertHighlightsTitle" is set to "true", the project highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if page.includeCertHighlightsTitle %}
+                    {% if cert.highlights.size > 0 and page.includeCertHighlightsTitle %}
                     <div class="cert-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="cert-highlights-list">
@@ -73,7 +73,7 @@
                 <div class="cert-highlights">
                     <!-- SWITCH: unless "page.includeCertHighlightsTitle" is set to "true", the project highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if page.includeCertHighlightsTitle %}
+                    {% if cert.highlights.size > 0 and page.includeCertHighlightsTitle %}
                     <div class="cert-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="cert-highlights-list">
@@ -104,7 +104,7 @@
                 <div class="cert-highlights">
                     <!-- SWITCH: unless "page.includeCertHighlightsTitle" is set to "true", the cert highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if page.includeCertHighlightsTitle %}
+                    {% if cert.highlights.size > 0 and page.includeCertHighlightsTitle %}
                     <div class="cert-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="cert-highlights-list">

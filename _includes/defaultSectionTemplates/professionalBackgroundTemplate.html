@@ -38,6 +38,11 @@
                 {% endif %}
                 {% if entry.highlights == true %}
                 <div class="background-highlights">
+                    <!-- SWITCH: unless "page.includeBackgroundHighlightsTitle" is set to "true", the background highlights 
+                    title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
+                    {% if job.highlights.size > 0 and page.includeBackgroundHighlightsTitle %}
+                    <div class="background-highlights-title">Highlights: </div>
+                    {% endif %}
                     <ul class="background-highlights-list">
                         {% for item in job.highlights %}
                         <li class="background-highlights-list-item">
@@ -49,12 +54,17 @@
                 {% endif %}
                 <!-- * ELSE for "if entry.position" loop, i.e. if position not in modifiedProfessionalBackground then go to this ELSE.
                 Generate DEFAULT HTML for Section Entries NOT in "page.modifiedProfessionalBackground" list, i.e.
-                 all items that are to be generated with full content. -->
+                all items that are to be generated with full content. -->
                 {% else %}
                 <div class="background-summary">
                     <p class="background-summary-body">{{ job.summary }}</p>
                 </div>
                 <div class="background-highlights">
+                    <!-- SWITCH: unless "page.includeBackgroundHighlightsTitle" is set to "true", the background highlights 
+                    title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
+                    {% if job.highlights.size > 0 and page.includeBackgroundHighlightsTitle %}
+                    <div class="background-highlights-title">Highlights: </div>
+                    {% endif %}
                     <ul class="background-highlights-list">
                         {% for item in job.highlights %}
                         <li class="background-highlights-list-item">
@@ -73,7 +83,7 @@
                 <div class="background-highlights">
                     <!-- SWITCH: unless "page.includeBackgroundHighlightsTitle" is set to "true", the background highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if page.includeBackgroundHighlightsTitle %}
+                    {% if job.highlights.size > 0 and page.includeBackgroundHighlightsTitle %}
                     <div class="background-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="background-highlights-list">

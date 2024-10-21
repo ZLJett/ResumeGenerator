@@ -1,4 +1,9 @@
-<!-- TODO - Fill in comment on how this connects with "communityServiceTemplate" -->
+<!-- The Awards Template file is intended to pair as the 'child' of the Community 
+Service Template file in the same way that "minorProjectsData.json" slots under 
+"projectsData.json" as its child, i.e. minor projects (and thus this file) has an 
+optional, default off, header so that it will appear as if it just part of the 
+projects section of the resume, and not its own separate section. 
+-->
 <div class="awards-element element-block">
     <!-- SWITCH: unless "page.includeAwardsElementTitle" is set to "true", the awards element title
     will NOT be included. This means DEFAULT is not to include the element title. -->
@@ -45,7 +50,7 @@
                 <div class="award-highlights">
                     <!-- SWITCH: unless "page.includeAwardHighlightsTitle" is set to "true", the awards highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if page.includeAwardHighlightsTitle %}
+                    {% if award.highlights.size > 0 and page.includeAwardHighlightsTitle %}
                     <div class="award-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="award-highlights-list">
@@ -67,7 +72,7 @@
                 <div class="award-highlights">
                     <!-- SWITCH: unless "page.includeAwardHighlightsTitle" is set to "true", the awards highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if page.includeAwardHighlightsTitle %}
+                    {% if award.highlights.size > 0 and page.includeAwardHighlightsTitle %}
                     <div class="award-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="award-highlights-list">
@@ -88,7 +93,7 @@
                 <div class="award-highlights">
                     <!-- SWITCH: unless "page.includeAwardHighlightsTitle" is set to "true", the awards highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if page.includeAwardHighlightsTitle %}
+                    {% if award.highlights.size > 0 and page.includeAwardHighlightsTitle %}
                     <div class="award-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="award-highlights-list">

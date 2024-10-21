@@ -1,3 +1,17 @@
+General design principle here is that switches are added only for items I want to drop, i.e.  If including an item at all, it will necessarily have title, position, location, dates, etc. BUT I will want to choose if I want, highlights, links, summary etc. 
+
+Reason for using front matter variables over config variables is can use --livereload to tweak things easier 
+
+OLD Structure idea:
+  section data: in _data - controlled by _config.yml switches, all default to base options
+  section structure: in _includes - controlled by _config.yml switches, all default to base options
+  resume structure: in the index.html - controlled by _config.yml switches, all default to base options
+  resume style - controlled by _config.yml switches that are hand set
+
+GOAL: Idea of this is that the base/short resumes are my generic resumes, after that all other directories are designed for individual companies/positions resumes. When I go to create those my GOAL is that a resume folder is just its own _data files (i.e. changed data). All minor structure changes should be accomplishable with switches from that individual resumes's index.html file's front matter variables. However any major changes can have possibly _includes, _sass, content.html, or index.html files  (i.e. changed structure).
+Further, my GOAL for the system is that it can dynamically detect all new files in the resume folder, be they _data, _included, _sass, etc. and use those for the project, with any missing files being pulled from default. So all I have to do is supply a list of resume elements and it will pull all the changed ones for this resume first and fill in the rest with the defaults. 
+
+
 # Resume Creation Steps:
 
 Resume is made up of three layers of Switches:

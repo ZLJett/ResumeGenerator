@@ -1,11 +1,15 @@
 # TODO ADD comment on each switch below and what it does/where it goes... 
+# General design principle here is that switches are added only for items 
+# I want to drop, i.e.  If including an item at all, it will necessarily 
+# have title, position, location, dates, etc. BUT I will want to choose 
+# if I want, highlights, links, summary etc. 
 
-
-# Resume Title Switches
+### Resume Title Switches ##############################
 includeProfessionalTitle: true
 
 
-# Contact Info Switches 
+
+### Contact Info Switches ##############################
 includeContactElementTitle: true
 
 skipContactEntry: ["PhoneNum", "EmailAdd", "currLocation"]
@@ -13,15 +17,18 @@ skipContactEntry: ["PhoneNum", "EmailAdd", "currLocation"]
 skipContactWebsite: ["LinkedIn", "GitHub", "Portfolio"]
 
 
-# Summary Switches
+
+### Summary Switches ####################################
 includeSummaryElementTitle: true
 
 
-# Skill Sets Switches
+
+### Skill Sets Switches ##############################
 skipSkillSet: ["Disciplines", "Languages", "Environments", "Tools"]
 
 
-# Projects Switches 
+
+### Projects Switches ####################################
 skipProject: ["Financial_Trade_Message_Router"]
 
 projectTitleDivider: " " # Single space removes whole line
@@ -36,7 +43,8 @@ modifiedProject:
     highlights: true
 
 
-# Minor Projects Switches
+
+### Minor Projects Switches ####################################
 skipMinorProjectCategory: ["Web-Development_Projects", "Python_Projects"]
 
 skipMinorProject: ["Calculator_Webpage", "Etch-a-Sketch_Webpage", "Rock_Paper_Scissors_Webpage", "Budgeting_App_Project"]
@@ -53,7 +61,8 @@ modifiedMinorProject:
     highlights: true
 
 
-# Certs Switches
+
+### Certs Switches ####################################
 skipCert: ["Google_IT_Automation_with_Python", "Scientific_Computing_with_Python", "Preparing_for_Google_Cloud_Certification:_Cloud_Engineer"]
 
 certTitleDivider: " " # Single space removes whole line
@@ -68,7 +77,8 @@ modifiedCert:
     highlights: true
 
 
-# Education Switches
+
+### Education Switches ####################################
 skipEducation: ["Master_of_Arts", "Bachelors_of_Arts", "Associate_of_Arts_and_Sciences"]
 
 degreeTitleDivider: " " # Single space removes whole line
@@ -90,7 +100,8 @@ modifiedEducation:
     thesisLink: true # Item will be included if EITHER this or "includeEducationThesisLink" set to "true"
 
 
-# Professional Background Switches
+
+### Professional Background Switches ####################################
 skipProfessionalBackground: ["Graduate_Assistant", "Assistant-Director_of_Communication"]
 
 backgroundDateDivider: " " # Single space removes whole line
@@ -103,7 +114,8 @@ modifiedProfessionalBackground:
     highlights: true
 
 
-# Community Service Switches 
+
+### Community Service Switches ####################################
 skipCommunityService: ["Trustee"]
 
 serviceTitleDivider: " " # Single space removes whole line
@@ -118,7 +130,8 @@ modifiedCommunityService:
     highlights: true
 
 
-# Awards Switches
+
+### Awards Switches ####################################
 includeAwardsElementTitle: true
 
 skipAward: ["William_T._Hornaday_Award_for_Environmental_Conservation", "Eagle_Scout"]

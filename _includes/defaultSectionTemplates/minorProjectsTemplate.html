@@ -77,7 +77,7 @@ dropped when I move past the point of including 'minor projects' on my resume. -
                     <!-- SWITCH: unless "page.includeMinorProjectHighlightsTitle" is set to "true", the minor project 
                     highlights title will NOT be included. This means DEFAULT is not to include the 
                     highlights title. -->
-                    {% if page.includeMinorProjectHighlightsTitle %}
+                    {% if project.highlights.size > 0 and page.includeMinorProjectHighlightsTitle %}
                     <div class="minor-project-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="minor-project-highlights-list">
@@ -126,7 +126,7 @@ dropped when I move past the point of including 'minor projects' on my resume. -
                     <!-- SWITCH: unless "page.includeMinorProjectHighlightsTitle" is set to "true", the minor project 
                     highlights title will NOT be included. This means DEFAULT is not to include the 
                     highlights title. -->
-                    {% if page.includeMinorProjectHighlightsTitle %}
+                    {% if project.highlights.size > 0 and page.includeMinorProjectHighlightsTitle %}
                     <div class="minor-project-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="minor-project-highlights-list">
@@ -174,7 +174,7 @@ dropped when I move past the point of including 'minor projects' on my resume. -
                     <!-- SWITCH: unless "page.includeMinorProjectHighlightsTitle" is set to "true", the minor project 
                     highlights title will NOT be included. This means DEFAULT is not to include the 
                     highlights title. -->
-                    {% if page.includeMinorProjectHighlightsTitle %}
+                    {% if project.highlights.size > 0 and page.includeMinorProjectHighlightsTitle %}
                     <div class="minor-project-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="minor-project-highlights-list">

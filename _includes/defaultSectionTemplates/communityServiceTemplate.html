@@ -1,4 +1,10 @@
-<!-- TODO - Fill in comment on how this connects with "awardsTemplate" -->
+<!-- The Community Service Template file is written as a standard template file.
+However, it is intended to pair as the 'parent' with the Awards Template file in 
+the same way that "minorProjectsData.json" slots under "projectsData.json" as its 
+child, i.e. minor projects has an optional, default off, header so that it will 
+appear as if it just part of the projects section of the resume, and not its own 
+separate section. 
+-->
 <div class="service-element element-block">
     <div class="element-head">
         <h2 class="service-element-title element-title">Community Service</h2>
@@ -48,7 +54,7 @@
                 <div class="service-highlights">
                     <!-- SWITCH: unless "page.includeServiceHighlightsTitle" is set to "true", the service highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if page.includeServiceHighlightsTitle %}
+                    {% if service.highlights.size > 0 and page.includeServiceHighlightsTitle %}
                     <div class="service-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="service-highlights-list">
@@ -70,7 +76,7 @@
                 <div class="service-highlights">
                     <!-- SWITCH: unless "page.includeServiceHighlightsTitle" is set to "true", the service highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if page.includeServiceHighlightsTitle %}
+                    {% if service.highlights.size > 0 and page.includeServiceHighlightsTitle %}
                     <div class="service-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="service-highlights-list">
@@ -91,7 +97,7 @@
                 <div class="service-highlights">
                     <!-- SWITCH: unless "page.includeServiceHighlightsTitle" is set to "true", the service highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if page.includeServiceHighlightsTitle %}
+                    {% if service.highlights.size > 0 and page.includeServiceHighlightsTitle %}
                     <div class="service-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="service-highlights-list">
