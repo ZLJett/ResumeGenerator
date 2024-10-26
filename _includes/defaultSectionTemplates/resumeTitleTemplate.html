@@ -1,6 +1,20 @@
+<!-- Set correct Data Source -->
+{% if site.modifiedResumeData contains "resumeTitleData" %}
+<!-- Check if automatically included modified Data should be replaced with default Data  -->
+{% if page.overrideResumeData contains "resumeTitleData" %}
+{% assign DataLocation = site.data.defaultResumeData.resumeTitleData %}
+<!-- Use modified Data -->
+{% else %}
+{% assign DataLocation = site.resumeTitleData %}
+{% endif %}
+<!-- If none of the above true use default Data -->
+{% else %}
+{% assign DataLocation = site.data.defaultResumeData.resumeTitleData %}
+{% endif %}
+
 <div class="resume-title-element resume-head">
     <div class="title-element-head">
-        <div class="resume-title">{{ site.data.defaultResumeData.resumeTitleData.name }}</div>
+        <div class="resume-title">{{ DataLocation.name }}</div>
     </div>
 
     <!-- SWITCH: unless "page.includeProfessionalTitle" is set to "true", the professional title
@@ -8,7 +22,7 @@
     {% if page.includeProfessionalTitle %}
     <div class="title-element-body">
         <div class="professional-title">
-            {{ site.data.defaultResumeData.resumeTitleData.professional-title }}
+            {{ DataLocation.professional-title }}
         </div>
     </div>
     {% endif %}

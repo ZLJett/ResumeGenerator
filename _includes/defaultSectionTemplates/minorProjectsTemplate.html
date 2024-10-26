@@ -1,10 +1,25 @@
 <!-- The Minor Projects Templates file uses only data from "minorProjectsData.json" which is designed 
 to 'slot' under the HTML produced by "projectsTemplate.html". The goal is that this template can be 
 dropped when I move past the point of including 'minor projects' on my resume. -->
+
+<!-- Set correct Data Source -->
+{% if site.modifiedResumeData contains "minorProjectsData" %}
+<!-- Check if automatically included modified Data should be replaced with default Data  -->
+{% if page.overrideResumeData contains "minorProjectsData" %}
+{% assign DataLocation = site.data.defaultResumeData.minorProjectsData %}
+<!-- Use modified Data -->
+{% else %}
+{% assign DataLocation = site.minorProjectsData %}
+{% endif %}
+<!-- If none of the above true use default Data -->
+{% else %}
+{% assign DataLocation = site.data.defaultResumeData.minorProjectsData %}
+{% endif %}
+
 <div class="minor-projects-element element-block">
     <div class="minor-projects-element-body">
         <!-- * Loop through categories of minor projects. -->
-        {% for projectCategory in site.data.defaultResumeData.minorProjectsData %}
+        {% for projectCategory in DataLocation %}
         <!-- Setup each variable used in minor project category loop -->
         {% assign CurrentCategory = projectCategory.category | replace: " ", "_" %}
         <!-- SWITCH: if "minor project category" in "page.skipMinorProjectCategory: []" then minor project 

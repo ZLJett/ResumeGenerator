@@ -1,0 +1,7 @@
+---
+
+
+---
+
+
+{% include defaultSectionTemplates/defaultContent.html %}

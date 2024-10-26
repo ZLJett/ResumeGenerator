@@ -1,10 +1,24 @@
+<!-- Set correct Data Source -->
+{% if site.modifiedResumeData contains "skillSetsData" %}
+<!-- Check if automatically included modified Data should be replaced with default Data  -->
+{% if page.overrideResumeData contains "skillSetsData" %}
+{% assign DataLocation = site.data.defaultResumeData.skillSetsData %}
+<!-- Use modified Data -->
+{% else %}
+{% assign DataLocation = site.skillSetsData %}
+{% endif %}
+<!-- If none of the above true use default Data -->
+{% else %}
+{% assign DataLocation = site.data.defaultResumeData.skillSetsData %}
+{% endif %}
+
 <div class="skills-element element-block">
     <div class="elemnet-head">
         <h2 class="skills-elemnet-title elemnet-title">Skill Set</h2>
     </div>
 
     <div class="skills-elemnet-body">
-        {% for skillSet in site.data.defaultResumeData.skillSetsData %}
+        {% for skillSet in DataLocation %}
         <!-- SWITCH: if "skill_title" in "page.skipSkillSet: []" then skill set Section Entry 
         will be skipped.
         Note: each skill title name is exactly the same as in the "skill_title" value

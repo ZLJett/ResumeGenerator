@@ -1,0 +1,14 @@
+contactInfoData:
+  phone: TESTRESUME#
+  email: test@testRESUME
+  location: 1111 TestStreetRESUME
+  websites:
+    - websiteDesc: TESTLinkedIn
+      websiteLinkValue: '@ZachariahJett'
+      websiteLink: 'https://www.linkedin.com/in/zachariahjett/'
+    - websiteDesc: TESTGitHub
+      websiteLinkValue: '@ZLJett'
+      websiteLink: 'https://github.com/ZLJett'
+    - websiteDesc: TESTPortfolio
+      websiteLinkValue: ZachariahJett
+      websiteLink: 'https://zljett.github.io/'

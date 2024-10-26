@@ -1,0 +1,39 @@
+skillSetsData:
+  - skill_title: TESTDisciplines
+    skills:
+      - Web-Development
+      - Data Transformation
+      - Testing
+      - Agile/Sprint Planning
+  - skill_title: TESTLanguages
+    skills:
+      - Python
+      - Java
+      - C
+      - C#
+      - JavaScript
+      - HTML
+      - CSS
+      - Bash Scripting
+  - skill_title: TESTEnvironments
+    skills:
+      - Linux
+      - Windows
+      - Visual Studio
+      - VSCode
+      - IntelliJ
+      - Oracle VM VirtualBox
+      - Compiler Explorer
+      - Google Cloud Platform
+  - skill_title: TESTTools
+    skills:
+      - Git
+      - Maven
+      - Spring Boot
+      - Apache Camel
+      - JPA
+      - Hibernate
+      - H2 SQL
+      - Saxon XSLT
+      - Jackson XML/JSON
+      - JUnit5

@@ -1,7 +1,11 @@
 ---
 ---
-// For how this file works see the README and the _config.yml file.
-// MUST SAVE WITHOUT FORMATTING, shortcut: first "ctrl + k" then "ctrl + shift + s"
+// STATIC: This file adds all all the stylesheets used to add style to any given resume, 
+// but what stylesheets are added is done in the root _config file. Hence, this file 
+// itself is STATIC and should never need to be modified. For exactly how this file works 
+// see the README and the _config.yml file.
+// NOTE: This file MUST be SAVED WITHOUT FORMATTING, shortcut: 
+// first, "ctrl + k" then, "ctrl + shift + s"
 
 {% if site.replace_default_style == true %}
     {%- for entry in site.style_list -%}

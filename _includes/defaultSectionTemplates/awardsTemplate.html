@@ -2,8 +2,22 @@
 Service Template file in the same way that "minorProjectsData.json" slots under 
 "projectsData.json" as its child, i.e. minor projects (and thus this file) has an 
 optional, default off, header so that it will appear as if it just part of the 
-projects section of the resume, and not its own separate section. 
--->
+projects section of the resume, and not its own separate section. -->
+
+<!-- Set correct Data Source -->
+{% if site.modifiedResumeData contains "awardsData" %}
+<!-- Check if automatically included modified Data should be replaced with default Data  -->
+{% if page.overrideResumeData contains "awardsData" %}
+{% assign DataLocation = site.data.defaultResumeData.awardsData %}
+<!-- Use modified Data -->
+{% else %}
+{% assign DataLocation = site.awardsData %}
+{% endif %}
+<!-- If none of the above true use default Data -->
+{% else %}
+{% assign DataLocation = site.data.defaultResumeData.awardsData %}
+{% endif %}
+
 <div class="awards-element element-block">
     <!-- SWITCH: unless "page.includeAwardsElementTitle" is set to "true", the awards element title
     will NOT be included. This means DEFAULT is not to include the element title. -->
@@ -15,7 +29,7 @@ projects section of the resume, and not its own separate section.
 
     <div class="awards-element-body">
         <!-- * Loop through awards Section Entries -->
-        {% for award in site.data.defaultResumeData.awardsData %}
+        {% for award in DataLocation %}
         <!-- Setup each variable used in main loop -->
         {% assign CurrentAward = award.name | replace: " ", "_" %}
         <!-- SWITCH: if award in "page.skipAward: []" then the award Section Entry will be skipped.

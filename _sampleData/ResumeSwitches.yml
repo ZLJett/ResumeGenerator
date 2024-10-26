@@ -1,8 +1,22 @@
 # TODO ADD comment on each switch below and what it does/where it goes... 
-# General design principle here is that switches are added only for items 
-# I want to drop, i.e.  If including an item at all, it will necessarily 
-# have title, position, location, dates, etc. BUT I will want to choose 
-# if I want, highlights, links, summary etc. 
+# The general design principle of Switches is that switches are added only 
+# for items I want to drop, i.e.  If including an item at all, it will 
+# necessarily have title, position, location, dates, etc. BUT I will want 
+# to choose if I want, highlights, links, summary etc. 
+
+### Resume Content Switches ##############################
+# The contents of these MUST be in the desired final order for the resume's contents
+excludeResumeContents: [contactInfoTemplate]
+
+# Replaces the automatically included Resume Template files, i.e. the modified Templates in 
+# the resume's directory, with the default Template file of the same name
+overrideResumeTemplates: []
+
+# Replaces the automatically included Resume Data files, i.e. the modified Templates in 
+# the resume's directory, with the default Data file of the same name
+# Note: Values MUST be strings, e.g. ["contactInfoData"]
+overrideResumeData: []
+
 
 ### Resume Title Switches ##############################
 includeProfessionalTitle: true

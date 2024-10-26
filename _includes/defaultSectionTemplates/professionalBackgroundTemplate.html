@@ -1,3 +1,17 @@
+<!-- Set correct Data Source -->
+{% if site.modifiedResumeData contains "professionalBackgroundData" %}
+<!-- Check if automatically included modified Data should be replaced with default Data  -->
+{% if page.overrideResumeData contains "professionalBackgroundData" %}
+{% assign DataLocation = site.data.defaultResumeData.professionalBackgroundData %}
+<!-- Use modified Data -->
+{% else %}
+{% assign DataLocation = site.professionalBackgroundData %}
+{% endif %}
+<!-- If none of the above true use default Data -->
+{% else %}
+{% assign DataLocation = site.data.defaultResumeData.professionalBackgroundData %}
+{% endif %}
+
 <div class="background-element element-block">
     <div class="element-head">
         <h2 class="background-element-title element-title">Professional Background</h2>
@@ -5,7 +19,7 @@
 
     <div class="background-element-body">
         <!-- * Loop through professional backgrounds. -->
-        {% for job in site.data.defaultResumeData.professionalBackgroundData %}
+        {% for job in DataLocation %}
         <!-- Setup each variable used in main loop -->
         {% assign CurrentJob = job.position | replace: " ", "_" %}
         <!-- SWITCH: if "position" in "page.skipProfessionalBackground: []" then position Section Entry will be skipped

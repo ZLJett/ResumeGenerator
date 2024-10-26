@@ -2,6 +2,21 @@
 from "minorProjectsData.json" which will have its own template that is designed to 'slot' under the HTML
 produced by this template. The goal is that this template can be used exclusively when I move past the 
 point of including 'minor projects' on my resume. -->
+
+<!-- Set correct Data Source -->
+{% if site.modifiedResumeData contains "majorProjectsData" %}
+<!-- Check if automatically included modified Data should be replaced with default Data  -->
+{% if page.overrideResumeData contains "majorProjectsData" %}
+{% assign DataLocation = site.data.defaultResumeData.majorProjectsData %}
+<!-- Use modified Data -->
+{% else %}
+{% assign DataLocation = site.majorProjectsData %}
+{% endif %}
+<!-- If none of the above true use default Data -->
+{% else %}
+{% assign DataLocation = site.data.defaultResumeData.majorProjectsData %}
+{% endif %}
+
 <div class="projects-element element-block">
     <div class="element-head">
         <h2 class="projects-element-title element-title">Projects</h2>
@@ -9,7 +24,7 @@ point of including 'minor projects' on my resume. -->
 
     <div class="projects-element-body">
         <!-- * Loop through projects. -->
-        {% for project in site.data.defaultResumeData.majorProjectsData %}
+        {% for project in DataLocation %}
         <!-- Setup each variable used in main loop -->
         {% assign CurrentProject = project.name | replace: " ", "_" %}
         <!-- SWITCH: if "project" in "page.skipProject: []" then project Section Entry will be skipped

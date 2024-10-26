@@ -1,0 +1,10 @@
+# This Resume _config.yml file MUST be included with below AUTOMATICALLY GENERATED 
+# variables in each Resume Directory in the _configs Directory for runner.sh to be 
+# able to add config variables
+
+# AUTOMATICALLY GENERATED variables by runner.sh
+# All resume specific Templates files, i.e. modified Templates, e.g. [resumeTitleTemplate]
+modifiedResumeTemplates: []
+# All resume specific Data files, i.e. modified Data
+# Values MUST be strings, e.g. ["contactInfoData"]
+modifiedResumeData: []

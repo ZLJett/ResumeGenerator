@@ -1,3 +1,17 @@
+<!-- Set correct Data Source -->
+{% if site.modifiedResumeData contains "summaryData" %}
+<!-- Check if automatically included modified Data should be replaced with default Data  -->
+{% if page.overrideResumeData contains "summaryData" %}
+{% assign DataLocation = site.data.defaultResumeData.summaryData %}
+<!-- Use modified Data -->
+{% else %}
+{% assign DataLocation = site.summaryData %}
+{% endif %}
+<!-- If none of the above true use default Data -->
+{% else %}
+{% assign DataLocation = site.data.defaultResumeData.summaryData %}
+{% endif %}
+
 <div class="summary-element element-block">
     <!-- SWITCH: unless "page.includeSummaryElementTitle" is set to "true", the summary element title
     will NOT be included. This means DEFAULT is not to include the element title. -->
@@ -8,7 +22,7 @@
     {% endif %}
 
     <div class="summary-element-body">
-        <p class="summary-element-content">{{site.data.defaultResumeData.summaryData.summary}}</p>
+        <p class="summary-element-content">{{DataLocation.summary}}</p>
     </div>
 
 </div>

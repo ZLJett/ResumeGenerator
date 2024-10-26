@@ -1,6 +1,6 @@
 # Resume Configuration
 
-#Config Notes:
+# Config Notes:
 #   Defaults listed after each option show settings for generating a normal, base, resume.
 
 
@@ -12,8 +12,16 @@ include:
 - _testResume    # Target
 
 
+# RESUME CONTENT AND ORDER: This is the list of Element Templates used by defaultContents.html 
+# to generate the Resume. This is usually STATIC but this option allows for switching to a 
+# different Resume organization without deleting the previous one.
+# NOTE: This list is the ORDER THE elements will appear in on the Resume. Element order can 
+# ONLY be changed from here!
+defaultResumeContents: [resumeTitleTemplate, contactInfoTemplate, summaryTemplate, skillSetsTemplate, projectsTemplate, minorProjectsTemplate, certsTemplate, educationTemplate, professionalBackgroundTemplate, communityServiceTemplate, awardsTemplate]
+
+
 # DEFAULT STYLESHEET: for standard resumes. This is usually STATIC but this option allows 
-# me to switch to updated defaults with deleting the previous one.
+# for switching to updated defaults without deleting the previous one.
 # This file is ALWAYS in the root _sass directory, and is included without extension, 
 # e.g. "defaultStyle.scss" is included as "default-style: defaultStyle".
 default-style: defaultStyle
@@ -22,9 +30,10 @@ default-style: defaultStyle
 # CHANGE STYLE: Change resume style from just using the default stylesheet (see above setting) 
 # to either replace default stylesheet or add extra stylesheets to default stylesheet.
 
-# The "load_paths" option allows me to use different locations for my stylesheets, but 
-# does not change what will load, that is done by the "assets/css/styles.scss" file's 
-# @include statements. 
+# The "load_paths" option allows me to add different locations for my stylesheets beyond 
+# the default stylesheet: "_sass/defaultStyle.scss" but this option does not actually change 
+# what will load, that is done by the "assets/css/styles.scss" file's @include statements VIA
+# THE BELOW OPTIONS, which allow you to set if "defaultStyle.scss" is imported, etc.
 # If no additional style needed, comment out "load_paths" option.
 sass:
   load_paths: [_resumes/_testResume/_sass]    # default: load_paths: []
@@ -37,7 +46,7 @@ sass:
 #  Option 1: The "replace_default_style" adds to @imports full "style_list" given below but 
 #  NOT the "defaultStyle".
 #  Option 2: The "additional_styles" adds to @imports full "style_list" AND the "defaultStyle".
-# NOTE: only one of these should be set to "true" 
+# NOTE: only one of these should EVER be set to "true" 
 replace_default_style: false    # default: false
 additional_styles: true    # default: false
 
@@ -46,8 +55,11 @@ additional_styles: true    # default: false
 # Note: the filename is the name of each additional stylesheet, minus the extension, I want 
 # to include, be they from the root _sass directory, or one of the resumes' _sass directories, 
 # e.g. to testStyle.scss is included as "- {filename: testStyle}".
+# NOTE: The order these files are listed is the order they will be 'included' and thus the order 
+# in which their styles will override each other. So care needs to be taken to make sure they are 
+# in the right order. 
 style_list: 
-- {filename: testStyle}
+- {filename: additionalStyle}
 
 ###############################################################################
 # STATIC CONFIG (i.e. items that should never need to be changed) 

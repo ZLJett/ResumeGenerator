@@ -1,0 +1,14 @@
+contactInfoData:
+  phone: test#
+  email: test@test
+  location: 1111 TestStreet
+  websites:
+    - websiteDesc: LinkedIn
+      websiteLinkValue: "@ZachariahJett"
+      websiteLink: https://www.linkedin.com/in/zachariahjett/
+    - websiteDesc: GitHub
+      websiteLinkValue: "@ZLJett"
+      websiteLink: https://github.com/ZLJett
+    - websiteDesc: Portfolio
+      websiteLinkValue: ZachariahJett
+      websiteLink: https://zljett.github.io/

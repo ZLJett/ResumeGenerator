@@ -1,3 +1,17 @@
+<!-- Set correct Data Source -->
+{% if site.modifiedResumeData contains "certsData" %}
+<!-- Check if automatically included modified Data should be replaced with default Data  -->
+{% if page.overrideResumeData contains "certsData" %}
+{% assign DataLocation = site.data.defaultResumeData.certsData %}
+<!-- Use modified Data -->
+{% else %}
+{% assign DataLocation = site.certsData %}
+{% endif %}
+<!-- If none of the above true use default Data -->
+{% else %}
+{% assign DataLocation = site.data.defaultResumeData.certsData %}
+{% endif %}
+
 <div class="certs-element element-block">
     <div class="element-head">
         <h2 class="certs-element-title element-title">Certifications</h2>
@@ -5,7 +19,7 @@
 
     <div class="certs-element-body">
         <!-- * Loop through certs. -->
-        {% for cert in site.data.defaultResumeData.certsData %}
+        {% for cert in DataLocation %}
         <!-- Setup each variable used in main loop -->
         {% assign CurrentCert = cert.name | replace: " ", "_" %}
         <!-- SWITCH: if cert "name" in "page.skipCert: []" then the cert's Section Entry 

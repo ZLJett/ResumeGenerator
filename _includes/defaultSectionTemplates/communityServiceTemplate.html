@@ -3,8 +3,22 @@ However, it is intended to pair as the 'parent' with the Awards Template file in
 the same way that "minorProjectsData.json" slots under "projectsData.json" as its 
 child, i.e. minor projects has an optional, default off, header so that it will 
 appear as if it just part of the projects section of the resume, and not its own 
-separate section. 
--->
+separate section. -->
+
+<!-- Set correct Data Source -->
+{% if site.modifiedResumeData contains "communityServiceData" %}
+<!-- Check if automatically included modified Data should be replaced with default Data  -->
+{% if page.overrideResumeData contains "communityServiceData" %}
+{% assign DataLocation = site.data.defaultResumeData.communityServiceData %}
+<!-- Use modified Data -->
+{% else %}
+{% assign DataLocation = site.communityServiceData %}
+{% endif %}
+<!-- If none of the above true use default Data -->
+{% else %}
+{% assign DataLocation = site.data.defaultResumeData.communityServiceData %}
+{% endif %}
+
 <div class="service-element element-block">
     <div class="element-head">
         <h2 class="service-element-title element-title">Community Service</h2>
@@ -12,7 +26,7 @@ separate section.
 
     <div class="service-element-body">
         <!-- * Loop through community service Section Entries -->
-        {% for service in site.data.defaultResumeData.communityServiceData %}
+        {% for service in DataLocation %}
         <!-- Setup each variable used in main loop -->
         {% assign CurrentService = service.role | replace: " ", "_" %}
         <!-- SWITCH: if "role" in "page.skipCommunityService: []" then the community service Section Entry

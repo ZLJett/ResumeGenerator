@@ -1,25 +1,20 @@
----
+<!-- Add all Element Templates to Resume index.html -->
+{% for element in site.defaultResumeContents %}
 
----
+{% if page.excludeResumeContents contains element %}
+{% continue %}
 
-{% include defaultSectionTemplates/resumeTitleTemplate.html %}
+{% elsif site.modifiedResumeTemplates contains element %}
+<!-- Check if automatically included modified Template should be replaced with default Template -->
+{% if page.overrideResumeTemplates contains element %}
+{% include defaultSectionTemplates/{{element}}.html %}
+<!-- Use modified Template -->
+{% else %}
+{% include_relative _includes/{{element}}.html %}
+{% endif %}
 
-{% include defaultSectionTemplates/contactInfoTemplate.html %}
-
-{% include defaultSectionTemplates/summaryTemplate.html %}
-
-{% include defaultSectionTemplates/skillSetsTemplate.html %}
-
-{% include defaultSectionTemplates/projectsTemplate.html %}
-
-{% include defaultSectionTemplates/minorProjectsTemplate.html %}
-
-{% include defaultSectionTemplates/certsTemplate.html %}
-
-{% include defaultSectionTemplates/educationTemplate.html %}
-
-{% include defaultSectionTemplates/professionalBackgroundTemplate.html %}
-
-{% include defaultSectionTemplates/communityServiceTemplate.html %}
-
-{% include defaultSectionTemplates/awardsTemplate.html %}
+<!-- If none of the above true use default Template -->
+{% else %}
+{% include defaultSectionTemplates/{{element}}.html %}
+{% endif %}
+{% endfor %}
