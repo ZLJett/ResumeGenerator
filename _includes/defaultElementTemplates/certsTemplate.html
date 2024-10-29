@@ -24,8 +24,8 @@
         {% assign CurrentCert = cert.name | replace: " ", "_" %}
         <!-- SWITCH: if cert "name" in "page.skipCert: []" then the cert's Section Entry 
         will be skipped.
-        Note: each cert name must include an underscore instead of a whitespace, 
-        e.g. "Google_IT_Automation_with_Python" -->
+        Note: each cert name is the "name" value for the cert in the "certsData.json"  data file but with 
+        all whitespace replaced with underscores, e.g. "Google_IT_Automation_with_Python" -->
         {% unless page.skipCert contains CurrentCert %}
         <div class="cert-section-entry">
             <div class="cert-head">

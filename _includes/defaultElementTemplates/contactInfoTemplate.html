@@ -12,6 +12,9 @@
 {% assign DataLocation = site.data.defaultResumeData.contactInfoData %}
 {% endif %}
 
+<!-- Set Secret Data Source -->
+{% assign SecretDataLocation = site.data.secretData.contactInfoSecretData %}
+
 <div class="contact-element resume-head">
     <!-- SWITCH: unless "page.includeContactElementTitle" is set to "true", the contact element title
     will NOT be included. This means DEFAULT is not to include the element title. -->
@@ -29,7 +32,7 @@
         {% unless page.skipContactEntry contains phoneNum %}
         <div class="contact-section-entry">
             <div class="contact-entry-desc">Phone: </div>
-            <div class="contact-entry-value">{{DataLocation.phone}}</div>
+            <div class="contact-entry-value">{{SecretDataLocation.phone}}</div>
         </div>
         {% endunless %}
 
@@ -37,22 +40,22 @@
         {% unless page.skipContactEntry contains emailAdd %}
         <div class="contact-section-entry">
             <div class="contact-entry-desc">Email: </div>
-            <div class="contact-entry-value">{{DataLocation.email}}</div>
+            <div class="contact-entry-value">{{SecretDataLocation.email}}</div>
         </div>
         {% endunless %}
 
-        {% assign currLocation = "currLocation" %}
+        {% assign currLocation = "CurrLocation" %}
         {% unless page.skipContactEntry contains currLocation %}
         <div class="contact-section-entry location-entry">
             <!-- DEFAULT is just location value, no description, i.e. no "Location: value" -->
-            <div class="contact-entry-value">{{DataLocation.location}}</div>
+            <div class="contact-entry-value">{{SecretDataLocation.location}}</div>
         </div>
         {% endunless %}
 
         {% for website in DataLocation.websites %}
         <!-- SWITCH: if website name in "page.skipContactWebsite: []" then website Section Entry will be skipped
         Note: each website name is the "websiteDesc" value for the website in the "contactInfoData.json" data 
-        file  -->
+        file -->
         {% unless page.skipContactWebsite contains website.websiteDesc %}
         <div class="contact-section-entry">
             <div class="contact-entry-desc">{{website.websiteDesc}}: </div>

@@ -23,8 +23,10 @@ dropped when I move past the point of including 'minor projects' on my resume. -
         <!-- Setup each variable used in minor project category loop -->
         {% assign CurrentCategory = projectCategory.category | replace: " ", "_" %}
         <!-- SWITCH: if "minor project category" in "page.skipMinorProjectCategory: []" then minor project 
-        Section Entry Category will be skipped. Note: each project name must include an underscore instead 
-        of a whitespace, e.g. "Web-Development_Projects" -->
+        Section Entry Category will be skipped. 
+        Note: ARGs: each minor project category is the "category" value for the project in the 
+        "minorProjectsData.json" data file but with all whitespace replaced with underscores, 
+        e.g. "Web-Development_Projects" -->
         {% unless page.skipMinorProjectCategory contains CurrentCategory %}
         <div class="minor-project-category-head">
             <h3 class="minor-project-category-title">{{projectCategory.category}}</h3>
@@ -34,15 +36,17 @@ dropped when I move past the point of including 'minor projects' on my resume. -
         <!-- Setup each variable used in minor projects loop -->
         {% assign CurrentProject = project.name | replace: " ", "_" %}
         <!-- SWITCH: if "minor project" in "page.skipMinorProject: []" then minor project Section Entry 
-        will be skipped. Note: each minor project name must include an underscore instead of a whitespace, 
+        will be skipped. 
+        Note: each minor project name is the "name" value for the minor project in the 
+        "minorProjectsData.json" data file but with all whitespace replaced with underscores, 
         e.g. "Etch-a-Sketch_Webpage" -->
         {% unless page.skipMinorProject contains CurrentProject %}
         <div class="minor-project-entry">
             <div class="minor-project-head">
                 <div class="minor-project-title-block">
                     <div class="minor-project-title">{{project.name}}</div>
-                    {% assign ProjectTitleDivider = page.projectTitleDivider | default: " &ndash; " %}
-                    <div class="minor-project-title-divider">{{ProjectTitleDivider}}</div>
+                    {% assign MinorProjectTitleDivider = page.minorProjectTitleDivider | default: " &ndash; " %}
+                    <div class="minor-project-title-divider">{{MinorProjectTitleDivider}}</div>
                     <div class="minor-project-github-link-block">
                         <div class="minor-project-github-link-desc">GitHub: </div>
                         <a href="{{project.githubLink}}"

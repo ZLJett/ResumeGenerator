@@ -4,4 +4,4 @@
 ---
 
 
-{% include defaultSectionTemplates/defaultContent.html %}
+{% include defaultElementTemplates/defaultContent.html %}

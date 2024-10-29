@@ -23,7 +23,9 @@
         <!-- Setup each variable used in main loop -->
         {% assign CurrentJob = job.position | replace: " ", "_" %}
         <!-- SWITCH: if "position" in "page.skipProfessionalBackground: []" then position Section Entry will be skipped
-        Note: each position name must include an underscore instead of a whitespace, e.g. "Graduate_Assistant" -->
+        Note: each Professional Background position is the "position" value for the Professional Background in 
+        the "professionalBackgroundData.json" data file but with all whitespace replaced with underscores, 
+        e.g. "Graduate_Assistant" -->
         {% unless page.skipProfessionalBackground contains CurrentJob %}
         <div class="background-section-entry">
             <div class="background-head">

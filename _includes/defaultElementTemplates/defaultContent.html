@@ -1,3 +1,7 @@
+<!-- This file exists to keep all of the code for including the Resume's Elements out of 
+the index.md file so that the index.md file exists primarily as a 'configuration' file 
+where the Resume's 'front matter variables' are the core content  -->
+
 <!-- Add all Element Templates to Resume index.html -->
 {% for element in site.defaultResumeContents %}
 
@@ -7,7 +11,7 @@
 {% elsif site.modifiedResumeTemplates contains element %}
 <!-- Check if automatically included modified Template should be replaced with default Template -->
 {% if page.overrideResumeTemplates contains element %}
-{% include defaultSectionTemplates/{{element}}.html %}
+{% include defaultElementTemplates/{{element}}.html %}
 <!-- Use modified Template -->
 {% else %}
 {% include_relative _includes/{{element}}.html %}
@@ -15,6 +19,6 @@
 
 <!-- If none of the above true use default Template -->
 {% else %}
-{% include defaultSectionTemplates/{{element}}.html %}
+{% include defaultElementTemplates/{{element}}.html %}
 {% endif %}
 {% endfor %}

@@ -31,7 +31,9 @@ separate section. -->
         {% assign CurrentService = service.role | replace: " ", "_" %}
         <!-- SWITCH: if "role" in "page.skipCommunityService: []" then the community service Section Entry
         will be skipped.
-        Note: each "role" must include an underscore instead of a whitespace, e.g. "" -->
+        Note: each Community Service role is the "role" value for the Community Service in the 
+        "communityServiceData.json" data file but with all whitespace replaced with underscores, 
+        e.g. "" -->
         {% unless page.skipCommunityService contains CurrentService %}
         <div class="service-section-entry">
             <div class="service-head">

@@ -1,54 +1,75 @@
-# TODO ADD comment on each switch below and what it does/where it goes... 
-# The general design principle of Switches is that switches are added only 
-# for items I want to drop, i.e.  If including an item at all, it will 
-# necessarily have title, position, location, dates, etc. BUT I will want 
-# to choose if I want, highlights, links, summary etc. 
+### For overall details on functions of Switches see README.md
 
-### Resume Content Switches ##############################
+### Resume Content Switches ####################################
 # The contents of these MUST be in the desired final order for the resume's contents
+# ARGs: Values are template file names, minus extension, e.g. [contactInfoTemplate]
 excludeResumeContents: [contactInfoTemplate]
 
 # Replaces the automatically included Resume Template files, i.e. the modified Templates in 
 # the resume's directory, with the default Template file of the same name
+# ARGs: Values are template file names, minus extension, e.g. [contactInfoTemplate]
 overrideResumeTemplates: []
 
 # Replaces the automatically included Resume Data files, i.e. the modified Templates in 
 # the resume's directory, with the default Data file of the same name
-# Note: Values MUST be strings, e.g. ["contactInfoData"]
+# ARGs: Values are data file names, minus extension, and MUST be strings, 
+# e.g. ["contactInfoData"]
 overrideResumeData: []
 
 
-### Resume Title Switches ##############################
+
+### Resume Title Switches ######################################
+# Include after/below Name in Resume Title a professional title, i.e. "Software Developer"
 includeProfessionalTitle: true
 
 
 
-### Contact Info Switches ##############################
+### Contact Info Switches ######################################
+# Include Contact Element'e Title, i.e. "Contact Info" at top os Element
 includeContactElementTitle: true
 
-skipContactEntry: ["PhoneNum", "EmailAdd", "currLocation"]
+# Skip a contact info section/data entry, i.e. do not include "PhoneNum" in the Element 
+# ARGs: each Section Entry name is the string in the liquid "assign" block above the 
+# Section Entry, currently "PhoneNum", "EmailAdd", or "CurrLocation"
+skipContactEntry: ["PhoneNum", "EmailAdd", "CurrLocation"]
 
+# Skip a website section/data entry, i.e. do not include "LinkedIn" in the Element 
+# ARGs: each website name is the "websiteDesc" value for the website in the 
+# "contactInfoData.json" data file
 skipContactWebsite: ["LinkedIn", "GitHub", "Portfolio"]
 
 
 
-### Summary Switches ####################################
+### Summary Switches ###########################################
+# Include Summary Element'e Title, i.e. "Summary" at top os Element
 includeSummaryElementTitle: true
 
 
 
-### Skill Sets Switches ##############################
+### Skill Sets Switches ########################################
+# Skip a Skill Set section, i.e. do not include "Disciplines" in the Element 
+# ARGs: each Skill title name is the "skill_title" value for the Skill in the 
+# "skillSetData.json" data file
 skipSkillSet: ["Disciplines", "Languages", "Environments", "Tools"]
 
 
 
-### Projects Switches ####################################
+### Projects Switches ##########################################
+# Skip a Project section, i.e. do not include "Financial_Trade_Message_Router" in the Element 
+# ARGs: each Project name is the "name" value for the Project in the "majorProjectsData.json" 
+# data file but with all whitespace replaced with underscores, e.g. "Financial_Trade_Message_Router"
 skipProject: ["Financial_Trade_Message_Router"]
 
+# Change default divider (" &ndash; ") between Project Name and Project Link
 projectTitleDivider: " " # Single space removes whole line
 
+# Include the Data Entry title "Highlights:" before the list of Project highlights
 includeProjectHighlightsTitle: true
 
+# Modify which Data Entries that are included in each Section. Each Section to be modified must be
+# included as YAML object under "modifiedProject" with each Data Entry to exclude set to "False".
+# ARGs: the "name" argument follows the same format as in the "skipProject" switch above,
+# e.g. "Financial_Trade_Message_Router"
 modifiedProject:
   - name: Financial_Trade_Message_Router
     takeaways: true
@@ -59,14 +80,30 @@ modifiedProject:
 
 
 ### Minor Projects Switches ####################################
+# Skip a Minor Project category of Sections, i.e. do not include all the "Web-Development_Projects" 
+# Sections in the Element 
+# ARGs: each minor project category is the "category" value for the project in the "minorProjectsData.json" 
+# data file but with all whitespace replaced with underscores, e.g. "Web-Development_Projects"
 skipMinorProjectCategory: ["Web-Development_Projects", "Python_Projects"]
 
+# Skip a Minor Project section, i.e. do not include "Calculator_Webpage" in the Element 
+# ARGs: each Minor Project name is the "name" value for the Minor Project in the "minorProjectsData.json" 
+# data file but with all whitespace replaced with underscores, e.g. "Etch-a-Sketch_Webpage"
 skipMinorProject: ["Calculator_Webpage", "Etch-a-Sketch_Webpage", "Rock_Paper_Scissors_Webpage", "Budgeting_App_Project"]
 
+# Change default divider (" &ndash; ") between Minor Project Name and Minor Project Link
+minorProjectTitleDivider: " " # Single space removes whole line
+
+# Include the Data Entry title "Highlights:" before the list of Minor Project highlights
 includeMinorProjectHighlightsTitle: true
 
+# Include Link to the Source of the Minor Project, i.e. "@TheOdinProject" Link
 includeMinorProjectSourceLink: true
 
+# Modify which Data Entries that are included in each Section. Each Section to be modified must be
+# included as YAML object under "modifiedMinorProject" with each Data Entry to exclude set to "False".
+# ARGs: the "name" argument follows the same format as in the "skipMinorProject" switch above,
+# e.g. "Calculator_Webpage"
 modifiedMinorProject:
   - name: Calculator_Webpage
     takeaways: true
@@ -76,15 +113,25 @@ modifiedMinorProject:
 
 
 
-### Certs Switches ####################################
+### Certs Switches #############################################
+# Skip a Cert section, i.e. do not include "Google_IT_Automation_with_Python" in the Element 
+# ARGs: each Cert name is the "name" value for the Cert in the "certsData.json" data file but with 
+# all whitespace replaced with underscores, e.g. "Google_IT_Automation_with_Python"
 skipCert: ["Google_IT_Automation_with_Python", "Scientific_Computing_with_Python", "Preparing_for_Google_Cloud_Certification:_Cloud_Engineer"]
 
+# Change default divider (" &ndash; ") between Cert Name and Cert Issuer
 certTitleDivider: " " # Single space removes whole line
 
+# Include the Data Entry title "Highlights:" before the list of Cert highlights
 includeCertHighlightsTitle: true
 
+# Include Cert's ID with link to the Cert's "digital certificate"
 includeCertLinkAndId: true
 
+# Modify which Data Entries that are included in each Section. Each Section to be modified must be
+# included as YAML object under "modifiedCert" with each Data Entry to exclude set to "False".
+# ARGs: the "name" argument follows the same format as in the "skipCert" switch above,
+# e.g. "Google_IT_Automation_with_Python"
 modifiedCert:
   - name: Google_IT_Automation_with_Python
     summary: true
@@ -92,19 +139,32 @@ modifiedCert:
 
 
 
-### Education Switches ####################################
+### Education Switches #########################################
+# Skip an Education section, i.e. do not include "Master_of_Arts" in the Element 
+# ARGs: each Education degree is the "degree" value for the Education in the "educationData.json" data 
+# file but with all whitespace replaced with underscores, e.g. "Master_of_Arts"
 skipEducation: ["Master_of_Arts", "Bachelors_of_Arts", "Associate_of_Arts_and_Sciences"]
 
+# Change default divider (" &ndash; ") between Education Degree and Education Major
 degreeTitleDivider: " " # Single space removes whole line
 
+# Change default divider (" &ndash; ") between Education School and Education Location
 degreeSchoolDivider: " " # Single space removes whole line
 
+# Include the Data Entry title "Highlights:" before the list of Education highlights
 includeEducationHighlightsTitle: true
 
+# Include Education Highlights minor additional Details List, i.e. the details of each
+# paper presented at a conference
 includeEducationDetailList: true
 
+# Include link to copy of Master's Thesis, i.e. "OhioLink" Link
 includeEducationThesisLink: true
 
+# Modify which Data Entries that are included in each Section. Each Section to be modified must be
+# included as YAML object under "modifiedEducation" with each Data Entry to exclude set to "False".
+# ARGs: the "degree" argument follows the same format as in the "skipEducation" switch above,
+# e.g. "Master_of_Arts"
 modifiedEducation:
   - degree: Master_of_Arts
     minors: true
@@ -115,13 +175,24 @@ modifiedEducation:
 
 
 
-### Professional Background Switches ####################################
+### Professional Background Switches ###########################
+# Skip Professional Background section, i.e. do not include "Graduate_Assistant" in the Element 
+# ARGs: each Professional Background position is the "position" value for the Professional Background in 
+# the "professionalBackgroundData.json" data file but with all whitespace replaced with underscores, 
+# e.g. "Graduate_Assistant"
 skipProfessionalBackground: ["Graduate_Assistant", "Assistant-Director_of_Communication"]
 
+# Change default divider (" &ndash; ") between Professional Background start and end Date
 backgroundDateDivider: " " # Single space removes whole line
 
+# Include the Data Entry title "Highlights:" before the list of Professional Background highlights
 includeBackgroundHighlightsTitle: true
 
+# Modify which Data Entries that are included in each Section. Each Section to be modified must be
+# included as YAML object under "modifiedProfessionalBackground" with each Data Entry to exclude 
+# set to "False".
+# ARGs: the "position" argument follows the same format as in the "skipProfessionalBackground" switch 
+# above, e.g. "Graduate_Assistant"
 modifiedProfessionalBackground:
   - position: Graduate_Assistant
     summary: true
@@ -129,15 +200,26 @@ modifiedProfessionalBackground:
 
 
 
-### Community Service Switches ####################################
+### Community Service Switches #################################
+# Skip Community Service section, i.e. do not include "Trustee" in the Element 
+# ARGs: each Community Service role is the "role" value for the Community Service in the 
+# "communityServiceData.json" data file but with all whitespace replaced with underscores, 
+# e.g. ""
 skipCommunityService: ["Trustee"]
 
+# Change default divider (" &ndash; ") between Community Service Role and Organization
 serviceTitleDivider: " " # Single space removes whole line
 
+# Change default divider (" &ndash; ") between Community Service start and end Date
 serviceDateDivider: " " # Single space removes whole line
 
+# Include the Data Entry title "Highlights:" before the list of Community Service highlights
 includeServiceHighlightsTitle: true
 
+# Modify which Data Entries that are included in each Section. Each Section to be modified must be
+# included as YAML object under "modifiedCommunityService" with each Data Entry to exclude set to "False".
+# ARGs: the "role" argument follows the same format as in the "skipCommunityService" switch 
+# above, e.g. ""
 modifiedCommunityService:
   - role: Trustee
     summary: true
@@ -145,16 +227,27 @@ modifiedCommunityService:
 
 
 
-### Awards Switches ####################################
+### Awards Switches ############################################
+# Include Awards Element'e Title, i.e. "Awards &amp; Honors" at top os Element
 includeAwardsElementTitle: true
 
+# Skip Award section, i.e. do not include "Eagle_Scout" in the Element 
+# ARGs: each Award name is the "name" value for the Award in the  "awardsData.json" data file but 
+# with all whitespace replaced with underscores, 
+# e.g. "William_T._Hornaday_Award_for_Environmental_Conservation"
 skipAward: ["William_T._Hornaday_Award_for_Environmental_Conservation", "Eagle_Scout"]
 
+# Include Data Entry for Award Issuer 
 includeAwardsIssuer: true
 
+# Include the Data Entry title "Highlights:" before the list of Community Service highlights
 includeAwardHighlightsTitle: true
 
+# Modify which Data Entries that are included in each Section. Each Section to be modified must be
+# included as YAML object under "modifiedAward" with each Data Entry to exclude set to "False".
+# ARGs: the "name" argument follows the same format as in the "skipAward" switch above, 
+# e.g. "William_T._Hornaday_Award_for_Environmental_Conservation"
 modifiedAward:
-  - role: William_T._Hornaday_Award_for_Environmental_Conservation
+  - name: William_T._Hornaday_Award_for_Environmental_Conservation
     summary: true
     highlights: true

@@ -28,8 +28,9 @@ point of including 'minor projects' on my resume. -->
         <!-- Setup each variable used in main loop -->
         {% assign CurrentProject = project.name | replace: " ", "_" %}
         <!-- SWITCH: if "project" in "page.skipProject: []" then project Section Entry will be skipped
-        Note: each project name must include an underscore instead of a whitespace, 
-        e.g. "Financial_Trade_Message_Router" -->
+        Note: each project name is the "name" value for the project in the "majorProjectsData.json" 
+        data file but with all whitespace replaced with underscores, e.g. 
+        "Financial_Trade_Message_Router" -->
         {% unless page.skipProject contains CurrentProject %}
         <div class="project-section-entry">
             <div class="project-head">

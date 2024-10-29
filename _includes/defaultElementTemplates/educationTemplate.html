@@ -24,7 +24,8 @@
         {% assign CurrentDegree = education.degree | replace: " ", "_" %}
         <!-- SWITCH: if "degree" in "page.skipEducation: []" then the Education Section Entry, 
         i.e. degree, will be skipped.
-        Note: each degree must include an underscore instead of a whitespace, e.g. "Master_of_Arts" -->
+        Note: each Education degree is the "degree" value for the Education in the "educationData.json" data 
+        file but with all whitespace replaced with underscores, e.g. "Master_of_Arts" -->
         {% unless page.skipEducation contains CurrentDegree %}
         <div class="education-section-entry">
             <div class="education-head">

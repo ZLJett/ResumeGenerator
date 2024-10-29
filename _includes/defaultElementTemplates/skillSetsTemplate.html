@@ -21,7 +21,8 @@
         {% for skillSet in DataLocation %}
         <!-- SWITCH: if "skill_title" in "page.skipSkillSet: []" then skill set Section Entry 
         will be skipped.
-        Note: each skill title name is exactly the same as in the "skill_title" value
+        Note: each skill title name is the "skill_title" value for the website in the 
+        "skillSetData.json" data file.
         Any included item is generated with DEFAULT HTML for each "skill set" Section Entry, 
         i.e. includes all data items. -->
         {% unless page.skipSkillSet contains skillSet.skill_title %}
