@@ -17,6 +17,14 @@ dropped when I move past the point of including 'minor projects' on my resume. -
 {% endif %}
 
 <div class="minor-projects-element element-block">
+    <!-- SWITCH: unless "page.includeMinorProjectsElementTitle" is set to "true", the minor projects
+    element title will NOT be included. This means DEFAULT is not to include the element title. -->
+    {% if page.includeMinorProjectsElementTitle %}
+    <div class="minor-project-element-head">
+        <h2 class="minor-project-element-title element-title">Minor Projects</h2>
+    </div>
+    {% endif %}
+
     <div class="minor-projects-element-body">
         <!-- * Loop through categories of minor projects. -->
         {% for projectCategory in DataLocation %}
@@ -96,7 +104,8 @@ dropped when I move past the point of including 'minor projects' on my resume. -
                     <!-- SWITCH: unless "page.includeMinorProjectHighlightsTitle" is set to "true", the minor project 
                     highlights title will NOT be included. This means DEFAULT is not to include the 
                     highlights title. -->
-                    {% if project.highlights.size > 0 and page.includeMinorProjectHighlightsTitle %}
+                    {% if project.highlights.size > 0 and page.includeMinorProjectHighlightsTitle or
+                    entry.highlightsTitle == true %}
                     <div class="minor-project-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="minor-project-highlights-list">
@@ -111,7 +120,7 @@ dropped when I move past the point of including 'minor projects' on my resume. -
                 <!-- SWITCH: unless "page.includeMinorProjectSourceLink" is set to "true", the minor project 
                 Minor Project Source Link will NOT be included. This means DEFAULT is not to include the 
                 Minor Project Source Link . -->
-                {% if page.includeMinorProjectSourceLink %}
+                {% if entry.sourceLink == true or page.includeMinorProjectSourceLink %}
                 <div class="minor-project-source-link-block">
                     <div class="minor-project-source-link-desc">Project Description: </div>
                     <a href="{{project.sourceLink}}"

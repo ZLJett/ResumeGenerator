@@ -56,7 +56,8 @@
                 <div class="background-highlights">
                     <!-- SWITCH: unless "page.includeBackgroundHighlightsTitle" is set to "true", the background highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if job.highlights.size > 0 and page.includeBackgroundHighlightsTitle %}
+                    {% if job.highlights.size > 0 and page.includeBackgroundHighlightsTitle or
+                    entry.highlightsTitle == true %}
                     <div class="background-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="background-highlights-list">

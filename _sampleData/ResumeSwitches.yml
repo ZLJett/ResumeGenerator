@@ -67,7 +67,8 @@ projectTitleDivider: " " # Single space removes whole line
 includeProjectHighlightsTitle: true
 
 # Modify which Data Entries that are included in each Section. Each Section to be modified must be
-# included as YAML object under "modifiedProject" with each Data Entry to exclude set to "False".
+# included as YAML object under "modifiedProject" with each Data Entry to REMOVE set to "False" 
+# or removed entirely from list.
 # ARGs: the "name" argument follows the same format as in the "skipProject" switch above,
 # e.g. "Financial_Trade_Message_Router"
 modifiedProject:
@@ -75,6 +76,7 @@ modifiedProject:
     takeaways: true
     technologies: true
     summary: true
+    highlightsTitle: true # Item will be included if EITHER this or "includeProjectHighlightsTitle" set to "true"
     highlights: true
 
 
@@ -91,6 +93,9 @@ skipMinorProjectCategory: ["Web-Development_Projects", "Python_Projects"]
 # data file but with all whitespace replaced with underscores, e.g. "Etch-a-Sketch_Webpage"
 skipMinorProject: ["Calculator_Webpage", "Etch-a-Sketch_Webpage", "Rock_Paper_Scissors_Webpage", "Budgeting_App_Project"]
 
+# Include Minor Projects Element'e Title, i.e. "Minor Projects" at top os Element
+includeMinorProjectsElementTitle: true
+
 # Change default divider (" &ndash; ") between Minor Project Name and Minor Project Link
 minorProjectTitleDivider: " " # Single space removes whole line
 
@@ -101,7 +106,8 @@ includeMinorProjectHighlightsTitle: true
 includeMinorProjectSourceLink: true
 
 # Modify which Data Entries that are included in each Section. Each Section to be modified must be
-# included as YAML object under "modifiedMinorProject" with each Data Entry to exclude set to "False".
+# included as YAML object under "modifiedMinorProject" with each Data Entry to REMOVE set to "False" 
+# or removed entirely from list.
 # ARGs: the "name" argument follows the same format as in the "skipMinorProject" switch above,
 # e.g. "Calculator_Webpage"
 modifiedMinorProject:
@@ -109,7 +115,9 @@ modifiedMinorProject:
     takeaways: true
     technologies: true
     summary: true
+    highlightsTitle: true # Item will be included if EITHER this or "includeMinorProjectHighlightsTitle" set to "true"
     highlights: true
+    sourceLink: true # Item will be included if EITHER this or "includeMinorProjectSourceLink" set to "true"
 
 
 
@@ -129,13 +137,16 @@ includeCertHighlightsTitle: true
 includeCertLinkAndId: true
 
 # Modify which Data Entries that are included in each Section. Each Section to be modified must be
-# included as YAML object under "modifiedCert" with each Data Entry to exclude set to "False".
+# included as YAML object under "modifiedCert" with each Data Entry to REMOVE set to "False" 
+# or removed entirely from list.
 # ARGs: the "name" argument follows the same format as in the "skipCert" switch above,
 # e.g. "Google_IT_Automation_with_Python"
 modifiedCert:
   - name: Google_IT_Automation_with_Python
     summary: true
+    highlightsTitle: true # Item will be included if EITHER this or "includeCertHighlightsTitle" set to "true"
     highlights: true
+    linkAndId: true # Item will be included if EITHER this or "includeCertLinkAndId" set to "true"
 
 
 
@@ -162,13 +173,15 @@ includeEducationDetailList: true
 includeEducationThesisLink: true
 
 # Modify which Data Entries that are included in each Section. Each Section to be modified must be
-# included as YAML object under "modifiedEducation" with each Data Entry to exclude set to "False".
+# included as YAML object under "modifiedEducation" with each Data Entry to REMOVE set to "False" 
+# or removed entirely from list.
 # ARGs: the "degree" argument follows the same format as in the "skipEducation" switch above,
 # e.g. "Master_of_Arts"
 modifiedEducation:
   - degree: Master_of_Arts
     minors: true
     summary: true
+    highlightsTitle: true # Item will be included if EITHER this or "includeEducationHighlightsTitle" set to "true"
     highlights: true
     detailList: true  # Item will be included if EITHER this or "includeEducationDetailList" set to "true"
     thesisLink: true # Item will be included if EITHER this or "includeEducationThesisLink" set to "true"
@@ -189,13 +202,14 @@ backgroundDateDivider: " " # Single space removes whole line
 includeBackgroundHighlightsTitle: true
 
 # Modify which Data Entries that are included in each Section. Each Section to be modified must be
-# included as YAML object under "modifiedProfessionalBackground" with each Data Entry to exclude 
-# set to "False".
+# included as YAML object under "modifiedProfessionalBackground" with each Data Entry to REMOVE set 
+# to "False" or removed entirely from list.
 # ARGs: the "position" argument follows the same format as in the "skipProfessionalBackground" switch 
 # above, e.g. "Graduate_Assistant"
 modifiedProfessionalBackground:
   - position: Graduate_Assistant
     summary: true
+    highlightsTitle: true # Item will be included if EITHER this or "includeBackgroundHighlightsTitle" set to "true"
     highlights: true
 
 
@@ -217,12 +231,14 @@ serviceDateDivider: " " # Single space removes whole line
 includeServiceHighlightsTitle: true
 
 # Modify which Data Entries that are included in each Section. Each Section to be modified must be
-# included as YAML object under "modifiedCommunityService" with each Data Entry to exclude set to "False".
+# included as YAML object under "modifiedCommunityService" with each Data Entry to REMOVE set to "False" 
+# or removed entirely from list.
 # ARGs: the "role" argument follows the same format as in the "skipCommunityService" switch 
 # above, e.g. ""
 modifiedCommunityService:
   - role: Trustee
     summary: true
+    highlightsTitle: true # Item will be included if EITHER this or "includeServiceHighlightsTitle" set to "true"
     highlights: true
 
 
@@ -244,10 +260,13 @@ includeAwardsIssuer: true
 includeAwardHighlightsTitle: true
 
 # Modify which Data Entries that are included in each Section. Each Section to be modified must be
-# included as YAML object under "modifiedAward" with each Data Entry to exclude set to "False".
+# included as YAML object under "modifiedAward" with each Data Entry to REMOVE set to "False" or
+# removed entirely from list.
 # ARGs: the "name" argument follows the same format as in the "skipAward" switch above, 
 # e.g. "William_T._Hornaday_Award_for_Environmental_Conservation"
 modifiedAward:
   - name: William_T._Hornaday_Award_for_Environmental_Conservation
+    awardsIssuer: true # Item will be included if EITHER this or "includeAwardsIssuer" set to "true"
     summary: true
+    highlightsTitle: true # Item will be included if EITHER this or "includeAwardHighlightsTitle" set to "true"
     highlights: true

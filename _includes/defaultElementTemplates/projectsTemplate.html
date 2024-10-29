@@ -84,7 +84,8 @@ point of including 'minor projects' on my resume. -->
                 <div class="project-highlights">
                     <!-- SWITCH: unless "page.includeProjectHighlightsTitle" is set to "true", the project highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if project.highlights.size > 0 and page.includeProjectHighlightsTitle %}
+                    {% if project.highlights.size > 0 and page.includeProjectHighlightsTitle or
+                    entry.highlightsTitle == true %}
                     <div class="project-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="project-highlights-list">

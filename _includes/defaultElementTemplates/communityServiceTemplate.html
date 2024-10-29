@@ -70,7 +70,8 @@ separate section. -->
                 <div class="service-highlights">
                     <!-- SWITCH: unless "page.includeServiceHighlightsTitle" is set to "true", the service highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if service.highlights.size > 0 and page.includeServiceHighlightsTitle %}
+                    {% if service.highlights.size > 0 and page.includeServiceHighlightsTitle or
+                    entry.highlightsTitle == true %}
                     <div class="service-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="service-highlights-list">

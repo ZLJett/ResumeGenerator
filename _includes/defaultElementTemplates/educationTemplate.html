@@ -74,7 +74,8 @@
                 <div class="education-highlights">
                     <!-- SWITCH: unless "page.includeEducationHighlightsTitle" is set to "true", the "education" highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if education.detailedHighlights.size > 0 and page.includeEducationHighlightsTitle %}
+                    {% if education.detailedHighlights.size > 0 and page.includeEducationHighlightsTitle or
+                    entry.highlightsTitle == true %}
                     <div class="education-highlights-title">Highlights: </div>
                     {% endif %}
                     {% for item in education.detailedHighlights %}

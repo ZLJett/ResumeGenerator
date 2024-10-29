@@ -23,7 +23,7 @@ projects section of the resume, and not its own separate section. -->
     will NOT be included. This means DEFAULT is not to include the element title. -->
     {% if page.includeAwardsElementTitle %}
     <div class="awards-element-head">
-        <div class="awards-element-title element-title">Awards &amp; Honors</div>
+        <h2 class="awards-element-title element-title">Awards &amp; Honors</h2>
     </div>
     {% endif %}
 
@@ -42,11 +42,6 @@ projects section of the resume, and not its own separate section. -->
                 <div class="award-title">{{award.name}}</div>
                 <div class="award-date">{{award.endDate}}</div>
             </div>
-            <!-- SWITCH: unless "page.includeAwardsIssuer" is set to "true", the awards issuer
-            will NOT be included. This means DEFAULT is not to include the award issuer. -->
-            {% if page.includeAwardsIssuer %}
-            <div class="award-issuer">{{award.issuer}}</div>
-            {% endif %}
             <div class="award-body">
                 <!-- SWITCH: if "page.modifiedAward" exists, the for loop will check if the current award Section
                 Entry should be MODIFIED. Each MODIFIED award Section Entry only includes the Data Entries specified 
@@ -56,6 +51,11 @@ projects section of the resume, and not its own separate section. -->
                 <!-- Generate HTML for MODIFIED Section Entries -->
                 <!-- * Loop through modifiedAward objects, if award not in modifiedAward then go to ELSE for "if entry.name" loop. -->
                 {% if entry.name == CurrentAward %}
+                <!-- SWITCH: unless "page.includeAwardsIssuer" is set to "true", the awards issuer
+                will NOT be included. This means DEFAULT is not to include the award issuer. -->
+                {% if entry.awardsIssuer == true or page.includeAwardsIssuer %}
+                <div class="award-issuer">{{award.issuer}}</div>
+                {% endif %}
                 {% if entry.summary == true %}
                 <div class="award-summary">
                     <p class="award-summary-body">{{ award.summary }}</p>
@@ -65,7 +65,8 @@ projects section of the resume, and not its own separate section. -->
                 <div class="award-highlights">
                     <!-- SWITCH: unless "page.includeAwardHighlightsTitle" is set to "true", the awards highlights 
                     title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if award.highlights.size > 0 and page.includeAwardHighlightsTitle %}
+                    {% if award.highlights.size > 0 and page.includeAwardHighlightsTitle or
+                    entry.highlightsTitle == true %}
                     <div class="award-highlights-title">Highlights: </div>
                     {% endif %}
                     <ul class="award-highlights-list">
@@ -81,6 +82,11 @@ projects section of the resume, and not its own separate section. -->
                 Generate DEFAULT HTML for Section Entries NOT in "page.modifiedAward" list, i.e.
                 all items that are to be generated with full content. -->
                 {% else %}
+                <!-- SWITCH: unless "page.includeAwardsIssuer" is set to "true", the awards issuer
+                will NOT be included. This means DEFAULT is not to include the award issuer. -->
+                {% if page.includeAwardsIssuer %}
+                <div class="award-issuer">{{award.issuer}}</div>
+                {% endif %}
                 <div class="award-summary">
                     <p class="award-summary-body">{{ award.summary }}</p>
                 </div>
@@ -102,6 +108,11 @@ projects section of the resume, and not its own separate section. -->
                 <!-- * ELSE for "for entry in" loop, i.e. modifiedAward front matter is not being used.
                 DEFAULT Section Entry generation if "page.modifiedAward" Switch does not exist -->
                 {% else %}
+                <!-- SWITCH: unless "page.includeAwardsIssuer" is set to "true", the awards issuer
+                will NOT be included. This means DEFAULT is not to include the award issuer. -->
+                {% if page.includeAwardsIssuer %}
+                <div class="award-issuer">{{award.issuer}}</div>
+                {% endif %}
                 <div class="award-summary">
                     <p class="award-summary-body">{{ award.summary }}</p>
                 </div>
