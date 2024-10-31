@@ -9,3 +9,5 @@ vendor/
 Gemfile.lock
 # Ignore secret data file
 _data/secretData.yml
+# Ignore all Resume PDF output directories
+**/_outputResumes
