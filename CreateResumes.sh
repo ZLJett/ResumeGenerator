@@ -148,5 +148,6 @@ else
     echo "[${date}] CreateResumes.sh:  Launch Server"
     # --livereload option allows changes to resume to show up without a server restart
     bundle exec jekyll serve --livereload --config ${configsArg}
+    # Must manually enter: CRTL + C, to shut down a Jekyll server
     echo "[${date}] CreateResumes.sh:  Shutdown Server"
 fi

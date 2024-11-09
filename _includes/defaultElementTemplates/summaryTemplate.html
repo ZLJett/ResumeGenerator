@@ -16,13 +16,17 @@
     <!-- SWITCH: unless "page.includeSummaryElementTitle" is set to "true", the summary element title
     will NOT be included. This means DEFAULT is not to include the element title. -->
     {% if page.includeSummaryElementTitle %}
-    <div class="element-head">
-        <h2 class="summary-element-title element-title">Summary</h2>
+    <div class="element-head summary-element-head">
+        <div class="summary-element-title element-title">Summary</div>
     </div>
     {% endif %}
 
-    <div class="summary-element-body">
-        <p class="summary-element-content">{{DataLocation.summary}}</p>
+    <!-- Sub-SWITCH: if "page.includeSummaryElementTitle" is set to "true" and the summary element title
+    is included, the class "summary-element-border" will be dropped so that the "element-head" border can
+    replace the one added by "summary-element-border" -->
+    <div class="summary-element-body element-body">
+        <div class="summary-element-content" {% unless page.includeSummaryElementTitle %}class="summary-element-border"
+            {% endunless %}>{{DataLocation.summary}}</div>
     </div>
 
 </div>

@@ -20,12 +20,12 @@ dropped when I move past the point of including 'minor projects' on my resume. -
     <!-- SWITCH: unless "page.includeMinorProjectsElementTitle" is set to "true", the minor projects
     element title will NOT be included. This means DEFAULT is not to include the element title. -->
     {% if page.includeMinorProjectsElementTitle %}
-    <div class="minor-project-element-head">
-        <h2 class="minor-project-element-title element-title">Minor Projects</h2>
+    <div class="minor-project-element-head element-head">
+        <div class="minor-project-element-title element-title">Minor Projects</div>
     </div>
     {% endif %}
 
-    <div class="minor-projects-element-body">
+    <div class="minor-projects-element-body element-body">
         <!-- * Loop through categories of minor projects. -->
         {% for projectCategory in DataLocation %}
         <!-- Setup each variable used in minor project category loop -->
@@ -37,7 +37,7 @@ dropped when I move past the point of including 'minor projects' on my resume. -
         e.g. "Web-Development_Projects" -->
         {% unless page.skipMinorProjectCategory contains CurrentCategory %}
         <div class="minor-project-category-head">
-            <h3 class="minor-project-category-title">{{projectCategory.category}}</h3>
+            <div class="minor-project-category-title">{{projectCategory.category}}</div>
         </div>
         <!-- * Loop through minor projects in category. -->
         {% for project in projectCategory.projects %}
@@ -49,7 +49,7 @@ dropped when I move past the point of including 'minor projects' on my resume. -
         "minorProjectsData.json" data file but with all whitespace replaced with underscores, 
         e.g. "Etch-a-Sketch_Webpage" -->
         {% unless page.skipMinorProject contains CurrentProject %}
-        <div class="minor-project-entry">
+        <div class="minor-project-section-entry">
             <div class="minor-project-head">
                 <div class="minor-project-title-block">
                     <div class="minor-project-title">{{project.name}}</div>
@@ -133,7 +133,7 @@ dropped when I move past the point of including 'minor projects' on my resume. -
                 {% else %}
                 <div class="minor-project-takeaways">
                     {% if project.takeaways.size > 0 %}
-                    <div class="minor-project-takeaways">Takeaways: </div>
+                    <div class="minor-project-takeaways-desc">Takeaways: </div>
                     {% endif %}
                     <div class="minor-project-takeaways-list">
                         {{project.takeaways | join: "; "}}
@@ -141,7 +141,7 @@ dropped when I move past the point of including 'minor projects' on my resume. -
                 </div>
                 <div class="minor-project-technologies">
                     {% if project.technologies.size > 0 %}
-                    <div class="minor-project-technologies">Languages and Tools: </div>
+                    <div class="minor-project-technologies-desc">Languages and Tools: </div>
                     {% endif %}
                     <div class="minor-project-technologies-list">
                         {{project.technologies | join: ", "}}
@@ -181,7 +181,7 @@ dropped when I move past the point of including 'minor projects' on my resume. -
                 {% else %}
                 <div class="minor-project-takeaways">
                     {% if project.takeaways.size > 0 %}
-                    <div class="minor-project-takeaways">Takeaways: </div>
+                    <div class="minor-project-takeaways-desc">Takeaways: </div>
                     {% endif %}
                     <div class="minor-project-takeaways-list">
                         {{project.takeaways | join: "; "}}
@@ -189,7 +189,7 @@ dropped when I move past the point of including 'minor projects' on my resume. -
                 </div>
                 <div class="minor-project-technologies">
                     {% if project.technologies.size > 0 %}
-                    <div class="minor-project-technologies">Languages and Tools: </div>
+                    <div class="minor-project-technologies-desc">Languages and Tools: </div>
                     {% endif %}
                     <div class="minor-project-technologies-list">
                         {{project.technologies | join: ", "}}

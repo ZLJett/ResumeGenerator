@@ -5,8 +5,16 @@
             {
                 "name": "Calculator Webpage",
                 "endDate": "Aug. 2022",
-                "takeaways": [],
-                "technologies": [],
+                "takeaways": [
+                    "Take1",
+                    "Take2",
+                    "Take3"
+                ],
+                "technologies": [
+                    "Tech1",
+                    "Tech2",
+                    "Tech3"
+                ],
                 "summary": "My implementation of the 'Project: Calculator' from The Odin Project's 'Foundations' course, with all 'extra credit' assignments implemented a well as a history tracker.",
                 "highlights": [
                     "Features: Keyboard inputs, built-in error handling, and history tracker."

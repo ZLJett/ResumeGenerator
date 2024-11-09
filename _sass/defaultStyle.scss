@@ -1,7 +1,326 @@
-.test-title {
-    font-weight: bolder;
+// Resume overall
+html,
+body {
+    font-size: 9.5pt;
+    overflow-x: hidden;
+    font-family: "Inter", sans-serif;
+    //font-family: "Lusitana", serif;
 }
 
-.test-short {
-    color: red;
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: white;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 98vw; // 98 keeps edge of page from cutting off
+    //padding-top: 80px; // TODO CHANGE? 
+}
+
+.element-block {
+    max-width: 800px;
+    width: 100%;
+}
+
+
+// Resume head
+.resume-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 800px;
+    width: 100%;
+}
+
+.resume-title {
+    font-family: "Lusitana", serif;
+    font-size: 36pt;
+}
+
+.title-element-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.professional-title {
+    font-family: "Lusitana", serif;
+    font-size: 19pt;
+    margin-top: -8px;
+    margin-left: 68px;
+}
+
+.contact-element {
+    width: 270px;
+    margin-right: 25px;
+}
+
+.contact-section-entry {
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-entry-desc {
+    margin-right: 6px;
+}
+
+
+// Section Heads general
+.project-head,
+.minor-project-head,
+.cert-head,
+.education-head,
+.background-head,
+.service-head,
+.award-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 10.5pt;
+}
+
+.project-title-block,
+.minor-project-title-block,
+.cert-title-block,
+.education-title-block,
+.background-title-block,
+.service-title-block {
+    display: flex;
+    flex-direction: row;
+    width: 575px;
+}
+
+.project-title,
+.minor-project-title,
+.cert-title,
+.education-degree,
+.background-company,
+.service-role,
+.award-title {
+    margin-right: 6px;
+    font-weight: bold;
+}
+
+.project-github-link-block,
+.minor-project-github-link-block,
+.cert-issuer,
+.education-major,
+.background-position,
+.service-organization {
+    display: flex;
+    flex-direction: row;
+    margin-left: 6px;
+}
+
+.project-date,
+.minor-project-date,
+.cert-date,
+.education-date,
+.award-date {
+    margin-right: 40px;
+    font-weight: bold;
+}
+
+.project-github-link-desc,
+.minor-project-github-link-desc {
+    margin-right: 4px;
+}
+
+// --Section Heads specific
+.education-school-block,
+.background-location-block,
+.award-issuer-block {
+    display: flex;
+    flex-direction: row;
+    width: 375px;
+    margin-left: 10px;
+}
+
+.education-school {
+    margin-right: 6px;
+}
+
+.education-location {
+    display: flex;
+    flex-direction: row;
+    margin-left: 6px;
+}
+
+.background-dates-block,
+.service-dates-block {
+    display: flex;
+    flex-direction: row;
+    margin-right: 40px;
+    font-weight: bold;
+}
+
+.background-date-divider,
+.service-date-divider {
+    margin-left: 6px;
+    margin-right: 6px;
+    font-weight: 400; // Normal size font for divider, i.e. "to"
+}
+
+
+// Section Body general
+.element-block {
+    margin-bottom: 6px;
+}
+
+.element-head {
+    border-bottom: 2px solid rgb(79, 129, 189);
+}
+
+.element-title {
+    font-family: "Lusitana", serif;
+    font-size: 16pt;
+    color: rgb(79, 129, 189);
+}
+
+.element-body {
+    margin-top: 2pt;
+}
+
+.project-section-entry,
+.minor-project-section-entry,
+.cert-section-entry,
+.education-section-entry,
+.background-section-entry,
+.service-section-entry,
+.award-section-entry {
+    margin-bottom: 6pt;
+}
+
+.project-summary-body,
+.minor-project-summary-body,
+.cert-summary-body,
+.education-summary-body,
+.background-summary-body,
+.service-summary-body,
+.award-summary-body {
+    margin-top: 2pt;
+    margin-bottom: 2pt;
+}
+
+.project-highlights-title,
+.minor-project-highlights-title,
+.cert-highlights-title,
+.education-highlights-title,
+.background-highlights-title,
+.service-highlights-title,
+.award-highlights-title {
+    margin-left: 11px;
+    font-weight: bold;
+}
+
+.project-highlights-list,
+.minor-project-highlights-list,
+.cert-highlights-list,
+.education-highlight-list,
+.background-highlights-list,
+.service-highlights-list,
+.award-highlights-list {
+    margin-top: 2pt;
+    margin-bottom: 0pt;
+    padding-left: 40px;
+}
+
+
+// --Section Body specific
+
+// Summary 
+.summary-element-head {
+    margin-top: -18px;
+}
+
+.summary-element-border {
+    border-top: 2px solid rgb(79, 129, 189);
+    margin-top: 10px;
+}
+
+//Skills
+.skills-section-entry {
+    display: flex;
+    flex-direction: row;
+}
+
+.skills-title {
+    flex: 0 0 12ch;
+    color: rgb(96, 137, 187);
+}
+
+.skills-list {
+    border-left: 2px solid black;
+    padding-left: 0.5ch;
+    line-height: 1.4;
+}
+
+// Section key items lists (major/minor projects, education Elements)
+.project-takeaways,
+.project-technologies,
+.minor-project-takeaways,
+.minor-project-technologies,
+.education-minors {
+    display: flex;
+    flex-direction: row;
+    margin-left: 6px;
+}
+
+.education-minors {
+    margin-left: 11px; // Minors needs to be a little more to the right to line up properly
+}
+
+.project-takeaways-desc,
+.project-technologies-desc,
+.minor-project-takeaways-desc,
+.minor-project-technologies-desc,
+.education-minors-desc {
+    font-weight: bold;
+}
+
+.project-takeaways-list,
+.project-technologies-list,
+.minor-project-takeaways-list,
+.minor-project-technologies-list,
+.education-minors-list {
+    margin-left: 4px;
+}
+
+// Minor Projects
+.minor-projects-element {
+    margin-top: -6px; // Reduce space between top category title and last project
+}
+
+.minor-project-category-title {
+    font-family: "Lusitana", serif;
+    font-size: 12pt;
+    font-weight: bolder;
+    text-decoration: underline;
+    margin-bottom: 0.5pt;
+}
+
+// Education
+.education-highlight-details-list {
+    list-style-type: disclosure-closed;
+    margin-top: 2pt;
+    margin-bottom: 0pt;
+    padding-left: 80px;
+}
+
+.education-thesis-link-block {
+    display: flex;
+    flex-direction: row;
+    font-size: 10pt;
+}
+
+.education-thesis-link-desc {
+    font-weight: bold;
+    margin-right: 4px;
 }

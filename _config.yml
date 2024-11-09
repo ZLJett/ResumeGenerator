@@ -17,7 +17,9 @@ include:
 # different Resume organization without deleting the previous one.
 # NOTE: This list is the ORDER THE elements will appear in on the Resume. Element order can 
 # ONLY be changed from here!
-defaultResumeContents: [resumeTitleTemplate, contactInfoTemplate, summaryTemplate, skillSetsTemplate, projectsTemplate, minorProjectsTemplate, certsTemplate, educationTemplate, professionalBackgroundTemplate, communityServiceTemplate, awardsTemplate]
+# NOTE: The "resumeTitleTemplate" and the "contactInfoTemplate" are not included here as they
+# are added together as DEFAULT content by resumeHeadTemplate.html
+defaultResumeContents: [summaryTemplate, skillSetsTemplate, projectsTemplate, minorProjectsTemplate, certsTemplate, educationTemplate, professionalBackgroundTemplate, communityServiceTemplate, awardsTemplate]
 
 
 # DEFAULT STYLESHEET: for standard resumes. This is usually STATIC but this option allows 

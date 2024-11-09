@@ -1,6 +1,0 @@
-{
-	"Disciplines": [ "Web-Development", "Data Transformation", "Testing", "Agile/Sprint Planning" ],
-	"Languages": [ "Python", "Java", "C", "C#", "JavaScript", "HTML", "CSS", "Bash Scripting" ],
-	"Environments": [ "Linux", "Windows", "Visual Studio", "VSCode", "IntelliJ", "Oracle VM VirtualBox", "Compiler Explorer", "Google Cloud Platform" ],
-	"Tools": [ "Git", "Maven", "Spring Boot", "Apache Camel", "JPA", "Hibernate", "H2 SQL", "Saxon XSLT", "Jackson XML/JSON", "JUnit5"]
-}

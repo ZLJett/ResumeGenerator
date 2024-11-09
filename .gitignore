@@ -11,3 +11,5 @@ Gemfile.lock
 _data/secretData.yml
 # Ignore all Resume PDF output directories
 **/_outputResumes
+# Ignore output examples
+_sampleData/_exampleOutput

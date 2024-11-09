@@ -1,13 +1,14 @@
 ### For overall details on functions of Switches see README.md
 
 ### Resume Content Switches ####################################
-# The contents of these MUST be in the desired final order for the resume's contents
-# ARGs: Values are template file names, minus extension, e.g. [contactInfoTemplate]
-excludeResumeContents: [contactInfoTemplate]
+# All element templates to exclude from the default resume contents contained in the root 
+# config file's variable "defaultResumeContents: []"
+# ARGs: Values are template file names, minus extension, e.g. [skillSetsTemplate]
+excludeResumeContents: [skillSetsTemplate]
 
 # Replaces the automatically included Resume Template files, i.e. the modified Templates in 
 # the resume's directory, with the default Template file of the same name
-# ARGs: Values are template file names, minus extension, e.g. [contactInfoTemplate]
+# ARGs: Values are template file names, minus extension, e.g. [skillSetsTemplate]
 overrideResumeTemplates: []
 
 # Replaces the automatically included Resume Data files, i.e. the modified Templates in 
@@ -20,7 +21,15 @@ overrideResumeData: []
 
 ### Resume Title Switches ######################################
 # Include after/below Name in Resume Title a professional title, i.e. "Software Developer"
+# STYLE: This Switch is NOT compatible with the "includeSummaryElementTitle" Switch 
 includeProfessionalTitle: true
+
+# Include Professional Title divider between Resume Title and Professional Title
+# STYLE: default stylesheet is NOT setup to support this option
+includeProfessionalTitleDivider: true
+
+# Change default divider (" &ndash; ") between Resume Title and Professional Title
+professionalTitleDivider: " " # Single space removes whole line
 
 
 
@@ -42,6 +51,7 @@ skipContactWebsite: ["LinkedIn", "GitHub", "Portfolio"]
 
 ### Summary Switches ###########################################
 # Include Summary Element'e Title, i.e. "Summary" at top os Element
+# STYLE: This Switch is NOT compatible with the "includeProfessionalTitle" Switch 
 includeSummaryElementTitle: true
 
 
@@ -195,8 +205,14 @@ modifiedEducation:
 # e.g. "Graduate_Assistant"
 skipProfessionalBackground: ["Graduate_Assistant", "Assistant-Director_of_Communication"]
 
+# Change default divider (" &ndash; ") between Professional Background Position and Education Company
+backgroundTitleDivider: " " # Single space removes whole line
+
 # Change default divider (" &ndash; ") between Professional Background start and end Date
 backgroundDateDivider: " " # Single space removes whole line
+
+# Include the Location of the Professional Background Position 
+includeBackgroundCompanyLocation: true 
 
 # Include the Data Entry title "Highlights:" before the list of Professional Background highlights
 includeBackgroundHighlightsTitle: true

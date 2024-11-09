@@ -6,7 +6,11 @@
         "startDate": "2018",
         "endDate": "2019",
         "summary": "Acted as a teaching assistant on several undergraduate classes. Duties included: preparing and grading tests, assisting in the paperwork involved in running a university course, and holding office hours to meet with students and help them with their coursework.",
-        "highlights": []
+        "highlights": [
+            "test1",
+            "test2",
+            "test3"
+        ]
     },
     {
         "position": "Assistant-Director of Communication",
@@ -15,6 +19,10 @@
         "startDate": "2014",
         "endDate": "2015",
         "summary": "Produced all official communications for the Student Association at the University of Washington's Cedar Apartments.",
-        "highlights": []
+        "highlights": [
+            "test1",
+            "test2",
+            "test3"
+        ]
     }
 ]

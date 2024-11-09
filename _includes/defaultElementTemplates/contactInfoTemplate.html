@@ -15,7 +15,7 @@
 <!-- Set Secret Data Source -->
 {% assign SecretDataLocation = site.data.secretData.contactInfoSecretData %}
 
-<div class="contact-element resume-head">
+<div class="contact-element resume-head-item">
     <!-- SWITCH: unless "page.includeContactElementTitle" is set to "true", the contact element title
     will NOT be included. This means DEFAULT is not to include the element title. -->
     {% if page.includeContactElementTitle %}
@@ -40,7 +40,7 @@
         {% unless page.skipContactEntry contains emailAdd %}
         <div class="contact-section-entry">
             <div class="contact-entry-desc">Email: </div>
-            <div class="contact-entry-value">{{SecretDataLocation.email}}</div>
+            <a href="mailto:{{SecretDataLocation.email}}" class="contact-entry-value">{{SecretDataLocation.email}}</a>
         </div>
         {% endunless %}
 

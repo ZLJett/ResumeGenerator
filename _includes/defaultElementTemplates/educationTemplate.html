@@ -14,10 +14,10 @@
 
 <div class="education-element element-block">
     <div class="element-head">
-        <h2 class="education-element-title element-title">Education</h2>
+        <div class="education-element-title element-title">Education</div>
     </div>
 
-    <div class="education-element-body">
+    <div class="education-element-body element-body">
         <!-- * Loop through education Section Entries, i.e. degrees -->
         {% for education in DataLocation %}
         <!-- Setup each variable used in main loop -->
@@ -32,6 +32,13 @@
                 <div class="education-title-block">
                     <div class="education-degree">{{education.degree}}</div>
                     {% assign DegreeTitleDivider = page.degreeTitleDivider | default: " &ndash; " %}
+                    <!-- If no major than set Degree Title Divider to empty 
+                    Note: as the variable holds between loops, unless reset by page.degreeTitleDivider 
+                    or this if statement, the variable will stay as the "dash" default, hence why this if
+                    statement must follow the initial assignment and not be incorporated into it -->
+                    {% if education.major.size == 0 %}
+                    {% assign DegreeTitleDivider = " " %}
+                    {% endif %}
                     <div class="education-title-divider">{{DegreeTitleDivider}}</div>
                     <div class="education-major">{{education.major}}</div>
                 </div>
@@ -80,7 +87,9 @@
                     {% endif %}
                     {% for item in education.detailedHighlights %}
                     <div class="education-highlights-item">
-                        <div class="education-highlight">{{item.highlight}}</div>
+                        <ul class="education-highlight-list">
+                            <li class="education-highlight">{{item.highlight}}</li>
+                        </ul>
                         <!-- Modified SWITCH: unless "page.modifiedEducation" entry for "detailList" OR "page.includeEducationDetailList" 
                         is set to "true", the highlight's extra details will NOT be included. This means DEFAULT is not to include
                         the highlight's extra details. -->
@@ -133,7 +142,9 @@
                     {% endif %}
                     {% for item in education.detailedHighlights %}
                     <div class="education-highlights-item">
-                        <div class="education-highlight">{{item.highlight}}</div>
+                        <ul class="education-highlight-list">
+                            <li class="education-highlight">{{item.highlight}}</li>
+                        </ul>
                         <!-- SWITCH: unless "page.includeEducationDetailList" is set to "true", the highlight's extra details 
                         will NOT be included. This means DEFAULT is not to include the highlight's extra details. -->
                         {% if page.includeEducationDetailList %}
@@ -183,7 +194,9 @@
                     {% endif %}
                     {% for item in education.detailedHighlights %}
                     <div class="education-highlights-item">
-                        <div class="education-highlight">{{item.highlight}}</div>
+                        <ul class="education-highlight-list">
+                            <li class="education-highlight">{{item.highlight}}</li>
+                        </ul>
                         <!-- SWITCH: unless "page.includeEducationDetailList" is set to "true", the highlight's extra details 
                         will NOT be included. This means DEFAULT is not to include the highlight's extra details. -->
                         {% if page.includeEducationDetailList %}

@@ -14,10 +14,10 @@
 
 <div class="background-element element-block">
     <div class="element-head">
-        <h2 class="background-element-title element-title">Professional Background</h2>
+        <div class="background-element-title element-title">Professional Background</div>
     </div>
 
-    <div class="background-element-body">
+    <div class="background-element-body element-body">
         <!-- * Loop through professional backgrounds. -->
         {% for job in DataLocation %}
         <!-- Setup each variable used in main loop -->
@@ -29,14 +29,27 @@
         {% unless page.skipProfessionalBackground contains CurrentJob %}
         <div class="background-section-entry">
             <div class="background-head">
-                <div class="background-title">{{job.company}} &ndash; {{job.position}}</div>
+                <div class="background-title-block">
+                    <div class="background-company">{{job.company}}</div>
+                    {% assign BackgroundTitleDivider = page.backgroundTitleDivider | default: " &ndash; " %}
+                    <div class="background-title-divider">{{BackgroundTitleDivider}}</div>
+                    <div class="background-position">{{job.position}}</div>
+                </div>
                 <div class="background-dates-block">
                     <div class="background-date background-start-date">{{job.startDate}}</div>
                     {% assign BackgroundDateDivider = page.backgroundDateDivider | default: " to " %}
-                    <div class="background-title-divider">{{BackgroundDateDivider}}</div>
+                    <div class="background-date-divider">{{BackgroundDateDivider}}</div>
                     <div class="background-date background-end-date">{{job.endDate}}</div>
                 </div>
             </div>
+            <!-- SWITCH: unless "page.includeBackgroundCompanyLocation" is set to "true", the Professional 
+            Background Position location will NOT be included. This means DEFAULT is not to include the 
+            Professional Background Position location. -->
+            {% if page.includeBackgroundCompanyLocation %}
+            <div class="background-location-block">
+                <div class="background-location">{{job.location}}</div>
+            </div>
+            {% endif %}
             <div class="background-body">
                 <!-- SWITCH: if "page.modifiedProfessionalBackground" exists, the for loop will check if the current "position" Section
                 Entry should be MODIFIED. Each MODIFIED position Section Entry only includes the Data Entries specified as "true" in 

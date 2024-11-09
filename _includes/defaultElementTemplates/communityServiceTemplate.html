@@ -21,10 +21,10 @@ separate section. -->
 
 <div class="service-element element-block">
     <div class="element-head">
-        <h2 class="service-element-title element-title">Community Service</h2>
+        <div class="service-element-title element-title">Community Service</div>
     </div>
 
-    <div class="service-element-body">
+    <div class="service-element-body element-body">
         <!-- * Loop through community service Section Entries -->
         {% for service in DataLocation %}
         <!-- Setup each variable used in main loop -->
@@ -46,7 +46,7 @@ separate section. -->
                 <div class="service-dates-block">
                     <div class="service-date service-start-date">{{service.startDate}}</div>
                     {% assign ServiceDateDivider = page.serviceDateDivider | default: " to " %}
-                    <div class="service-title-divider">{{ServiceDateDivider}}</div>
+                    <div class="service-date-divider">{{ServiceDateDivider}}</div>
                     <div class="service-date service-end-date">{{service.endDate}}</div>
                 </div>
             </div>

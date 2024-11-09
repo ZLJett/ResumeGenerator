@@ -19,10 +19,10 @@ point of including 'minor projects' on my resume. -->
 
 <div class="projects-element element-block">
     <div class="element-head">
-        <h2 class="projects-element-title element-title">Projects</h2>
+        <div class="projects-element-title element-title">Projects</div>
     </div>
 
-    <div class="projects-element-body">
+    <div class="projects-element-body element-body">
         <!-- * Loop through projects. -->
         {% for project in DataLocation %}
         <!-- Setup each variable used in main loop -->
@@ -103,7 +103,7 @@ point of including 'minor projects' on my resume. -->
                 {% else %}
                 <div class="project-takeaways">
                     {% if project.takeaways.size > 0 %}
-                    <div class="project-takeaways">Takeaways: </div>
+                    <div class="project-takeaways-desc">Takeaways: </div>
                     {% endif %}
                     <div class="project-takeaways-list">
                         {{project.takeaways | join: "; "}}
@@ -111,7 +111,7 @@ point of including 'minor projects' on my resume. -->
                 </div>
                 <div class="project-technologies">
                     {% if project.technologies.size > 0 %}
-                    <div class="project-technologies">Languages and Tools: </div>
+                    <div class="project-technologies-desc">Languages and Tools: </div>
                     {% endif %}
                     <div class="project-technologies-list">
                         {{project.technologies | join: ", "}}
@@ -140,7 +140,7 @@ point of including 'minor projects' on my resume. -->
                 {% else %}
                 <div class="project-takeaways">
                     {% if project.takeaways.size > 0 %}
-                    <div class="project-takeaways">Takeaways: </div>
+                    <div class="project-takeaways-desc">Takeaways: </div>
                     {% endif %}
                     <div class="project-takeaways-list">
                         {{project.takeaways | join: "; "}}
@@ -148,7 +148,7 @@ point of including 'minor projects' on my resume. -->
                 </div>
                 <div class="project-technologies">
                     {% if project.technologies.size > 0 %}
-                    <div class="project-technologies">Languages and Tools: </div>
+                    <div class="project-technologies-desc">Languages and Tools: </div>
                     {% endif %}
                     <div class="project-technologies-list">
                         {{project.technologies | join: ", "}}
