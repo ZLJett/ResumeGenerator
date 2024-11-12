@@ -12,6 +12,10 @@
 {% assign DataLocation = site.data.defaultResumeData.certsData %}
 {% endif %}
 
+<!-- Generate list of cert Section Entries that should be modified -->
+{% assign modifiedCerts = page.modifiedCert | map: "name" %}
+
+
 <div class="certs-element element-block">
     <div class="element-head">
         <div class="certs-element-title element-title">Certifications</div>
@@ -38,13 +42,15 @@
                 <div class="cert-date">{{cert.endDate}}</div>
             </div>
             <div class="cert-body">
-                <!-- SWITCH: if "page.modifiedCert" exists, the for loop will check if the current "cert" Section
-                Entry should be MODIFIED. Each MODIFIED cert Section Entry only includes the Data Entries specified 
-                as "true" in the modifiedCert yaml object. If "page.modifiedCert" does not exist, this for loop's 
-                "else" will generate DEFAULT HTML for each "cert", i.e. including all cert data. -->
+                <!-- SWITCH: if "page.modifiedCert" exists and contains the CurrentCert, the for loop will check 
+                if the current "cert" Section Entry should be MODIFIED. Each MODIFIED cert Section Entry only includes
+                the Data Entries specified as "true" in the modifiedCert yaml object. If "page.modifiedCert" does not 
+                exist, the "if modifiedCerts" condition's "else" will generate DEFAULT HTML for each "cert", i.e. 
+                including all cert data. -->
+                {% if modifiedCerts contains CurrentCert %}
+                <!-- FOR loop finds correct modifiedCert YAML object for generating the section body -->
                 {% for entry in page.modifiedCert %}
                 <!-- Generate HTML for MODIFIED Section Entries -->
-                <!-- * Loop through modifiedCert objects, if cert not in modifiedCert then go to ELSE for "if entry.name" loop. -->
                 {% if entry.name == CurrentCert %}
                 {% if entry.summary == true %}
                 <div class="cert-summary">
@@ -78,41 +84,12 @@
                     <a href="{{cert.certLink}}" class="cert-link-value">{{cert.certId}}</a>
                 </div>
                 {% endif %}
-                <!-- * ELSE for "if entry.name" loop, i.e. if cert not in modifiedCert then go to this ELSE.
-                Generate DEFAULT HTML for Section Entries NOT in "page.modifiedCert" list, i.e.
-                all items that are to be generated with full content. -->
-                {% else %}
-                <div class="cert-summary">
-                    <p class="cert-summary-body">{{ cert.summary }}</p>
-                </div>
-                <div class="cert-highlights">
-                    <!-- SWITCH: unless "page.includeCertHighlightsTitle" is set to "true", the project highlights 
-                    title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if cert.highlights.size > 0 and page.includeCertHighlightsTitle %}
-                    <div class="cert-highlights-title">Highlights: </div>
-                    {% endif %}
-                    <ul class="cert-highlights-list">
-                        {% for item in cert.highlights %}
-                        <li class="cert-highlights-list-item">
-                            {{ item }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <!-- SWITCH: unless "page.includeCertLinkAndId" is set to "true", the Cert Link and ID will 
-                NOT be included. This means DEFAULT is not to include the Cert Link and ID. -->
-                {% if page.includeCertLinkAndId %}
-                <div class="cert-link-id-block">
-                    {% if cert.certId.size > 0 %}
-                    <div class="cert-id-desc">{{cert.certLinkValue}} ID#: </div>
-                    {% endif %}
-                    <a href="{{cert.certLink}}" class="cert-link-value">{{cert.certId}}</a>
-                </div>
                 {% endif %}
-                {% endif %}
-                <!-- * ELSE for "for entry in" loop, i.e. modifiedCert front matter is not being used.
-                DEFAULT Section Entry generation if "page.modifiedCert" Switch does not exist -->
+                {% endfor %}
+                <!-- ELSE for "for entry in" loop, i.e. modifiedCert front matter is not being used or does 
+                not contain the Current Project. -->
                 {% else %}
+                <!-- DEFAULT Section Entry generation if "page.modifiedCert" Switch does not exist -->
                 <div class="cert-summary">
                     <p class="cert-summary-body">{{ cert.summary }}</p>
                 </div>
@@ -140,7 +117,7 @@
                     <a href="{{cert.certLink}}" class="cert-link-value">{{cert.certId}}</a>
                 </div>
                 {% endif %}
-                {% endfor %}
+                {% endif %}
             </div>
         </div>
         {% endunless %}

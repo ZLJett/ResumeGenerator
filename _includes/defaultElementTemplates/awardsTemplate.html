@@ -18,6 +18,10 @@ projects section of the resume, and not its own separate section. -->
 {% assign DataLocation = site.data.defaultResumeData.awardsData %}
 {% endif %}
 
+<!-- Generate list of award Section Entries that should be modified -->
+{% assign modifiedAwards = page.modifiedAward | map: "name" %}
+
+
 <div class="awards-element element-block">
     <!-- SWITCH: unless "page.includeAwardsElementTitle" is set to "true", the awards element title
     will NOT be included. This means DEFAULT is not to include the element title. -->
@@ -50,13 +54,15 @@ projects section of the resume, and not its own separate section. -->
             </div>
             {% endif %}
             <div class="award-body">
-                <!-- SWITCH: if "page.modifiedAward" exists, the for loop will check if the current award Section
-                Entry should be MODIFIED. Each MODIFIED award Section Entry only includes the Data Entries specified 
-                as "true" in the modifiedAward yaml object. If "page.modifiedAward" does not exist, this for loop's 
-                "else" will generate DEFAULT HTML for each award, i.e. including all award data. -->
+                <!-- SWITCH: if "page.modifiedAward" exists and contains the CurrentAward, the for loop will check if 
+                the current award Section Entry should be MODIFIED. Each MODIFIED award Section Entry only includes 
+                the Data Entries specified as "true" in the modifiedAward yaml object. If "page.modifiedAward" does 
+                not exist, the "if modifiedAwards" condition's "else" will generate DEFAULT HTML for each award, i.e. 
+                including all award data. -->
+                {% if modifiedAwards contains CurrentAward %}
+                <!-- FOR loop finds correct modifiedAward YAML object for generating the section body -->
                 {% for entry in page.modifiedAward %}
                 <!-- Generate HTML for MODIFIED Section Entries -->
-                <!-- * Loop through modifiedAward objects, if award not in modifiedAward then go to ELSE for "if entry.name" loop. -->
                 {% if entry.name == CurrentAward %}
                 {% if entry.summary == true %}
                 <div class="award-summary">
@@ -80,10 +86,12 @@ projects section of the resume, and not its own separate section. -->
                     </ul>
                 </div>
                 {% endif %}
-                <!-- * ELSE for "if entry.name" loop, i.e. if award not in modifiedAward then go to this ELSE.
-                Generate DEFAULT HTML for Section Entries NOT in "page.modifiedAward" list, i.e.
-                all items that are to be generated with full content. -->
+                {% endif %}
+                {% endfor %}
+                <!-- ELSE for "for entry in" loop, i.e. modifiedAward front matter is not being used or does 
+                not contain the Current Award. -->
                 {% else %}
+                <!-- DEFAULT Section Entry generation if "page.modifiedAward" Switch does not exist -->
                 <div class="award-summary">
                     <p class="award-summary-body">{{ award.summary }}</p>
                 </div>
@@ -102,27 +110,6 @@ projects section of the resume, and not its own separate section. -->
                     </ul>
                 </div>
                 {% endif %}
-                <!-- * ELSE for "for entry in" loop, i.e. modifiedAward front matter is not being used.
-                DEFAULT Section Entry generation if "page.modifiedAward" Switch does not exist -->
-                {% else %}
-                <div class="award-summary">
-                    <p class="award-summary-body">{{ award.summary }}</p>
-                </div>
-                <div class="award-highlights">
-                    <!-- SWITCH: unless "page.includeAwardHighlightsTitle" is set to "true", the awards highlights 
-                    title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if award.highlights.size > 0 and page.includeAwardHighlightsTitle %}
-                    <div class="award-highlights-title">Highlights: </div>
-                    {% endif %}
-                    <ul class="award-highlights-list">
-                        {% for item in award.highlights %}
-                        <li class="award-highlights-list-item">
-                            {{ item }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endfor %}
             </div>
         </div>
         {% endunless %}

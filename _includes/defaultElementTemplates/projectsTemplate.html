@@ -17,6 +17,10 @@ point of including 'minor projects' on my resume. -->
 {% assign DataLocation = site.data.defaultResumeData.majorProjectsData %}
 {% endif %}
 
+<!-- Generate list of project Section Entries that should be modified -->
+{% assign modifiedProjects = page.modifiedProject | map: "name" %}
+
+
 <div class="projects-element element-block">
     <div class="element-head">
         <div class="projects-element-title element-title">Projects</div>
@@ -47,13 +51,15 @@ point of including 'minor projects' on my resume. -->
                 <div class="project-date">{{project.endDate}}</div>
             </div>
             <div class="project-body">
-                <!-- SWITCH: if "page.modifiedProject" exists, the for loop will check if the current "project" Section
-                Entry should be MODIFIED. Each MODIFIED project Section Entry only includes the Data Entries specified 
-                as "true" in the modifiedProject yaml object. If "page.modifiedProject" does not exist, this for loop's 
-                "else" will generate DEFAULT HTML for each "project", i.e. including all project data. -->
+                <!-- SWITCH: if "page.modifiedProject" exists and contains the CurrentProject, the for loop will check 
+                if the current "project" Section Entry should be MODIFIED. Each MODIFIED project Section Entry only includes 
+                the Data Entries specified as "true" in the modifiedProject yaml object. If "page.modifiedProject" does not 
+                exist, the "if modifiedProjects" condition's "else" will generate DEFAULT HTML for each "project", i.e. 
+                including all project data. -->
+                {% if modifiedProjects contains CurrentProject %}
+                <!-- FOR loop finds correct modifiedProject YAML object for generating the section body -->
                 {% for entry in page.modifiedProject %}
                 <!-- Generate HTML for MODIFIED Section Entries -->
-                <!-- * Loop through modifiedProject objects, if project not in modifiedProject then go to ELSE for "if entry.name" loop. -->
                 {% if entry.name == CurrentProject %}
                 {% if entry.takeaways == true %}
                 <div class="project-takeaways">
@@ -97,10 +103,12 @@ point of including 'minor projects' on my resume. -->
                     </ul>
                 </div>
                 {% endif %}
-                <!-- * ELSE for "if entry.name" loop, i.e. if project not in modifiedProject then go to this ELSE.
-                Generate DEFAULT HTML for Section Entries NOT in "page.modifiedProject" list, i.e.
-                all items that are to be generated with full content. -->
+                {% endif %}
+                {% endfor %}
+                <!-- ELSE for "for entry in" loop, i.e. modifiedProject front matter is not being used or does 
+                not contain the Current Project. -->
                 {% else %}
+                <!-- DEFAULT Section Entry generation if "page.modifiedProject" Switch does not exist -->
                 <div class="project-takeaways">
                     {% if project.takeaways.size > 0 %}
                     <div class="project-takeaways-desc">Takeaways: </div>
@@ -135,43 +143,6 @@ point of including 'minor projects' on my resume. -->
                     </ul>
                 </div>
                 {% endif %}
-                <!-- * ELSE for "for entry in" loop, i.e. modifiedProject front matter is not being used.
-                DEFAULT Section Entry generation if "page.modifiedProject" Switch does not exist -->
-                {% else %}
-                <div class="project-takeaways">
-                    {% if project.takeaways.size > 0 %}
-                    <div class="project-takeaways-desc">Takeaways: </div>
-                    {% endif %}
-                    <div class="project-takeaways-list">
-                        {{project.takeaways | join: "; "}}
-                    </div>
-                </div>
-                <div class="project-technologies">
-                    {% if project.technologies.size > 0 %}
-                    <div class="project-technologies-desc">Languages and Tools: </div>
-                    {% endif %}
-                    <div class="project-technologies-list">
-                        {{project.technologies | join: ", "}}
-                    </div>
-                </div>
-                <div class="project-summary">
-                    <p class="project-summary-body">{{ project.summary }}</p>
-                </div>
-                <div class="project-highlights">
-                    <!-- SWITCH: unless "page.includeProjectHighlightsTitle" is set to "true", the project highlights 
-                    title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if project.highlights.size > 0 and page.includeProjectHighlightsTitle %}
-                    <div class="project-highlights-title">Highlights: </div>
-                    {% endif %}
-                    <ul class="project-highlights-list">
-                        {% for item in project.highlights %}
-                        <li class="project-highlights-list-item">
-                            {{ item }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endfor %}
             </div>
         </div>
         {% endunless %}

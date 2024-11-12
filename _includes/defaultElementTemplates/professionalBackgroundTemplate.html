@@ -12,6 +12,10 @@
 {% assign DataLocation = site.data.defaultResumeData.professionalBackgroundData %}
 {% endif %}
 
+<!-- Generate list of position Section Entries that should be modified -->
+{% assign modifiedJobs = page.modifiedProfessionalBackground | map: "position" %}
+
+
 <div class="background-element element-block">
     <div class="element-head">
         <div class="background-element-title element-title">Professional Background</div>
@@ -51,14 +55,15 @@
             </div>
             {% endif %}
             <div class="background-body">
-                <!-- SWITCH: if "page.modifiedProfessionalBackground" exists, the for loop will check if the current "position" Section
-                Entry should be MODIFIED. Each MODIFIED position Section Entry only includes the Data Entries specified as "true" in 
-                the modifiedProfessionalBackground yaml object. If "page.modifiedProfessionalBackground" does not exist, this for loop's
-                "else" will generate DEFAULT HTML for each "position", i.e. including all professional background data. -->
+                <!-- SWITCH: if "page.modifiedProfessionalBackground" exists and contains the CurrentJob, the for loop will check if 
+                the current "position" Section Entry should be MODIFIED. Each MODIFIED position Section Entry only includes the Data 
+                Entries specified as "true" in the modifiedProfessionalBackground yaml object. If "page.modifiedProfessionalBackground"
+                does not exist, the "if modifiedJobs" condition's "else" will generate DEFAULT HTML for each "position", i.e. including 
+                all professional background data. -->
+                {% if modifiedJobs contains CurrentJob %}
+                <!-- FOR loop finds correct modifiedProfessionalBackground YAML object for generating the section body -->
                 {% for entry in page.modifiedProfessionalBackground %}
                 <!-- Generate HTML for MODIFIED Section Entries -->
-                <!-- * Loop through modifiedProfessionalBackground objects, if position not in modifiedProfessionalBackground then go to 
-                 * ELSE for "if entry.position" loop. -->
                 {% if entry.position == CurrentJob %}
                 {% if entry.summary == true %}
                 <div class="background-summary">
@@ -82,10 +87,12 @@
                     </ul>
                 </div>
                 {% endif %}
-                <!-- * ELSE for "if entry.position" loop, i.e. if position not in modifiedProfessionalBackground then go to this ELSE.
-                Generate DEFAULT HTML for Section Entries NOT in "page.modifiedProfessionalBackground" list, i.e.
-                all items that are to be generated with full content. -->
+                {% endif %}
+                {% endfor %}
+                <!-- ELSE for "if modifiedJobs", i.e. if modifiedProfessionalBackground front matter is not being used or does 
+                not contain the Current Job. -->
                 {% else %}
+                <!-- DEFAULT Section Entry generation if "page.modifiedProfessionalBackground" Switch does not exist -->
                 <div class="background-summary">
                     <p class="background-summary-body">{{ job.summary }}</p>
                 </div>
@@ -104,27 +111,6 @@
                     </ul>
                 </div>
                 {% endif %}
-                <!-- * ELSE for "for entry in" loop, i.e. modifiedProfessionalBackground front matter is not being used.
-                DEFAULT Section Entry generation if "page.modifiedProfessionalBackground" Switch does not exist -->
-                {% else %}
-                <div class="background-summary">
-                    <p class="background-summary-body">{{ job.summary }}</p>
-                </div>
-                <div class="background-highlights">
-                    <!-- SWITCH: unless "page.includeBackgroundHighlightsTitle" is set to "true", the background highlights 
-                    title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if job.highlights.size > 0 and page.includeBackgroundHighlightsTitle %}
-                    <div class="background-highlights-title">Highlights: </div>
-                    {% endif %}
-                    <ul class="background-highlights-list">
-                        {% for item in job.highlights %}
-                        <li class="background-highlights-list-item">
-                            {{ item }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endfor %}
             </div>
         </div>
         {% endunless %}

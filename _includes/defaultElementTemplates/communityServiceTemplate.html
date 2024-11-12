@@ -19,6 +19,10 @@ separate section. -->
 {% assign DataLocation = site.data.defaultResumeData.communityServiceData %}
 {% endif %}
 
+<!-- Generate list of service Section Entries that should be modified -->
+{% assign modifiedServices = page.modifiedCommunityService | map: "role" %}
+
+
 <div class="service-element element-block">
     <div class="element-head">
         <div class="service-element-title element-title">Community Service</div>
@@ -51,15 +55,15 @@ separate section. -->
                 </div>
             </div>
             <div class="service-body">
-                <!-- SWITCH: if "page.modifiedCommunityService" exists, the for loop will check if the current "service" 
-                Section Entry should be MODIFIED. Each MODIFIED service Section Entry only includes the Data Entries 
-                specified as "true" in the modifiedCommunityService yaml object. If "page.modifiedCommunityService" does 
-                not exist, this for loop's "else" will generate DEFAULT HTML for each "service", i.e. including all service 
-                data. -->
+                <!-- SWITCH: if "page.modifiedCommunityService" exists and contains the CurrentService, the for loop 
+                will check if the current "service" Section Entry should be MODIFIED. Each MODIFIED service Section 
+                Entry only includes the Data Entries specified as "true" in the modifiedCommunityService yaml object. 
+                If "page.modifiedCommunityService" does not exist, the "if modifiedServices" condition's "else" will 
+                generate DEFAULT HTML for each "service", i.e. including all service data. -->
+                {% if modifiedServices contains CurrentService %}
+                <!-- FOR loop finds correct modifiedCommunityService YAML object for generating the section body -->
                 {% for entry in page.modifiedCommunityService %}
                 <!-- Generate HTML for MODIFIED Section Entries -->
-                <!-- * Loop through modifiedCommunityService objects, if service not in modifiedCommunityService then go 
-                * to ELSE for "if entry.role" loop. -->
                 {% if entry.role == CurrentService %}
                 {% if entry.summary == true %}
                 <div class="service-summary">
@@ -83,10 +87,12 @@ separate section. -->
                     </ul>
                 </div>
                 {% endif %}
-                <!-- * ELSE for "if entry.role" loop, i.e. if service not in modifiedCommunityService then go to this ELSE.
-                Generate DEFAULT HTML for Section Entries NOT in "page.modifiedCommunityService" list, i.e.
-                all items that are to be generated with full content. -->
+                {% endif %}
+                {% endfor %}
+                <!-- ELSE for "for entry in" loop, i.e. modifiedCommunityService front matter is not being used or does 
+                not contain the Current Service. -->
                 {% else %}
+                <!-- DEFAULT Section Entry generation if "page.modifiedCommunityService" Switch does not exist -->
                 <div class="service-summary">
                     <p class="service-summary-body">{{ service.summary }}</p>
                 </div>
@@ -105,27 +111,6 @@ separate section. -->
                     </ul>
                 </div>
                 {% endif %}
-                <!-- * ELSE for "for entry in" loop, i.e. modifiedCommunityService front matter is not being used.
-                DEFAULT Section Entry generation if "page.modifiedCommunityService" Switch does not exist -->
-                {% else %}
-                <div class="service-summary">
-                    <p class="service-summary-body">{{ service.summary }}</p>
-                </div>
-                <div class="service-highlights">
-                    <!-- SWITCH: unless "page.includeServiceHighlightsTitle" is set to "true", the service highlights 
-                    title will NOT be included. This means DEFAULT is not to include the highlights Data title. -->
-                    {% if service.highlights.size > 0 and page.includeServiceHighlightsTitle %}
-                    <div class="service-highlights-title">Highlights: </div>
-                    {% endif %}
-                    <ul class="service-highlights-list">
-                        {% for item in service.highlights %}
-                        <li class="service-highlights-list-item">
-                            {{ item }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endfor %}
             </div>
         </div>
         {% endunless %}

@@ -16,6 +16,10 @@ dropped when I move past the point of including 'minor projects' on my resume. -
 {% assign DataLocation = site.data.defaultResumeData.minorProjectsData %}
 {% endif %}
 
+<!-- Generate list of minor project Section Entries that should be modified -->
+{% assign modifiedMinorProjects = page.modifiedMinorProject | map: "name" %}
+
+
 <div class="minor-projects-element element-block">
     <!-- SWITCH: unless "page.includeMinorProjectsElementTitle" is set to "true", the minor projects
     element title will NOT be included. This means DEFAULT is not to include the element title. -->
@@ -64,15 +68,15 @@ dropped when I move past the point of including 'minor projects' on my resume. -
                 <div class="minor-project-date">{{project.endDate}}</div>
             </div>
             <div class="minor-project-body">
-                <!-- SWITCH: if "page.modifiedMinorProject" exists, the for loop will check if the current " minor project" 
-                Section Entry should be MODIFIED. Each MODIFIED minor project Section Entry only includes the Data 
-                Entries specified as "true" in the modifiedMinorProject yaml object. If "page.modifiedMinorProject" 
-                does not exist, this for loop's "else" will generate DEFAULT HTML for each "minor project", i.e. including all 
-                project data. -->
+                <!-- SWITCH: if "page.modifiedMinorProject" exists and contains the CurrentProject, the for loop will 
+                check if the current "minor project" Section Entry should be MODIFIED. Each MODIFIED minor project 
+                Section Entry only includes the Data Entries specified as "true" in the modifiedMinorProject yaml 
+                object. If "page.modifiedMinorProject" does not exist, the "if modifiedMinorProjects" condition's 
+                "else" will generate DEFAULT HTML for each "minor project", i.e. including all project data. -->
+                {% if modifiedMinorProjects contains CurrentProject %}
+                <!-- FOR loop finds correct modifiedMinorProject YAML object for generating the section body -->
                 {% for entry in page.modifiedMinorProject %}
                 <!-- Generate HTML for MODIFIED Section Entries -->
-                <!-- * Loop through modifiedMinorProject objects, if project not in modifiedMinorProject then go to 
-                 * ELSE for "if entry.name" loop. -->
                 {% if entry.name == CurrentProject %}
                 {% if entry.takeaways == true %}
                 <div class="minor-project-takeaways">
@@ -127,103 +131,57 @@ dropped when I move past the point of including 'minor projects' on my resume. -
                         class="minor-project-source-entry-value">{{project.sourceLinkValue}}</a>
                 </div>
                 {% endif %}
-                <!--  * ELSE for "if entry.name" loop, i.e. if project not in modifiedMinorProject then go to this ELSE.
-                Generate DEFAULT HTML for Section Entries NOT in "page.modifiedProject" list, i.e.
-                all items that are to be generated with full content. -->
-                {% else %}
-                <div class="minor-project-takeaways">
-                    {% if project.takeaways.size > 0 %}
-                    <div class="minor-project-takeaways-desc">Takeaways: </div>
-                    {% endif %}
-                    <div class="minor-project-takeaways-list">
-                        {{project.takeaways | join: "; "}}
-                    </div>
-                </div>
-                <div class="minor-project-technologies">
-                    {% if project.technologies.size > 0 %}
-                    <div class="minor-project-technologies-desc">Languages and Tools: </div>
-                    {% endif %}
-                    <div class="minor-project-technologies-list">
-                        {{project.technologies | join: ", "}}
-                    </div>
-                </div>
-                <div class="minor-project-summary">
-                    <p class="minor-project-summary-body">{{ project.summary }}</p>
-                </div>
-                <div class="minor-project-highlights">
-                    <!-- SWITCH: unless "page.includeMinorProjectHighlightsTitle" is set to "true", the minor project 
-                    highlights title will NOT be included. This means DEFAULT is not to include the 
-                    highlights title. -->
-                    {% if project.highlights.size > 0 and page.includeMinorProjectHighlightsTitle %}
-                    <div class="minor-project-highlights-title">Highlights: </div>
-                    {% endif %}
-                    <ul class="minor-project-highlights-list">
-                        {% for item in project.highlights %}
-                        <li class="minor-project-highlights-list-item">
-                            {{ item }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <!-- SWITCH: unless "page.includeMinorProjectSourceLink" is set to "true", the minor project 
-                Minor Project Source Link will NOT be included. This means DEFAULT is not to include the 
-                Minor Project Source Link . -->
-                {% if page.includeMinorProjectSourceLink %}
-                <div class="minor-project-source-link-block">
-                    <div class="minor-project-source-link-desc">Project Description: </div>
-                    <a href="{{project.sourceLink}}"
-                        class="minor-project-source-entry-value">{{project.sourceLinkValue}}</a>
-                </div>
-                {% endif %}
-                {% endif %}
-                <!-- * ELSE for "for entry in" loop, i.e. modifiedMinorProject front matter is not being used.
-                DEFAULT Section Entry generation if "page.modifiedProject" Switch does not exist -->
-                {% else %}
-                <div class="minor-project-takeaways">
-                    {% if project.takeaways.size > 0 %}
-                    <div class="minor-project-takeaways-desc">Takeaways: </div>
-                    {% endif %}
-                    <div class="minor-project-takeaways-list">
-                        {{project.takeaways | join: "; "}}
-                    </div>
-                </div>
-                <div class="minor-project-technologies">
-                    {% if project.technologies.size > 0 %}
-                    <div class="minor-project-technologies-desc">Languages and Tools: </div>
-                    {% endif %}
-                    <div class="minor-project-technologies-list">
-                        {{project.technologies | join: ", "}}
-                    </div>
-                </div>
-                <div class="minor-project-summary">
-                    <p class="minor-project-summary-body">{{ project.summary }}</p>
-                </div>
-                <div class="minor-project-highlights">
-                    <!-- SWITCH: unless "page.includeMinorProjectHighlightsTitle" is set to "true", the minor project 
-                    highlights title will NOT be included. This means DEFAULT is not to include the 
-                    highlights title. -->
-                    {% if project.highlights.size > 0 and page.includeMinorProjectHighlightsTitle %}
-                    <div class="minor-project-highlights-title">Highlights: </div>
-                    {% endif %}
-                    <ul class="minor-project-highlights-list">
-                        {% for item in project.highlights %}
-                        <li class="minor-project-highlights-list-item">
-                            {{ item }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <!-- SWITCH: unless "page.includeMinorProjectSourceLink" is set to "true", the minor project 
-                Minor Project Source Link will NOT be included. This means DEFAULT is not to include the 
-                Minor Project Source Link . -->
-                {% if page.includeMinorProjectSourceLink %}
-                <div class="minor-project-source-link-block">
-                    <div class="minor-project-source-link-desc">Project Description: </div>
-                    <a href="{{project.sourceLink}}"
-                        class="minor-project-source-entry-value">{{project.sourceLinkValue}}</a>
-                </div>
                 {% endif %}
                 {% endfor %}
+                <!-- ELSE for "for entry in" loop, i.e. modifiedMinorProject front matter is not being used or does 
+                not contain the Current Project. -->
+                {% else %}
+                <!-- DEFAULT Section Entry generation if "page.modifiedProject" Switch does not exist -->
+                <div class="minor-project-takeaways">
+                    {% if project.takeaways.size > 0 %}
+                    <div class="minor-project-takeaways-desc">Takeaways: </div>
+                    {% endif %}
+                    <div class="minor-project-takeaways-list">
+                        {{project.takeaways | join: "; "}}
+                    </div>
+                </div>
+                <div class="minor-project-technologies">
+                    {% if project.technologies.size > 0 %}
+                    <div class="minor-project-technologies-desc">Languages and Tools: </div>
+                    {% endif %}
+                    <div class="minor-project-technologies-list">
+                        {{project.technologies | join: ", "}}
+                    </div>
+                </div>
+                <div class="minor-project-summary">
+                    <p class="minor-project-summary-body">{{ project.summary }}</p>
+                </div>
+                <div class="minor-project-highlights">
+                    <!-- SWITCH: unless "page.includeMinorProjectHighlightsTitle" is set to "true", the minor project 
+                    highlights title will NOT be included. This means DEFAULT is not to include the 
+                    highlights title. -->
+                    {% if project.highlights.size > 0 and page.includeMinorProjectHighlightsTitle %}
+                    <div class="minor-project-highlights-title">Highlights: </div>
+                    {% endif %}
+                    <ul class="minor-project-highlights-list">
+                        {% for item in project.highlights %}
+                        <li class="minor-project-highlights-list-item">
+                            {{ item }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- SWITCH: unless "page.includeMinorProjectSourceLink" is set to "true", the minor project 
+                Minor Project Source Link will NOT be included. This means DEFAULT is not to include the 
+                Minor Project Source Link . -->
+                {% if page.includeMinorProjectSourceLink %}
+                <div class="minor-project-source-link-block">
+                    <div class="minor-project-source-link-desc">Project Description: </div>
+                    <a href="{{project.sourceLink}}"
+                        class="minor-project-source-entry-value">{{project.sourceLinkValue}}</a>
+                </div>
+                {% endif %}
+                {% endif %}
             </div>
         </div>
         {% endunless %}
