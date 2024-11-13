@@ -129,7 +129,7 @@ printPdf() {
     # Sleep is intended to delay printing until after the server is fully setup and running
     sleep 2
     # Port 4000 is the Jekyll default 
-    google-chrome --headless --disable-gpu --print-to-pdf="${targetFile}" --no-pdf-header-footer http://127.0.0.1:4000/
+    google-chrome --headless --disable-gpu --virtual-time-budget=10000 --print-to-pdf="${targetFile}" --no-pdf-header-footer http://127.0.0.1:4000/
     echo "[${date}] CreateResumes.sh:  End Print "
 }
 

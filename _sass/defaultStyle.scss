@@ -1,10 +1,9 @@
 // Resume overall
 html,
 body {
-    font-size: 9.5pt;
+    font-size: 9pt; // 9.5pt
     overflow-x: hidden;
     font-family: "Inter", sans-serif;
-    //font-family: "Lusitana", serif;
 }
 
 body {
@@ -15,6 +14,7 @@ body {
     min-height: 100vh;
     overflow: hidden;
     background-color: white;
+    margin: 0 0 0 0;
 }
 
 .main-content {
@@ -22,7 +22,6 @@ body {
     flex-direction: column;
     align-items: center;
     width: 98vw; // 98 keeps edge of page from cutting off
-    //padding-top: 80px; // TODO CHANGE? 
 }
 
 .element-block {
@@ -42,7 +41,7 @@ body {
 
 .resume-title {
     font-family: "Lusitana", serif;
-    font-size: 36pt;
+    font-size: 35pt;
 }
 
 .title-element-body {
@@ -52,9 +51,9 @@ body {
 
 .professional-title {
     font-family: "Lusitana", serif;
-    font-size: 19pt;
+    font-size: 17pt; // 19pt
     margin-top: -8px;
-    margin-left: 68px;
+    margin-left: 85px; // 68pt
 }
 
 .contact-element {
@@ -71,6 +70,25 @@ body {
     margin-right: 6px;
 }
 
+// Element Heads
+.element-block {
+    margin-bottom: 4.5px; // 6pt
+}
+
+.element-head {
+    border-bottom: 2px solid rgb(79, 129, 189);
+}
+
+.element-title {
+    font-family: "Lusitana", serif;
+    font-size: 14pt; // 16pt
+    color: rgb(79, 129, 189);
+}
+
+.element-body {
+    margin-top: 1.5pt; // 2pt
+}
+
 
 // Section Heads general
 .project-head,
@@ -83,7 +101,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 10.5pt;
+    font-size: 10pt; // 10pt
 }
 
 .project-title-block,
@@ -170,24 +188,6 @@ body {
 
 
 // Section Body general
-.element-block {
-    margin-bottom: 6px;
-}
-
-.element-head {
-    border-bottom: 2px solid rgb(79, 129, 189);
-}
-
-.element-title {
-    font-family: "Lusitana", serif;
-    font-size: 16pt;
-    color: rgb(79, 129, 189);
-}
-
-.element-body {
-    margin-top: 2pt;
-}
-
 .project-section-entry,
 .minor-project-section-entry,
 .cert-section-entry,
@@ -195,7 +195,7 @@ body {
 .background-section-entry,
 .service-section-entry,
 .award-section-entry {
-    margin-bottom: 6pt;
+    margin-bottom: 5pt; // 6pt
 }
 
 .project-summary-body,
@@ -205,8 +205,8 @@ body {
 .background-summary-body,
 .service-summary-body,
 .award-summary-body {
-    margin-top: 2pt;
-    margin-bottom: 2pt;
+    margin-top: 1pt; // 2pt
+    margin-bottom: 1pt; // 2pt
 }
 
 .project-highlights-title,
@@ -227,7 +227,7 @@ body {
 .background-highlights-list,
 .service-highlights-list,
 .award-highlights-list {
-    margin-top: 2pt;
+    margin-top: 1pt; // 2pt
     margin-bottom: 0pt;
     padding-left: 40px;
 }
@@ -267,12 +267,16 @@ body {
 .project-technologies,
 .minor-project-takeaways,
 .minor-project-technologies,
+.minor-project-source-link-block,
+.cert-link-id-block,
 .education-minors {
     display: flex;
     flex-direction: row;
     margin-left: 6px;
 }
 
+.minor-project-source-link-block,
+.cert-link-id-block,
 .education-minors {
     margin-left: 11px; // Minors needs to be a little more to the right to line up properly
 }
@@ -281,6 +285,8 @@ body {
 .project-technologies-desc,
 .minor-project-takeaways-desc,
 .minor-project-technologies-desc,
+.minor-project-source-link-desc,
+.cert-id-desc,
 .education-minors-desc {
     font-weight: bold;
 }
@@ -289,6 +295,8 @@ body {
 .project-technologies-list,
 .minor-project-takeaways-list,
 .minor-project-technologies-list,
+.minor-project-source-entry-value,
+.cert-link-value,
 .education-minors-list {
     margin-left: 4px;
 }
@@ -300,7 +308,7 @@ body {
 
 .minor-project-category-title {
     font-family: "Lusitana", serif;
-    font-size: 12pt;
+    font-size: 11pt; // 12pt
     font-weight: bolder;
     text-decoration: underline;
     margin-bottom: 0.5pt;
@@ -309,7 +317,7 @@ body {
 // Education
 .education-highlight-details-list {
     list-style-type: disclosure-closed;
-    margin-top: 2pt;
+    margin-top: 1pt; // 2pt
     margin-bottom: 0pt;
     padding-left: 80px;
 }
@@ -317,7 +325,7 @@ body {
 .education-thesis-link-block {
     display: flex;
     flex-direction: row;
-    font-size: 10pt;
+    margin-left: 11px;
 }
 
 .education-thesis-link-desc {
