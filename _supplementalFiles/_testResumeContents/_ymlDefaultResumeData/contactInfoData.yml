@@ -1,7 +1,7 @@
 contactInfoData:
-  phone: test#
-  email: test@test
-  location: 1111 TestStreet
+  phone: ""
+  email: ""
+  location: ""
   websites:
     - websiteDesc: LinkedIn
       websiteLinkValue: "@ZachariahJett"

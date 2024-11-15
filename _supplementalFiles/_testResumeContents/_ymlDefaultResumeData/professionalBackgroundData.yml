@@ -8,18 +8,12 @@ professionalBackgroundData:
       included: preparing and grading tests, assisting in the paperwork involved
       in running a university course, and holding office hours to meet with
       students and help them with their coursework."
-    highlights:
-      - test1
-      - test2
-      - test3
+    highlights: []
   - position: Assistant-Director of Communication
-    company: Cedar Apartments Student Association &ndash; University of Washington
-    location: Seattle, WA
+    company: Cedar Apartments Student Association
+    location: University of Washington &ndash; Seattle, WA
     startDate: "2014"
     endDate: "2015"
     summary: Produced all official communications for the Student Association at the
       University of Washington's Cedar Apartments.
-    highlights:
-      - test1
-      - test2
-      - test3
+    highlights: []

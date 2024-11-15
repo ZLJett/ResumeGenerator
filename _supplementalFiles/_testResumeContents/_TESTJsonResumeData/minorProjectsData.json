@@ -6,14 +6,14 @@
                 "name": "Calculator Webpage",
                 "endDate": "Aug. 2022",
                 "takeaways": [
-                    "Take1",
-                    "Take2",
-                    "Take3"
+                    "TEST1",
+                    "TEST2",
+                    "TEST3"
                 ],
                 "technologies": [
-                    "Tech1",
-                    "Tech2",
-                    "Tech3"
+                    "TEST1",
+                    "TEST2",
+                    "TEST3"
                 ],
                 "summary": "My implementation of the 'Project: Calculator' from The Odin Project's 'Foundations' course, with all 'extra credit' assignments implemented a well as a history tracker.",
                 "highlights": [
@@ -27,8 +27,16 @@
             {
                 "name": "Etch-a-Sketch Webpage",
                 "endDate": "Jul. 2022",
-                "takeaways": [],
-                "technologies": [],
+                "takeaways": [
+                    "TEST1",
+                    "TEST2",
+                    "TEST3"
+                ],
+                "technologies": [
+                    "TEST1",
+                    "TEST2",
+                    "TEST3"
+                ],
                 "summary": "My implementation of the 'Project: Etch-a-Sketch' from The Odin Project's 'Foundations' course, with additional functionality to allow user to input 'pixel' count of Etch-a-Sketch display. All while carefully styled to look like a classic Etch-a-Sketch.",
                 "highlights": [
                     "Features: Styled like classic Etch-a-Sketch, user can set &lsquo;pixel&rsquo; count."
@@ -41,8 +49,16 @@
             {
                 "name": "Rock Paper Scissors Webpage",
                 "endDate": "Jun. 2022",
-                "takeaways": [],
-                "technologies": [],
+                "takeaways": [
+                    "TEST1",
+                    "TEST2",
+                    "TEST3"
+                ],
+                "technologies": [
+                    "TEST1",
+                    "TEST2",
+                    "TEST3"
+                ],
                 "summary": "My implementation of the 'Project: Rock Paper Scissors' from The Odin Project's 'Foundations' course, with additional functionality to display game on webpage with images of player choices.",
                 "highlights": [
                     "Features: Displays images of player inputs with delay to keep surprise."
@@ -60,8 +76,16 @@
             {
                 "name": "Budgeting App Project",
                 "endDate": "Oct. 2021",
-                "takeaways": [],
-                "technologies": [],
+                "takeaways": [
+                    "TEST1",
+                    "TEST2",
+                    "TEST3"
+                ],
+                "technologies": [
+                    "TEST1",
+                    "TEST2",
+                    "TEST3"
+                ],
                 "summary": "My implementation of the 'Build a Budget App Project' from freeCodeCamp's 'Scientific Computing with Python' course.",
                 "highlights": [
                     "Features: Tracks debts and credits to account, displays percentage spent by category as bar chart."

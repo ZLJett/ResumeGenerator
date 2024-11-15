@@ -4,13 +4,21 @@
     "location": "Fairborn, OH",
     "degree": "Master of Arts",
     "major": "History",
-    "minors": [],
+    "minors": [
+      "TEST1",
+      "TEST2",
+      "TEST3"
+    ],
     "endDate": "Dec. 2020",
-    "summary": "",
+    "summary": "TEST Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ex minus debitis at hic, laboriosam laborum aut quia.",
     "detailedHighlights": [
       {
         "highlight": "Outstanding Graduate Student &ndash; 2021",
-        "details": []
+        "details": [
+          "TEST1",
+          "TEST2",
+          "TEST3"
+        ]
       },
       {
         "highlight": "Presented research papers at two conferences",
@@ -34,11 +42,15 @@
       "Swedish Language"
     ],
     "endDate": "Aug. 2015",
-    "summary": "",
+    "summary": "TEST Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ex minus debitis at hic, laboriosam laborum aut quia.",
     "detailedHighlights": [
       {
         "highlight": "Dean&rsquo;s List: Winter, Spring &ndash; 2014, Autumn, Winter, Spring &ndash; 2015",
-        "details": []
+        "details": [
+          "TEST1",
+          "TEST2",
+          "TEST3"
+        ]
       },
       {
         "highlight": "Study abroad at Uppsala International Summer Session (UISS) &ndash; Summer 2015",
@@ -47,28 +59,32 @@
         ]
       }
     ],
-    "thesisDesc": "",
-    "thesisValue": "",
-    "thesisLink": ""
+    "thesisDesc": "TEST DESC",
+    "thesisValue": "TEST VALUE",
+    "thesisLink": "http://rave.ohiolink.edu/etdc/view?acc_num=wright1605200125756442"
   },
   {
     "school": "Everett Community College",
     "location": "Everett, WA",
     "degree": "Associate of Arts and Sciences",
-    "major": "",
+    "major": "TEST1",
     "minors": [
       "Oceanography"
     ],
     "endDate": "Jun. 2012",
-    "summary": "",
+    "summary": "TEST Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ex minus debitis at hic, laboriosam laborum aut quia.",
     "detailedHighlights": [
       {
         "highlight": "Attended Everett Community College's Ocean Research College Academy (O.R.C.A.)",
-        "details": []
+        "details": [
+          "TEST1",
+          "TEST2",
+          "TEST3"
+        ]
       }
     ],
-    "thesisDesc": "",
-    "thesisValue": "",
-    "thesisLink": ""
+    "thesisDesc": "TEST DESC",
+    "thesisValue": "TEST VALUE",
+    "thesisLink": "http://rave.ohiolink.edu/etdc/view?acc_num=wright1605200125756442"
   }
 ]

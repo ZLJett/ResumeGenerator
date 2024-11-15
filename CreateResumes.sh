@@ -57,7 +57,7 @@ resumeDirectory="_resumes/"${SOURCE}
 resumeDataDirectory=${resumeDirectory}"/_data/"
 modifiedResumeData="modifiedResumeData: ["
 for file in $(find $resumeDataDirectory -name '*.yml') ; do
-    # Takes: "_resumes/_testResume/_includes/resumeTitleTemplate.html" to "resumeTitleTemplate"
+    # Takes: "_resumes/_testResume/_data/educationData.yml" to "educationData"
     dataFileStripped="$(basename -s .yml $file)" 
     modifiedResumeData+="\"${dataFileStripped}\","
 done

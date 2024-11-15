@@ -4,7 +4,7 @@
 # All element templates to exclude from the default resume contents contained in the root 
 # config file's variable "defaultResumeContents: []"
 # ARGs: Values are template file names, minus extension, e.g. [skillSetsTemplate]
-excludeResumeContents: [skillSetsTemplate]
+excludeResumeContents: []
 
 # Replaces the automatically included Resume Template files, i.e. the modified Templates in 
 # the resume's directory, with the default Template file of the same name
@@ -35,6 +35,7 @@ professionalTitleDivider: " " # Single space removes whole line
 
 ### Contact Info Switches ######################################
 # Include Contact Element'e Title, i.e. "Contact Info" at top os Element
+# STYLE: default stylesheet is NOT setup to support this option
 includeContactElementTitle: true
 
 # Skip a contact info section/data entry, i.e. do not include "PhoneNum" in the Element 
@@ -193,7 +194,7 @@ modifiedEducation:
     summary: true
     highlightsTitle: true # Item will be included if EITHER this or "includeEducationHighlightsTitle" set to "true"
     highlights: true
-    detailList: true  # Item will be included if EITHER this or "includeEducationDetailList" set to "true"
+    detailList: true # Item will be included if EITHER this or "includeEducationDetailList" set to "true"
     thesisLink: true # Item will be included if EITHER this or "includeEducationThesisLink" set to "true"
 
 
@@ -285,4 +286,107 @@ modifiedAward:
     awardsIssuer: true # Item will be included if EITHER this or "includeAwardsIssuer" set to "true"
     summary: true
     highlightsTitle: true # Item will be included if EITHER this or "includeAwardHighlightsTitle" set to "true"
+    highlights: true
+
+
+
+### All Modified Data Entry Switches ###########################
+modifiedProject:
+  - name: Financial_Trade_Message_Router
+    takeaways: true
+    technologies: true
+    summary: true
+    highlightsTitle: true
+    highlights: true
+modifiedMinorProject:
+  - name: Calculator_Webpage
+    takeaways: true
+    technologies: true
+    summary: true
+    highlightsTitle: true
+    highlights: true
+    sourceLink: true
+  - name: Etch-a-Sketch_Webpage
+    takeaways: true
+    technologies: true
+    summary: true
+    highlightsTitle: true
+    highlights: true
+    sourceLink: true
+  - name: Rock_Paper_Scissors_Webpage
+    takeaways: true
+    technologies: true
+    summary: true
+    highlightsTitle: true
+    highlights: true
+    sourceLink: true
+  - name: Budgeting_App_Project
+    takeaways: true
+    technologies: true
+    summary: true
+    highlightsTitle: true
+    highlights: true
+    sourceLink: true
+modifiedCert:
+  - name: Google_IT_Automation_with_Python
+    summary: true
+    highlightsTitle: true
+    highlights: true
+    linkAndId: true
+  - name: Scientific_Computing_with_Python
+    summary: true
+    highlightsTitle: true
+    highlights: true
+    linkAndId: true
+  - name: Preparing_for_Google_Cloud_Certification:_Cloud_Engineer
+    summary: true
+    highlightsTitle: true
+    highlights: true
+    linkAndId: true
+modifiedEducation:
+  - degree: Master_of_Arts
+    minors: true
+    summary: true
+    highlightsTitle: true
+    highlights: true
+    detailList: true
+    thesisLink: true
+  - degree: Bachelors_of_Arts
+    minors: true
+    summary: true
+    highlightsTitle: true
+    highlights: true
+    detailList: true
+    thesisLink: true
+  - degree: Associate_of_Arts_and_Sciences
+    minors: true
+    summary: true
+    highlightsTitle: true
+    highlights: true
+    detailList: true
+    thesisLink: true
+modifiedProfessionalBackground:
+  - position: Graduate_Assistant
+    summary: true
+    highlightsTitle: true
+    highlights: true
+  - position: Assistant-Director_of_Communication
+    summary: true
+    highlightsTitle: true
+    highlights: true
+modifiedCommunityService:
+  - role: Trustee
+    summary: true
+    highlightsTitle: true
+    highlights: true
+modifiedAward:
+  - name: William_T._Hornaday_Award_for_Environmental_Conservation
+    awardsIssuer: true
+    summary: true
+    highlightsTitle: true
+    highlights: true
+  - name: Eagle_Scout
+    awardsIssuer: true
+    summary: true
+    highlightsTitle: true
     highlights: true

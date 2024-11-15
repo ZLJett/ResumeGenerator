@@ -2,8 +2,7 @@ awardsData:
   - name: TESTWilliam T. Hornaday Award for Environmental Conservation
     issuer: Boy Scouts of America
     endDate: "2011"
-    summary:
-      - Silver Badge
+    summary: "Silver Badge"
     highlights:
       - test1
       - test2
@@ -11,5 +10,5 @@ awardsData:
   - name: TESTEagle Scout
     issuer: Boy Scouts of America
     endDate: "2011"
-    summary: []
+    summary: ""
     highlights: []
