@@ -21,8 +21,10 @@ projects section of the resume, and not its own separate section. -->
 <!-- Generate list of award Section Entries that should be modified -->
 {% assign modifiedAwards = page.modifiedAward | map: "name" %}
 
-
-<div class="awards-element element-block">
+<!-- SWITCH: if "page.awardElementTopMargin" exists its value will be added to the top margin of the whole Element
+so that the Element can be moved down onto the next PDF page if necessary -->
+<div class="awards-element element-block" {% if page.awardElementTopMargin>0 %}
+    style="margin-top:{{page.awardElementTopMargin}}px" {% endif%}>
     <!-- SWITCH: unless "page.includeAwardsElementTitle" is set to "true", the awards element title
     will NOT be included. This means DEFAULT is not to include the element title. -->
     {% if page.includeAwardsElementTitle %}
@@ -41,7 +43,14 @@ projects section of the resume, and not its own separate section. -->
         with all whitespace replaced with underscores, 
         e.g. "William_T._Hornaday_Award_for_Environmental_Conservation" -->
         {% unless page.skipAward contains CurrentAward %}
-        <div class="award-section-entry">
+        <!-- SWITCH: if "page.modifyAwardSectionMargins" contains CurrentAward, the margin value of the 
+        modifyAwardSectionMargins object will be added to the top margin of the Section so that the Section can be 
+        moved down onto the next PDF page if necessary -->
+        {% assign ModifySectionMargin = page.modifyAwardSectionMargins | where: "section", {{CurrentAward}} %}
+        {% assign SectionName = ModifySectionMargin | map: "section" %}
+        {% assign TopMargin = ModifySectionMargin | map: "margin" %}
+        <div class="award-section-entry" {% if SectionName contains CurrentAward %} style="margin-top:{{TopMargin}}px"
+            {%endif%}>
             <div class="award-head">
                 <div class="award-title">{{award.name}}</div>
                 <div class="award-date">{{award.endDate}}</div>

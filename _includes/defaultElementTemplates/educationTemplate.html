@@ -15,8 +15,10 @@
 <!-- Generate list of education Section Entries that should be modified -->
 {% assign modifiedDegrees = page.modifiedEducation | map: "degree" %}
 
-
-<div class="education-element element-block">
+<!-- SWITCH: if "page.educationElementTopMargin" exists its value will be added to the top margin of the whole Element
+so that the Element can be moved down onto the next PDF page if necessary -->
+<div class="education-element element-block" {% if page.educationElementTopMargin>0 %}
+    style="margin-top:{{page.educationElementTopMargin}}px" {% endif%}>
     <div class="element-head">
         <div class="education-element-title element-title">Education</div>
     </div>
@@ -31,7 +33,14 @@
         Note: each Education degree is the "degree" value for the Education in the "educationData.json" data 
         file but with all whitespace replaced with underscores, e.g. "Master_of_Arts" -->
         {% unless page.skipEducation contains CurrentDegree %}
-        <div class="education-section-entry">
+        <!-- SWITCH: if "page.modifyEducationSectionMargins" contains CurrentDegree, the margin value of the 
+        modifyEducationSectionMargins object will be added to the top margin of the Section so that the Section can be 
+        moved down onto the next PDF page if necessary -->
+        {% assign ModifySectionMargin = page.modifyEducationSectionMargins | where: "section", {{CurrentDegree}} %}
+        {% assign SectionName = ModifySectionMargin | map: "section" %}
+        {% assign TopMargin = ModifySectionMargin | map: "margin" %}
+        <div class="education-section-entry" {% if SectionName contains CurrentDegree %}
+            style="margin-top:{{TopMargin}}px" {%endif%}>
             <div class="education-head">
                 <div class="education-title-block">
                     <div class="education-degree">{{education.degree}}</div>

@@ -22,8 +22,10 @@ separate section. -->
 <!-- Generate list of service Section Entries that should be modified -->
 {% assign modifiedServices = page.modifiedCommunityService | map: "role" %}
 
-
-<div class="service-element element-block">
+<!-- SWITCH: if "page.serviceElementTopMargin" exists its value will be added to the top margin of the whole Element
+so that the Element can be moved down onto the next PDF page if necessary -->
+<div class="service-element element-block" {% if page.serviceElementTopMargin>0 %}
+    style="margin-top:{{page.serviceElementTopMargin}}px" {% endif%}>
     <div class="element-head">
         <div class="service-element-title element-title">Community Service</div>
     </div>
@@ -39,7 +41,14 @@ separate section. -->
         "communityServiceData.json" data file but with all whitespace replaced with underscores, 
         e.g. "" -->
         {% unless page.skipCommunityService contains CurrentService %}
-        <div class="service-section-entry">
+        <!-- SWITCH: if "page.modifyServiceSectionMargins" contains CurrentService, the margin value of the 
+        modifyServiceSectionMargins object will be added to the top margin of the Section so that the Section can be 
+        moved down onto the next PDF page if necessary -->
+        {% assign ModifySectionMargin = page.modifyServiceSectionMargins | where: "section", {{CurrentService}} %}
+        {% assign SectionName = ModifySectionMargin | map: "section" %}
+        {% assign TopMargin = ModifySectionMargin | map: "margin" %}
+        <div class="service-section-entry" {% if SectionName contains CurrentService %}
+            style="margin-top:{{TopMargin}}px" {%endif%}>
             <div class="service-head">
                 <div class="service-title-block">
                     <div class="service-role">{{service.role}}</div>

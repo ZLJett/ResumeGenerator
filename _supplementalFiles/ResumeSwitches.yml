@@ -66,6 +66,17 @@ skipSkillSet: ["Disciplines", "Languages", "Environments", "Tools"]
 
 
 ### Projects Switches ##########################################
+# Modify the top margin of the whole Element so that it can be moved down onto the next PDF page if necessary
+# ARGs: the value is a number greater than 0 in "px", e.g. 100px
+projectElementTopMargin: 100 # 0 applies default spacing to each Element
+
+# Modify the top margin of a Section so that it can be moved down onto the next PDF page if necessary
+# ARGs: the "section" argument follows the same format as in the "skipProject" switch below, e.g. 
+# "Financial_Trade_Message_Router". The "margin" value is a number greater than 0 in "px", e.g. 100px
+modifyProjectSectionMargins:
+  - section: Financial_Trade_Message_Router
+    margin: 100 # 0 applies default spacing to each Element
+
 # Skip a Project section, i.e. do not include "Financial_Trade_Message_Router" in the Element 
 # ARGs: each Project name is the "name" value for the Project in the "majorProjectsData.json" 
 # data file but with all whitespace replaced with underscores, e.g. "Financial_Trade_Message_Router"
@@ -93,6 +104,25 @@ modifiedProject:
 
 
 ### Minor Projects Switches ####################################
+# Modify the top margin of the whole Element so that it can be moved down onto the next PDF page if necessary
+# ARGs: the value is a number greater than 0 in "px", e.g. 100px
+minorProjectElementTopMargin: 100 # 0 applies default spacing to each Element
+
+# Modify the top margin of the title of a category of Sections, i.e. all the "Web-Development_Projects" 
+# Sections in the Element, so that it can be moved down onto the next PDF page if necessary
+# ARGs: the "category" argument follows the same format as in the "skipMinorProjectCategory" switch below,
+# e.g. "Web-Development_Projects". The "margin" value is a number greater than 0 in "px", e.g. 100px
+modifyMinorProjectCategoryMargins:
+  - category: Web-Development_Projects
+    margin: 100 # 0 applies default spacing to each Element
+
+# Modify the top margin of a Section so that it can be moved down onto the next PDF page if necessary
+# ARGs: the "section" argument follows the same format as in the "skipMinorProject" switch below,
+# e.g. "Calculator_Webpage". The "margin" value is a number greater than 0 in "px", e.g. 100px
+modifyMinorProjectSectionMargins:
+  - section: Calculator_Webpage
+    margin: 100 # 0 applies default spacing to each Element
+
 # Skip a Minor Project category of Sections, i.e. do not include all the "Web-Development_Projects" 
 # Sections in the Element 
 # ARGs: each minor project category is the "category" value for the project in the "minorProjectsData.json" 
@@ -133,6 +163,17 @@ modifiedMinorProject:
 
 
 ### Certs Switches #############################################
+# Modify the top margin of the whole Element so that it can be moved down onto the next PDF page if necessary
+# ARGs: the value is a number greater than 0 in "px", e.g. 100px
+certElementTopMargin: 100 # 0 applies default spacing to each Element
+
+# Modify the top margin of a Section so that it can be moved down onto the next PDF page if necessary
+# ARGs: the "section" argument follows the same format as in the "skipCert" switch below, e.g. 
+# "Google_IT_Automation_with_Python". The "margin" value is a number greater than 0 in "px", e.g. 100px
+modifyCertSectionMargins:
+  - section: Google_IT_Automation_with_Python
+    margin: 100 # 0 applies default spacing to each Element
+
 # Skip a Cert section, i.e. do not include "Google_IT_Automation_with_Python" in the Element 
 # ARGs: each Cert name is the "name" value for the Cert in the "certsData.json" data file but with 
 # all whitespace replaced with underscores, e.g. "Google_IT_Automation_with_Python"
@@ -162,6 +203,17 @@ modifiedCert:
 
 
 ### Education Switches #########################################
+# Modify the top margin of the whole Element so that it can be moved down onto the next PDF page if necessary
+# ARGs: the value is a number greater than 0 in "px", e.g. 100px
+educationElementTopMargin: 100 # 0 applies default spacing to each Element
+
+# Modify the top margin of a Section so that it can be moved down onto the next PDF page if necessary
+# ARGs: the "section" argument follows the same format as in the "skipEducation" switch below, e.g. 
+# "Master_of_Arts". The "margin" value is a number greater than 0 in "px", e.g. 100px
+modifyEducationSectionMargins:
+  - section: Master_of_Arts
+    margin: 100 # 0 applies default spacing to each Element
+
 # Skip an Education section, i.e. do not include "Master_of_Arts" in the Element 
 # ARGs: each Education degree is the "degree" value for the Education in the "educationData.json" data 
 # file but with all whitespace replaced with underscores, e.g. "Master_of_Arts"
@@ -200,6 +252,17 @@ modifiedEducation:
 
 
 ### Professional Background Switches ###########################
+# Modify the top margin of the whole Element so that it can be moved down onto the next PDF page if necessary
+# ARGs: the value is a number greater than 0 in "px", e.g. 100px
+backgroundElementTopMargin: 100 # 0 applies default spacing to each Element
+
+# Modify the top margin of a Section so that it can be moved down onto the next PDF page if necessary
+# ARGs: the "section" argument follows the same format as in the "skipProfessionalBackground" switch 
+# below, e.g. "Graduate_Assistant". The "margin" value is a number greater than 0 in "px", e.g. 100px
+modifyBackgroundSectionMargins:
+  - section: Graduate_Assistant
+    margin: 100 # 0 applies default spacing to each Element
+
 # Skip Professional Background section, i.e. do not include "Graduate_Assistant" in the Element 
 # ARGs: each Professional Background position is the "position" value for the Professional Background in 
 # the "professionalBackgroundData.json" data file but with all whitespace replaced with underscores, 
@@ -225,6 +288,7 @@ includeBackgroundHighlightsTitle: true
 # above, e.g. "Graduate_Assistant"
 modifiedProfessionalBackground:
   - position: Graduate_Assistant
+    companyLocation: true  # Item will be included if EITHER this or "includeBackgroundCompanyLocation" set to "true"
     summary: true
     highlightsTitle: true # Item will be included if EITHER this or "includeBackgroundHighlightsTitle" set to "true"
     highlights: true
@@ -232,6 +296,17 @@ modifiedProfessionalBackground:
 
 
 ### Community Service Switches #################################
+# Modify the top margin of the whole Element so that it can be moved down onto the next PDF page if necessary
+# ARGs: the value is a number greater than 0 in "px", e.g. 100px
+serviceElementTopMargin: 100 # 0 applies default spacing to each Element
+
+# Modify the top margin of a Section so that it can be moved down onto the next PDF page if necessary
+# ARGs: the "section" argument follows the same format as in the "skipCommunityService" switch 
+# below, e.g. "Trustee". The "margin" value is a number greater than 0 in "px", e.g. 100px
+modifyServiceSectionMargins:
+  - section: Trustee
+    margin: 100 # 0 applies default spacing to each Element
+
 # Skip Community Service section, i.e. do not include "Trustee" in the Element 
 # ARGs: each Community Service role is the "role" value for the Community Service in the 
 # "communityServiceData.json" data file but with all whitespace replaced with underscores, 
@@ -261,6 +336,17 @@ modifiedCommunityService:
 
 
 ### Awards Switches ############################################
+# Modify the top margin of the whole Element so that it can be moved down onto the next PDF page if necessary
+# ARGs: the value is a number greater than 0 in "px", e.g. 100px
+awardElementTopMargin: 100 # 0 applies default spacing to each Element
+
+# Modify the top margin of a Section so that it can be moved down onto the next PDF page if necessary
+# ARGs: the "section" argument follows the same format as in the "skipAward" switch below, e.g. 
+# "Eagle_Scout". The "margin" value is a number greater than 0 in "px", e.g. 100px
+modifyAwardSectionMargins:
+  - section: Eagle_Scout
+    margin: 100 # 0 applies default spacing to each Element
+
 # Include Awards Element'e Title, i.e. "Awards &amp; Honors" at top os Element
 includeAwardsElementTitle: true
 

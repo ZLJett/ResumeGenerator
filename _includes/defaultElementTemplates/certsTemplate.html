@@ -15,8 +15,10 @@
 <!-- Generate list of cert Section Entries that should be modified -->
 {% assign modifiedCerts = page.modifiedCert | map: "name" %}
 
-
-<div class="certs-element element-block">
+<!-- SWITCH: if "page.certElementTopMargin" exists its value will be added to the top margin of the whole Element
+so that the Element can be moved down onto the next PDF page if necessary -->
+<div class="certs-element element-block" {% if page.certElementTopMargin>0 %}
+    style="margin-top:{{page.certElementTopMargin}}px" {% endif%}>
     <div class="element-head">
         <div class="certs-element-title element-title">Certifications</div>
     </div>
@@ -31,7 +33,14 @@
         Note: each cert name is the "name" value for the cert in the "certsData.json"  data file but with 
         all whitespace replaced with underscores, e.g. "Google_IT_Automation_with_Python" -->
         {% unless page.skipCert contains CurrentCert %}
-        <div class="cert-section-entry">
+        <!-- SWITCH: if "page.modifyCertSectionMargins" contains CurrentCert, the margin value of the 
+        modifyCertSectionMargins object will be added to the top margin of the Section so that the Section can be 
+        moved down onto the next PDF page if necessary -->
+        {% assign ModifySectionMargin = page.modifyCertSectionMargins | where: "section", {{CurrentCert}} %}
+        {% assign SectionName = ModifySectionMargin | map: "section" %}
+        {% assign TopMargin = ModifySectionMargin | map: "margin" %}
+        <div class="cert-section-entry" {% if SectionName contains CurrentCert %} style="margin-top:{{TopMargin}}px"
+            {%endif%}>
             <div class="cert-head">
                 <div class="cert-title-block">
                     <div class="cert-title">{{cert.name}}</div>

@@ -15,8 +15,10 @@
 <!-- Generate list of position Section Entries that should be modified -->
 {% assign modifiedJobs = page.modifiedProfessionalBackground | map: "position" %}
 
-
-<div class="background-element element-block">
+<!-- SWITCH: if "page.backgroundElementTopMargin" exists its value will be added to the top margin of the whole Element
+so that the Element can be moved down onto the next PDF page if necessary -->
+<div class="background-element element-block" {% if page.backgroundElementTopMargin>0 %}
+    style="margin-top:{{page.backgroundElementTopMargin}}px" {% endif%}>
     <div class="element-head">
         <div class="background-element-title element-title">Professional Background</div>
     </div>
@@ -31,7 +33,14 @@
         the "professionalBackgroundData.json" data file but with all whitespace replaced with underscores, 
         e.g. "Graduate_Assistant" -->
         {% unless page.skipProfessionalBackground contains CurrentJob %}
-        <div class="background-section-entry">
+        <!-- SWITCH: if "page.modifyBackgroundSectionMargins" contains CurrentJob, the margin value of the 
+        modifyBackgroundSectionMargins object will be added to the top margin of the Section so that the Section can be 
+        moved down onto the next PDF page if necessary -->
+        {% assign ModifySectionMargin = page.modifyBackgroundSectionMargins | where: "section", {{CurrentJob}} %}
+        {% assign SectionName = ModifySectionMargin | map: "section" %}
+        {% assign TopMargin = ModifySectionMargin | map: "margin" %}
+        <div class="background-section-entry" {% if SectionName contains CurrentJob %}
+            style="margin-top:{{TopMargin}}px" {%endif%}>
             <div class="background-head">
                 <div class="background-title-block">
                     <div class="background-company">{{job.company}}</div>
@@ -46,14 +55,6 @@
                     <div class="background-date background-end-date">{{job.endDate}}</div>
                 </div>
             </div>
-            <!-- SWITCH: unless "page.includeBackgroundCompanyLocation" is set to "true", the Professional 
-            Background Position location will NOT be included. This means DEFAULT is not to include the 
-            Professional Background Position location. -->
-            {% if page.includeBackgroundCompanyLocation %}
-            <div class="background-location-block">
-                <div class="background-location">{{job.location}}</div>
-            </div>
-            {% endif %}
             <div class="background-body">
                 <!-- SWITCH: if "page.modifiedProfessionalBackground" exists and contains the CurrentJob, the for loop will check if 
                 the current "position" Section Entry should be MODIFIED. Each MODIFIED position Section Entry only includes the Data 
@@ -65,6 +66,14 @@
                 {% for entry in page.modifiedProfessionalBackground %}
                 <!-- Generate HTML for MODIFIED Section Entries -->
                 {% if entry.position == CurrentJob %}
+                <!-- SWITCH: unless "page.includeBackgroundCompanyLocation" is set to "true", the Professional 
+                Background Position location will NOT be included. This means DEFAULT is not to include the 
+                Professional Background Position location. -->
+                {% if entry.companyLocation == true or page.includeBackgroundCompanyLocation %}
+                <div class="background-location-block">
+                    <div class="background-location">{{job.location}}</div>
+                </div>
+                {% endif %}
                 {% if entry.summary == true %}
                 <div class="background-summary">
                     <p class="background-summary-body">{{ job.summary }}</p>
@@ -93,6 +102,14 @@
                 not contain the Current Job. -->
                 {% else %}
                 <!-- DEFAULT Section Entry generation if "page.modifiedProfessionalBackground" Switch does not exist -->
+                <!-- SWITCH: unless "page.includeBackgroundCompanyLocation" is set to "true", the Professional 
+                Background Position location will NOT be included. This means DEFAULT is not to include the 
+                Professional Background Position location. -->
+                {% if page.includeBackgroundCompanyLocation %}
+                <div class="background-location-block">
+                    <div class="background-location">{{job.location}}</div>
+                </div>
+                {% endif %}
                 <div class="background-summary">
                     <p class="background-summary-body">{{ job.summary }}</p>
                 </div>

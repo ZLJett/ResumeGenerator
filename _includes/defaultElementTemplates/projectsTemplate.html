@@ -20,8 +20,10 @@ point of including 'minor projects' on my resume. -->
 <!-- Generate list of project Section Entries that should be modified -->
 {% assign modifiedProjects = page.modifiedProject | map: "name" %}
 
-
-<div class="projects-element element-block">
+<!-- SWITCH: if "page.projectElementTopMargin" exists its value will be added to the top margin of the whole Element
+so that the Element can be moved down onto the next PDF page if necessary -->
+<div class="projects-element element-block" {% if page.projectElementTopMargin>0 %}
+    style="margin-top:{{page.projectElementTopMargin}}px" {% endif%}>
     <div class="element-head">
         <div class="projects-element-title element-title">Projects</div>
     </div>
@@ -36,7 +38,14 @@ point of including 'minor projects' on my resume. -->
         data file but with all whitespace replaced with underscores, e.g. 
         "Financial_Trade_Message_Router" -->
         {% unless page.skipProject contains CurrentProject %}
-        <div class="project-section-entry">
+        <!-- SWITCH: if "page.modifyProjectSectionMargins" contains CurrentProject, the margin value of the 
+        modifyProjectSectionMargins object will be added to the top margin of the Section so that the Section can be 
+        moved down onto the next PDF page if necessary -->
+        {% assign ModifySectionMargin = page.modifyProjectSectionMargins | where: "section", {{CurrentProject}} %}
+        {% assign SectionName = ModifySectionMargin | map: "section" %}
+        {% assign TopMargin = ModifySectionMargin | map: "margin" %}
+        <div class="project-section-entry" {% if SectionName contains CurrentProject %}
+            style="margin-top:{{TopMargin}}px" {%endif%}>
             <div class="project-head">
                 <div class="project-title-block">
                     <div class="project-title">{{project.name}}</div>

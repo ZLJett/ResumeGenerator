@@ -19,8 +19,10 @@ dropped when I move past the point of including 'minor projects' on my resume. -
 <!-- Generate list of minor project Section Entries that should be modified -->
 {% assign modifiedMinorProjects = page.modifiedMinorProject | map: "name" %}
 
-
-<div class="minor-projects-element element-block">
+<!-- SWITCH: if "page.minorProjectElementTopMargin" exists its value will be added to the top margin of the whole Element
+so that the Element can be moved down onto the next PDF page if necessary -->
+<div class="minor-projects-element element-block" {% if page.minorProjectElementTopMargin>0 %}
+    style="margin-top:{{page.minorProjectElementTopMargin}}px" {% endif%}>
     <!-- SWITCH: unless "page.includeMinorProjectsElementTitle" is set to "true", the minor projects
     element title will NOT be included. This means DEFAULT is not to include the element title. -->
     {% if page.includeMinorProjectsElementTitle %}
@@ -40,7 +42,15 @@ dropped when I move past the point of including 'minor projects' on my resume. -
         "minorProjectsData.json" data file but with all whitespace replaced with underscores, 
         e.g. "Web-Development_Projects" -->
         {% unless page.skipMinorProjectCategory contains CurrentCategory %}
-        <div class="minor-project-category-head">
+        <!-- SWITCH: if "page.modifyMinorProjectCategoryMargins" contains CurrentCategory, the margin value of the 
+        modifyMinorProjectCategoryMargins object will be added to the top margin of the Category title so that the 
+        Category title can be moved down onto the next PDF page if necessary -->
+        {% assign ModifyCategoryMargin = page.modifyMinorProjectCategoryMargins | where: "category",
+        {{CurrentCategory}} %}
+        {% assign CategoryName = ModifyCategoryMargin | map: "category" %}
+        {% assign CategoryTopMargin = ModifyCategoryMargin | map: "margin" %}
+        <div class="minor-project-category-head" {% if CategoryName contains CurrentCategory %}
+            style="margin-top:{{CategoryTopMargin}}px" {%endif%}>
             <div class="minor-project-category-title">{{projectCategory.category}}</div>
         </div>
         <!-- * Loop through minor projects in category. -->
@@ -53,7 +63,14 @@ dropped when I move past the point of including 'minor projects' on my resume. -
         "minorProjectsData.json" data file but with all whitespace replaced with underscores, 
         e.g. "Etch-a-Sketch_Webpage" -->
         {% unless page.skipMinorProject contains CurrentProject %}
-        <div class="minor-project-section-entry">
+        <!-- SWITCH: if "page.modifyMinorProjectSectionMargins" contains CurrentJob, the margin value of the 
+        modifyMinorProjectSectionMargins object will be added to the top margin of the Section so that the Section can be 
+        moved down onto the next PDF page if necessary -->
+        {% assign ModifySectionMargin = page.modifyMinorProjectSectionMargins | where: "section", {{CurrentProject}} %}
+        {% assign SectionName = ModifySectionMargin | map: "section" %}
+        {% assign TopMargin = ModifySectionMargin | map: "margin" %}
+        <div class="minor-project-section-entry" {% if SectionName contains CurrentProject %}
+            style="margin-top:{{TopMargin}}px" {%endif%}>
             <div class="minor-project-head">
                 <div class="minor-project-title-block">
                     <div class="minor-project-title">{{project.name}}</div>
