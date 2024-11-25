@@ -44,4 +44,4 @@ skipAward: ["Eagle_Scout"]
 ---
 
 
-{% include defaultElementTemplates/defaultContent.html %}
+{% include defaultElementTemplates/resumeContent.html %}
