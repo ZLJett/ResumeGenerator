@@ -7,7 +7,7 @@
                 "endDate": "Aug. 2022",
                 "takeaways": [],
                 "technologies": [],
-                "summary": "My implementation of the 'Project: Calculator' from The Odin Project's 'Foundations' course, with all 'extra credit' assignments implemented a well as a history tracker.",
+                "summary": "My implementation of the 'Project: Calculator' from The Odin Project's 'Foundations' course, with an added undo functionality, keyboard support, as well as a history tracker.",
                 "highlights": [
                     "Features: Keyboard inputs, built-in error handling, and history tracker."
                 ],

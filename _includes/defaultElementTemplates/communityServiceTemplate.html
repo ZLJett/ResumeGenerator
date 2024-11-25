@@ -6,7 +6,7 @@ appear as if it just part of the projects section of the resume, and not its own
 separate section. -->
 
 <!-- Set correct Data Source -->
-{% if site.modifiedResumeData contains "communityServiceData" %}
+{% if site.modified_resume_data contains "communityServiceData" %}
 <!-- Check if automatically included modified Data should be replaced with default Data  -->
 {% if page.overrideResumeData contains "communityServiceData" %}
 {% assign DataLocation = site.data.defaultResumeData.communityServiceData %}

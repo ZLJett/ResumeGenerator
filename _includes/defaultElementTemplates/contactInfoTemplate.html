@@ -1,5 +1,5 @@
 <!-- Set correct Data Source -->
-{% if site.modifiedResumeData contains "contactInfoData" %}
+{% if site.modified_resume_data contains "contactInfoData" %}
 <!-- Check if automatically included modified Data should be replaced with default Data  -->
 {% if page.overrideResumeData contains "contactInfoData" %}
 {% assign DataLocation = site.data.defaultResumeData.contactInfoData %}

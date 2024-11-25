@@ -3,7 +3,7 @@ to 'slot' under the HTML produced by "projectsTemplate.html". The goal is that t
 dropped when I move past the point of including 'minor projects' on my resume. -->
 
 <!-- Set correct Data Source -->
-{% if site.modifiedResumeData contains "minorProjectsData" %}
+{% if site.modified_resume_data contains "minorProjectsData" %}
 <!-- Check if automatically included modified Data should be replaced with default Data  -->
 {% if page.overrideResumeData contains "minorProjectsData" %}
 {% assign DataLocation = site.data.defaultResumeData.minorProjectsData %}

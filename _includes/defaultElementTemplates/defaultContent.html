@@ -8,13 +8,13 @@ where the Resume's 'front matter variables' are the core content -->
 
 <!-- SWITCH: Add default Resume content to Resume unless excluded, and if modified 
 templates exist use those instead -->
-<!-- Add all Element Templates to Resume index.html -->
-{% for element in site.defaultResumeContents %}
+<!-- Add all Element Templates to Resume index.md -->
+{% for element in site.default_resume_contents %}
 
 {% if page.excludeResumeContents contains element %}
 {% continue %}
 
-{% elsif site.modifiedResumeTemplates contains element %}
+{% elsif site.modified_resume_templates contains element %}
 <!-- Check if automatically included modified Template should be replaced with default Template -->
 {% if page.overrideResumeTemplates contains element %}
 {% include defaultElementTemplates/{{element}}.html %}

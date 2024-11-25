@@ -2,7 +2,7 @@
 
 ### Resume Content Switches ####################################
 # All element templates to exclude from the default resume contents contained in the root 
-# config file's variable "defaultResumeContents: []"
+# config file's variable "default_resume_contents: []"
 # ARGs: Values are template file names, minus extension, e.g. [skillSetsTemplate]
 excludeResumeContents: []
 
