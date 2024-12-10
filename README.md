@@ -1,9 +1,10 @@
-# Jekyll/Liquid Resume Generator 
+# Personal Resume Generator using Jekyll, Liquid, and Bash
 
-### Overview and Initial Setup:
-This Resume Generator uses Jekyll to generate a static website, then can automatically turn that website into a PDF with Google Chrome's Print-to-PDF function. </br>
-For a simple guide to installing and using Jekyll see the [Jekyll Step by Step Tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/).
+### Project Overview:
+This Resume Generator uses Jekyll to generate a static website, then can automatically turn that website into a PDF with Google Chrome's Print-to-PDF function. For a complete example of a standard resume produced by this Resume Generator see "exampleCompleteTestResume.pdf" in the "_supplementalFiles" directory.
 
+### Initial Setup:
+This Resume Generator requires a local install of Ruby and Jekyll on a Linux system. A simple guide to installing and using Jekyll can be found here: [Jekyll Step by Step Tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/).
 
 ### Basic Structure Terminology:
 Each resume has three layers of content, starting from the top level: 
@@ -57,7 +58,7 @@ These **MUST** exist as CreateResumes.sh, **REQUIRES** them; **HOWEVER**, they d
 **NOTE**: In a resume's directory, _data is really a 'config directory' added to the 'website generation' by CreateResumes.sh, and cannot be used at all like the regular _data directory. ***THIS MEANS that all resume Data files are in YAML and must contain a top level YAML object with the same name as the file, i.e. "skillSetData:"***
 **SEE** "_ymlDefaultResumeData" in "_supplementalFiles" directory for examples of how YAML modified Data files are formatted.
 3. **_outputResumes directory**: This directory is where CreateResumes.sh deposits any PDFs it generated for the Resume. See "CreateResumes.sh" notes below for more on how this directory is used. </br>
-**.gitignore**: All of the different resumes should have their "_outputResume" directories ignored by git as their contents are not relevant to the function of the program. For a completed example resume see "exampleCompleteTestResume.pdf" in "_supplementalFiles" directory.
+**.gitignore**: All of the different resumes should have their "_outputResume" directories ignored by git as their contents are not relevant to the function of the program. For a complete example resume see "exampleCompleteTestResume.pdf" in the "_supplementalFiles" directory.
 4. **_sass directory**: This directory allows for the resume to have its own ***Resume Styles*** in addition to/modifying, or completely replacing, the default style (i.e. "_sass/defaultStyle.scss"). These additional .scss files are added in alphabetical order by CreateResumes.sh to the "additional_stylesheets:" config option in the resume's config file and from there added by the @import statements in "assets/css/styles.scss" to the resume. **NOTE**: "defaultStyle.scss" is ALWAYS loaded first, meaning that all .scss files in the resume's _sass directory will come after and thus can override the default stylesheet's styles. </br> 
 The .scss files placed in the resumes _sass directory can have any name, but for simplicity do NOT use the resume's name (as that could get quite long). </br> 
 These .scss files need no specific example. Internally they are standard .scss files. 
@@ -98,7 +99,7 @@ Once all editing is completed the web-server the 'website' is running on **MUST*
 
 #### Print-to-PDF with the --print Flag:
 When "CreateResumes.sh" is run in 'print' mode, i.e. it is given the [-p, --print] flag, it will run Print-to-PDF once 'website' is setup then automatically shut the 'website' down and end the program. This allows a PDF to be created quickly once the resume is fully setup (i.e. all data, templates, front matter variables, etc. are set to produce the desired Resume).
-**SEE** "exampleCompleteTestResume.pdf" in "_supplementalFiles/_exampleOutput" directory for example of a default resume with all data entries filled.
+**SEE** "exampleCompleteTestResume.pdf" in "_supplementalFiles" directory for example of a default resume with all data entries filled.
 
 ### Using CreateResumes.sh:
 CreateResumes.sh **MUST** be run in project root to function correctly. Files are output from CreateResumes.sh with file names in the following format: "TestResume_24-10-31_14:02:24" into the resume's "_outputResumes" directory; both file names and output location are hard-coded. (Filename generation is hard-coded so that any number of resumes can be generated without any having matching filenames and so that they will be organized from oldest to newest).

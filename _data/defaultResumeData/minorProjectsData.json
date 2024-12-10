@@ -7,9 +7,9 @@
                 "endDate": "Aug. 2022",
                 "takeaways": [],
                 "technologies": [],
-                "summary": "My implementation of the 'Project: Calculator' from The Odin Project's 'Foundations' course, with an added undo functionality, keyboard support, as well as a history tracker.",
+                "summary": "Designed a calculator webpage that offers complete functionality with full keyboard support. Additionally, it includes an undo function and a history tracker to review past calculations. The calculator also incorporates robust user error handling to ensure all possible inputs have a clear response.",
                 "highlights": [
-                    "Features: Keyboard inputs, built-in error handling, and history tracker."
+                    "Features: Keyboard inputs, built-in user error handling, and history tracker."
                 ],
                 "githubLinkValue": "@calculator-page",
                 "githubLink": "https://github.com/ZLJett/calculator-page",
@@ -21,9 +21,9 @@
                 "endDate": "Jul. 2022",
                 "takeaways": [],
                 "technologies": [],
-                "summary": "My implementation of the 'Project: Etch-a-Sketch' from The Odin Project's 'Foundations' course, with additional functionality to allow user to input 'pixel' count of Etch-a-Sketch display. All while carefully styled to look like a classic Etch-a-Sketch.",
+                "summary": "Created a web-based version of the classic Etch-a-Sketch where user can customize the drawing canvas pixel density to increase ease of use or allow for finer details. This webpage is carefully designed to evoke the classic Etch-a-Sketch look while keeping the user's drawing experience mouse based.",
                 "highlights": [
-                    "Features: Styled like classic Etch-a-Sketch, user can set &lsquo;pixel&rsquo; count."
+                    "Features: Styled like classic Etch-a-Sketch, user can easily increase or decrease drawing canvas dimensions."
                 ],
                 "githubLinkValue": "@Etch-a-Sketch",
                 "githubLink": "https://github.com/ZLJett/Etch-a-Sketch",
@@ -35,9 +35,9 @@
                 "endDate": "Jun. 2022",
                 "takeaways": [],
                 "technologies": [],
-                "summary": "My implementation of the 'Project: Rock Paper Scissors' from The Odin Project's 'Foundations' course, with additional functionality to display game on webpage with images of player choices.",
+                "summary": "Built a browser-based version of Rock, Paper, Scissors with an enhanced user experience by using visual representations of player choices through stock images and incorporating a timed delay to build suspense before revealing the computer's selection.",
                 "highlights": [
-                    "Features: Displays images of player inputs with delay to keep surprise."
+                    "Features: Displays images of user selections with delay to keep surprise."
                 ],
                 "githubLinkValue": "@UI-rock-paper-scissors",
                 "githubLink": "https://github.com/ZLJett/UI-rock-paper-scissors",
@@ -54,7 +54,7 @@
                 "endDate": "Oct. 2021",
                 "takeaways": [],
                 "technologies": [],
-                "summary": "My implementation of the 'Build a Budget App Project' from freeCodeCamp's 'Scientific Computing with Python' course.",
+                "summary": "Developed a small budgeting app that tracks income, expenses, and transfers across multiple categories. The tool includes custom visualizations to display budget activity and can generate a bar chart that highlights spending trends.",
                 "highlights": [
                     "Features: Tracks debts and credits to account, displays percentage spent by category as bar chart."
                 ],
