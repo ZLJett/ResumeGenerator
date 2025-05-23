@@ -11,9 +11,9 @@
                 "highlights": [
                     "Features: Keyboard inputs, built-in user error handling, and history tracker."
                 ],
-                "githubLinkValue": "@calculator-page",
+                "githubLinkValue": "@Calculator Page",
                 "githubLink": "https://github.com/ZLJett/calculator-page",
-                "sourceLinkValue": "@TheOdinProject",
+                "sourceLinkValue": "@The Odin Project",
                 "sourceLink": "https://www.theodinproject.com/lessons/foundations-calculator"
             },
             {
@@ -21,13 +21,13 @@
                 "endDate": "Jul. 2022",
                 "takeaways": [],
                 "technologies": [],
-                "summary": "Created a web-based version of the classic Etch-a-Sketch where user can customize the drawing canvas pixel density to increase ease of use or allow for finer details. This webpage is carefully designed to evoke the classic Etch-a-Sketch look while keeping the user's drawing experience mouse based.",
+                "summary": "Created a web-based version of the classic Etch-a-Sketch where the user can customize the drawing canvas pixel density to increase ease of use or allow for finer details. This webpage is carefully designed to evoke the classic Etch-a-Sketch look while keeping the user's drawing experience mouse based.",
                 "highlights": [
                     "Features: Styled like classic Etch-a-Sketch, user can easily increase or decrease drawing canvas dimensions."
                 ],
-                "githubLinkValue": "@Etch-a-Sketch",
+                "githubLinkValue": "@Etch A Sketch",
                 "githubLink": "https://github.com/ZLJett/Etch-a-Sketch",
-                "sourceLinkValue": "@TheOdinProject",
+                "sourceLinkValue": "@The Odin Project",
                 "sourceLink": "https://www.theodinproject.com/lessons/foundations-etch-a-sketch"
             },
             {
@@ -39,9 +39,9 @@
                 "highlights": [
                     "Features: Displays images of user selections with delay to keep surprise."
                 ],
-                "githubLinkValue": "@UI-rock-paper-scissors",
+                "githubLinkValue": "@Rock Paper Scissors Game",
                 "githubLink": "https://github.com/ZLJett/UI-rock-paper-scissors",
-                "sourceLinkValue": "@TheOdinProject",
+                "sourceLinkValue": "@The Odin Project",
                 "sourceLink": "https://www.theodinproject.com/lessons/foundations-rock-paper-scissors"
             }
         ]
@@ -50,15 +50,15 @@
         "category": "Python Projects",
         "projects": [
             {
-                "name": "Budgeting App Project",
+                "name": "Budgeting Tool",
                 "endDate": "Oct. 2021",
                 "takeaways": [],
                 "technologies": [],
-                "summary": "Developed a small budgeting app that tracks income, expenses, and transfers across multiple categories. The tool includes custom visualizations to display budget activity and can generate a bar chart that highlights spending trends.",
+                "summary": "Developed a small budgeting tool that tracks income, expenses, and transfers across multiple categories. The tool includes custom visualizations to display budget activity and can generate a bar chart that highlights spending trends.",
                 "highlights": [
                     "Features: Tracks debts and credits to account, displays percentage spent by category as bar chart."
                 ],
-                "githubLinkValue": "@Budget-App-Project",
+                "githubLinkValue": "@Budget Tool",
                 "githubLink": "https://github.com/ZLJett/Budget-App-Project",
                 "sourceLinkValue": "@freeCodeCamp",
                 "sourceLink": "https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-budget-app-project/build-a-budget-app-project"

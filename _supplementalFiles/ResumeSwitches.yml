@@ -140,6 +140,10 @@ includeMinorProjectsElementTitle: true
 # Change default divider (" &ndash; ") between Minor Project Name and Minor Project Link
 minorProjectTitleDivider: " " # Single space removes whole line
 
+# When using the Minor Projects List Template, as opposed to the regular Minor Projects Template
+# this changes the default divider (";") between Minor Project Github Entry Values
+minorProjectListDivider: " " # Single space removes whole line
+
 # Include the Data Entry title "Highlights:" before the list of Minor Project highlights
 includeMinorProjectHighlightsTitle: true
 
@@ -270,13 +274,16 @@ modifyBackgroundSectionMargins:
 skipProfessionalBackground: ["Graduate_Assistant", "Assistant-Director_of_Communication"]
 
 # Change default divider (" &ndash; ") between Professional Background Position and Education Company
-backgroundTitleDivider: " " # Single space removes whole line
+backgroundCompanyDivider: " " # Single space removes whole line
 
 # Change default divider (" &ndash; ") between Professional Background start and end Date
 backgroundDateDivider: " " # Single space removes whole line
 
 # Include the Location of the Professional Background Position 
 includeBackgroundCompanyLocation: true 
+
+# Include the Source Link to Professional Background Project
+includeBackgroundSourceLink: true
 
 # Include the Data Entry title "Highlights:" before the list of Professional Background highlights
 includeBackgroundHighlightsTitle: true

@@ -112,14 +112,14 @@ body {
 .service-title-block {
     display: flex;
     flex-direction: row;
-    width: 575px;
+    width: 525px;
 }
 
 .project-title,
 .minor-project-title,
 .cert-title,
 .education-degree,
-.background-company,
+.background-position,
 .service-role,
 .award-title {
     margin-right: 6px;
@@ -130,7 +130,7 @@ body {
 .minor-project-github-link-block,
 .cert-issuer,
 .education-major,
-.background-position,
+.background-company,
 .service-organization {
     display: flex;
     flex-direction: row;
@@ -146,6 +146,7 @@ body {
     font-weight: bold;
 }
 
+.background-source-link-desc,
 .project-github-link-desc,
 .minor-project-github-link-desc {
     margin-right: 4px;
@@ -153,7 +154,6 @@ body {
 
 // --Section Heads specific
 .education-school-block,
-.background-location-block,
 .award-issuer-block {
     display: flex;
     flex-direction: row;
@@ -169,6 +169,13 @@ body {
     display: flex;
     flex-direction: row;
     margin-left: 6px;
+}
+
+.background-location,
+.background-source-link-block {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
 }
 
 .background-dates-block,
@@ -246,7 +253,8 @@ body {
 }
 
 //Skills
-.skills-section-entry {
+.skills-section-entry,
+.minor-project-list-entry {
     display: flex;
     flex-direction: row;
 }
@@ -306,12 +314,18 @@ body {
     margin-top: -6px; // Reduce space between top category title and last project
 }
 
-.minor-project-category-title {
+.minor-project-category-title,
+.minor-project-list-element-title {
     font-family: "Lusitana", serif;
     font-size: 11pt; // 12pt
     font-weight: bolder;
     text-decoration: underline;
     margin-bottom: 0.5pt;
+}
+
+.minor-project-list-entry-title {
+    font-weight: bold;
+    margin-left: 10px;
 }
 
 // Education
@@ -334,6 +348,3 @@ body {
 }
 
 // Professional Background
-.background-location-block {
-    font-weight: bold;
-}

@@ -2,6 +2,7 @@
   {
     "skill_title": "Disciplines",
     "skills": [
+      "Object-Oriented Programming",
       "Web-Development",
       "Data Transformation",
       "Testing",
@@ -26,12 +27,13 @@
     "skills": [
       "Linux",
       "Windows",
+      ".NET",
       "Visual Studio",
       "VSCode",
       "IntelliJ",
       "Oracle VM VirtualBox",
       "Compiler Explorer",
-      "Google Cloud Platform"
+      "GCP"
     ]
   },
   {

@@ -43,10 +43,10 @@ so that the Element can be moved down onto the next PDF page if necessary -->
             style="margin-top:{{TopMargin}}px" {%endif%}>
             <div class="background-head">
                 <div class="background-title-block">
-                    <div class="background-company">{{job.company}}</div>
-                    {% assign BackgroundTitleDivider = page.backgroundTitleDivider | default: " &ndash; " %}
-                    <div class="background-title-divider">{{BackgroundTitleDivider}}</div>
                     <div class="background-position">{{job.position}}</div>
+                    {% assign BackgroundCompanyDivider = page.backgroundCompanyDivider | default: " &ndash; " %}
+                    <div class="background-company-divider">{{BackgroundCompanyDivider}}</div>
+                    <div class="background-company">{{job.company}}</div>
                 </div>
                 <div class="background-dates-block">
                     <div class="background-date background-start-date">{{job.startDate}}</div>
@@ -55,6 +55,24 @@ so that the Element can be moved down onto the next PDF page if necessary -->
                     <div class="background-date background-end-date">{{job.endDate}}</div>
                 </div>
             </div>
+            <!-- SWITCH: unless "page.includeBackgroundCompanyLocation" is set to "true", the Professional 
+            Background Position location will NOT be included. This means DEFAULT is not to include the 
+            Professional Background Position location. -->
+            {% if page.includeBackgroundCompanyLocation %}
+            <div class="background-location-block">
+                <div class="background-location">{{job.location}}</div>
+            </div>
+            {% endif %}
+            <!-- SWITCH: unless "page.includeBackgroundSourceLink" is set to "true", the Professional 
+            Background Source Link will NOT be included. This means DEFAULT is not to include the 
+            Professional Background Source Link. -->
+            {% if page.includeBackgroundSourceLink %}
+            <div class="background-source-link-block">
+                {% assign BackgroundSourceLinkDesc = job.backgroundSourceLinkDesc| default: "" %}
+                <div class="background-source-link-desc">{{BackgroundSourceLinkDesc}}</div>
+                <a href="{{job.sourceLink}}" class="background-source-entry-value">{{job.sourceLinkValue}}</a>
+            </div>
+            {% endif %}
             <div class="background-body">
                 <!-- SWITCH: if "page.modifiedProfessionalBackground" exists and contains the CurrentJob, the for loop will check if 
                 the current "position" Section Entry should be MODIFIED. Each MODIFIED position Section Entry only includes the Data 
@@ -66,14 +84,6 @@ so that the Element can be moved down onto the next PDF page if necessary -->
                 {% for entry in page.modifiedProfessionalBackground %}
                 <!-- Generate HTML for MODIFIED Section Entries -->
                 {% if entry.position == CurrentJob %}
-                <!-- SWITCH: unless "page.includeBackgroundCompanyLocation" is set to "true", the Professional 
-                Background Position location will NOT be included. This means DEFAULT is not to include the 
-                Professional Background Position location. -->
-                {% if entry.companyLocation == true or page.includeBackgroundCompanyLocation %}
-                <div class="background-location-block">
-                    <div class="background-location">{{job.location}}</div>
-                </div>
-                {% endif %}
                 {% if entry.summary == true %}
                 <div class="background-summary">
                     <p class="background-summary-body">{{ job.summary }}</p>
@@ -102,14 +112,6 @@ so that the Element can be moved down onto the next PDF page if necessary -->
                 not contain the Current Job. -->
                 {% else %}
                 <!-- DEFAULT Section Entry generation if "page.modifiedProfessionalBackground" Switch does not exist -->
-                <!-- SWITCH: unless "page.includeBackgroundCompanyLocation" is set to "true", the Professional 
-                Background Position location will NOT be included. This means DEFAULT is not to include the 
-                Professional Background Position location. -->
-                {% if page.includeBackgroundCompanyLocation %}
-                <div class="background-location-block">
-                    <div class="background-location">{{job.location}}</div>
-                </div>
-                {% endif %}
                 <div class="background-summary">
                     <p class="background-summary-body">{{ job.summary }}</p>
                 </div>

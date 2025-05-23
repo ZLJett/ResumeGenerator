@@ -18,7 +18,7 @@
 # ONLY be changed from here!
 # NOTE: The "resumeTitleTemplate" and the "contactInfoTemplate" are not included here as they
 # are added together as DEFAULT content by resumeHeadTemplate.html
-default_resume_contents: [summaryTemplate, skillSetsTemplate, projectsTemplate, minorProjectsTemplate, certsTemplate, educationTemplate, professionalBackgroundTemplate, communityServiceTemplate, awardsTemplate]
+default_resume_contents: [summaryTemplate, skillSetsTemplate, professionalBackgroundTemplate, projectsTemplate, minorProjectsTemplate, certsTemplate, educationTemplate, communityServiceTemplate, awardsTemplate]
 
 # GOOGLE FONTS: Set any google fonts that need to be added as a <link> tag inside the 'webpage' <head>
 # in the "defaultHeadContents.html" template. 
@@ -45,14 +45,14 @@ include:
 # ARGs: file names in resume's _data directory without extension and MUST be in double quotation marks,
 # e.g. ["contactInfoData"]
 # DEFAULT VALUE empty list, i.e. []
-modified_resume_data: []
+modified_resume_data: ["minorProjectsData","certsData","communityServiceData","professionalBackgroundData","educationData","majorProjectsData","skillSetsData"]
 
 # RESUME TEMPLATE FILES: All resume specific Templates files, i.e. modified Templates, in the 
 # resume's "_includes" directory
 # ARGs: file names in resume's _data directory without extension, e.g. [resumeTitleTemplate] (Note:
 # these do not need to be in double quotation marks).
 # DEFAULT VALUE empty list, i.e. []
-modified_resume_templates: []
+modified_resume_templates: [minorProjectsTemplate]
 
 
 # CHANGE STYLE OPTIONS: 
@@ -102,4 +102,4 @@ sass:
 # ARGs: the name of a stylesheet in the resume's "_sass" directory, without file extension, e.g.
 # "additionalStyle.scss" is included as "additionalStyle"
 # # DEFAULT VALUE empty list, i.e. []
-additional_stylesheets: []
+additional_stylesheets: [additionalStyle]

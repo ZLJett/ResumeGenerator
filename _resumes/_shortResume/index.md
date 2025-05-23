@@ -1,46 +1,54 @@
 ---
+includeProfessionalTitle: true
+
 modifiedMinorProject:
   - name: Calculator_Webpage
-    takeaways: true
-    technologies: true
-    summary: false
+    takeaways: false
+    technologies: false
+    summary: true
     highlightsTitle: false
-    highlights: true
+    highlights: false
     sourceLink: false
   - name: Etch-a-Sketch_Webpage
-    takeaways: true
-    technologies: true
-    summary: false
+    takeaways: false
+    technologies: false
+    summary: true
     highlightsTitle: false
-    highlights: true
-    sourceLink: false
-  - name: Rock_Paper_Scissors_Webpage
-    takeaways: true
-    technologies: true
-    summary: false
-    highlightsTitle: false
-    highlights: true
+    highlights: false
     sourceLink: false
   - name: Budgeting_App_Project
-    takeaways: true
-    technologies: true
-    summary: false
+    takeaways: false
+    technologies: false
+    summary: true
     highlightsTitle: false
-    highlights: true
+    highlights: false
     sourceLink: false
+
 modifiedCert:
   - name: Google_IT_Automation_with_Python
     summary: false
     highlightsTitle: false
     highlights: true
     linkAndId: false
+  - name: Scientific_Computing_with_Python
+    summary: true
+    highlightsTitle: false
+    highlights: false
+    linkAndId: false
   - name: Preparing_for_Google_Cloud_Certification:_Cloud_Engineer
     summary: false
     highlightsTitle: false
     highlights: true
     linkAndId: false
+
 skipEducation: ["Bachelors_of_Arts", "Associate_of_Arts_and_Sciences"]
-skipAward: ["Eagle_Scout"]
+
+skipProfessionalBackground: ["Assistant-Director_of_Communication"]
+
+includeBackgroundSourceLink: true
+
+skipAward: ["William_T._Hornaday_Award_for_Environmental_Conservation", "Eagle_Scout"]
+
 ---
 
 

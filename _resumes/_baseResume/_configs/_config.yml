@@ -39,7 +39,7 @@ google_fonts:
 # ARG: Resume Source Directory is the name of any directory in the "_resumes" directory
 include: 
 - _resumes
-- _testResume    # Resume Source Directory
+- _baseResume    # Resume Source Directory
 
 # RESUME DATA FILES: All resume specific Data files, i.e. modified Data, in the resume's "_data" directory
 # ARGs: file names in resume's _data directory without extension and MUST be in double quotation marks,
@@ -89,7 +89,7 @@ main_stylesheet: defaultStyle
 # @include statements in "assets/css/styles.scss" which are set by the other style options in this config file.
 # DEFAULT VALUE empty list, i.e. []
 sass:
-  load_paths: [_resumes/_testResume/_sass]    # AUTOMATICALLY GENERATED
+  load_paths: [_resumes/_baseResume/_sass]    # AUTOMATICALLY GENERATED
   sass_dir: _sass    # STATIC
   style: compressed    # STATIC
 
@@ -102,4 +102,4 @@ sass:
 # ARGs: the name of a stylesheet in the resume's "_sass" directory, without file extension, e.g.
 # "additionalStyle.scss" is included as "additionalStyle"
 # # DEFAULT VALUE empty list, i.e. []
-additional_stylesheets: [additionalStyle]
+additional_stylesheets: []
