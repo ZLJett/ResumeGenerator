@@ -54,9 +54,9 @@ so that the Element can be moved down onto the next PDF page if necessary -->
             <div class="minor-project-category-list-element">
                 {% assign MinorProjectListDivider = page.minorProjectListDivider | default: ";" %}
                 <div class="minor-project-github-link-block">
-                    <a href="{{project.githubLink}}" class="minor-project-github-entry-value">@{{project.name}}
-                        <!-- Adds section devider, defeult ";", between each entry unless it is the last entry -->
-                        {%- unless forloop.last -%}{{MinorProjectListDivider}}{%- endunless -%}
+                    <!-- Adds section devider, defeult ";", between each entry unless it is the last entry -->
+                    <a href="{{project.githubLink}}" class="minor-project-github-entry-value">
+                        @{{project.name}}{%- unless forloop.last -%}{{MinorProjectListDivider}}{%- endunless -%}
                     </a>
                 </div>
             </div>

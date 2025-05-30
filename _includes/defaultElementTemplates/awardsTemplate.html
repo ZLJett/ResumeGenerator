@@ -52,16 +52,20 @@ so that the Element can be moved down onto the next PDF page if necessary -->
         <div class="award-section-entry" {% if SectionName contains CurrentAward %} style="margin-top:{{TopMargin}}px"
             {%endif%}>
             <div class="award-head">
-                <div class="award-title">{{award.name}}</div>
-                <div class="award-date">{{award.endDate}}</div>
+                <div class="award-title-block">
+                    <div class="award-title">{{award.name}}</div>
+                    <!-- SWITCH: unless "page.includeAwardsIssuer" is set to "true", the awards issuer
+                    will NOT be included. This means DEFAULT is not to include the award issuer. -->
+                    {% if page.includeAwardsIssuer %}
+                    {% assign AwardTitleDivider = page.awardTitleDivider | default: " &ndash; " %}
+                    <div class="award-title-divider">{{AwardTitleDivider}}</div>
+                    <div class="award-issuer">{{award.issuer}}</div>
+                    {% endif %}
+                </div>
+                <div class="award-dates-block">
+                    <div class="award-date">{{award.endDate}}</div>
+                </div>
             </div>
-            <!-- SWITCH: unless "page.includeAwardsIssuer" is set to "true", the awards issuer
-            will NOT be included. This means DEFAULT is not to include the award issuer. -->
-            {% if page.includeAwardsIssuer %}
-            <div class="award-issuer-block">
-                <div class="award-issuer">{{award.issuer}}</div>
-            </div>
-            {% endif %}
             <div class="award-body">
                 <!-- SWITCH: if "page.modifiedAward" exists and contains the CurrentAward, the for loop will check if 
                 the current award Section Entry should be MODIFIED. Each MODIFIED award Section Entry only includes 

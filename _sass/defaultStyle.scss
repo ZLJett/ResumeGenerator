@@ -109,7 +109,8 @@ body {
 .cert-title-block,
 .education-title-block,
 .background-title-block,
-.service-title-block {
+.service-title-block,
+.award-title-block {
     display: flex;
     flex-direction: row;
     width: 525px;
@@ -131,7 +132,8 @@ body {
 .cert-issuer,
 .education-major,
 .background-company,
-.service-organization {
+.service-organization,
+.award-issuer {
     display: flex;
     flex-direction: row;
     margin-left: 6px;

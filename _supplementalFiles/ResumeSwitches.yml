@@ -363,6 +363,9 @@ includeAwardsElementTitle: true
 # e.g. "William_T._Hornaday_Award_for_Environmental_Conservation"
 skipAward: ["William_T._Hornaday_Award_for_Environmental_Conservation", "Eagle_Scout"]
 
+# Change default divider (" &ndash; ") between the Award title and the Award Issuer
+awardTitleDivider: " " # Single space removes whole line
+
 # Include Data Entry for Award Issuer 
 includeAwardsIssuer: true
 
