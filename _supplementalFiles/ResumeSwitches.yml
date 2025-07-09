@@ -360,8 +360,8 @@ includeAwardsElementTitle: true
 # Skip Award section, i.e. do not include "Eagle_Scout" in the Element 
 # ARGs: each Award name is the "name" value for the Award in the  "awardsData.json" data file but 
 # with all whitespace replaced with underscores, 
-# e.g. "William_T._Hornaday_Award_for_Environmental_Conservation"
-skipAward: ["William_T._Hornaday_Award_for_Environmental_Conservation", "Eagle_Scout"]
+# e.g. "William_T._Hornaday_Award"
+skipAward: ["William_T._Hornaday_Award", "Eagle_Scout"]
 
 # Change default divider (" &ndash; ") between the Award title and the Award Issuer
 awardTitleDivider: " " # Single space removes whole line
@@ -376,9 +376,9 @@ includeAwardHighlightsTitle: true
 # included as YAML object under "modifiedAward" with each Data Entry to REMOVE set to "False" or
 # removed entirely from list.
 # ARGs: the "name" argument follows the same format as in the "skipAward" switch above, 
-# e.g. "William_T._Hornaday_Award_for_Environmental_Conservation"
+# e.g. "William_T._Hornaday_Award"
 modifiedAward:
-  - name: William_T._Hornaday_Award_for_Environmental_Conservation
+  - name: William_T._Hornaday_Award
     awardsIssuer: true # Item will be included if EITHER this or "includeAwardsIssuer" set to "true"
     summary: true
     highlightsTitle: true # Item will be included if EITHER this or "includeAwardHighlightsTitle" set to "true"

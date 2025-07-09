@@ -41,13 +41,15 @@ modifiedCert:
     highlights: true
     linkAndId: false
 
+skipMinorProjectCategory: ["Python_Projects"]
+
 skipEducation: ["Bachelors_of_Arts", "Associate_of_Arts_and_Sciences"]
 
 skipProfessionalBackground: ["Assistant-Director_of_Communication"]
 
 includeBackgroundSourceLink: true
 
-skipAward: ["William_T._Hornaday_Award_for_Environmental_Conservation", "Eagle_Scout"]
+skipAward: ["William_T._Hornaday_Award", "Eagle_Scout"]
 
 ---
 

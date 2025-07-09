@@ -5,6 +5,7 @@
       "Object-Oriented Programming",
       "Web-Development",
       "Data Transformation",
+      "Debugging",
       "Testing",
       "Agile/Sprint Planning"
     ]
@@ -19,7 +20,8 @@
       "JavaScript",
       "HTML",
       "CSS",
-      "Bash Scripting"
+      "Bash Scripting",
+      "PowerShell Scripting"
     ]
   },
   {
@@ -48,7 +50,8 @@
       "H2 SQL",
       "Saxon XSLT",
       "Jackson XML/JSON",
-      "JUnit5"
+      "JUnit5",
+      "Unity3D"
     ]
   }
 ]

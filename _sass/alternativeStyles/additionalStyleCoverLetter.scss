@@ -1,0 +1,21 @@
+// Style changes from Resume default for Cover Letters
+
+html,
+body {
+    font-size: 12.5pt; // 12pt
+    font-family: "Times New Roman", serif;
+}
+
+.contact-element {
+    font-size: 11pt; // 10pt
+}
+
+// Increase spacing between title section and letter body
+.cover-letter-head {
+    margin-top: 2em;
+}
+
+// Increase space between closing and signature
+.letter-foot-signature {
+    margin-top: 0.2em;
+}

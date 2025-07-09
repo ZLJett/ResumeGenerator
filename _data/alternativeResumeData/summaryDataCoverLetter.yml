@@ -1,0 +1,15 @@
+# Modified Summary Data file for use with the Cover Letter Summary Template (in alternative Elements Templates)
+summaryData:
+  # Format: Salutation and Closing will have appropriate punctuation added by Template
+  head:
+    # Format: "Dear X Company"
+    salutation: Dear
+  # Format: Each item on the list is a paragraph in the Cover Letter
+  summary:
+    - ""
+    - ""
+    - ""
+    - ""
+  foot:
+    closing: Regards
+    signature: Zachariah Jett

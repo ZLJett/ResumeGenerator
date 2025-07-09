@@ -241,6 +241,14 @@ body {
     padding-left: 40px;
 }
 
+// Replace bullet points with blue lines
+li {
+    list-style-type: none;
+    border-left: 2px solid rgb(79, 129, 189);
+    padding-left: 0.5ch;
+    margin-left: -20pt;
+}
+
 
 // --Section Body specific
 

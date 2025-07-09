@@ -1,0 +1,56 @@
+<!-- Special variation of Summary Template for Cover Letters -->
+
+<!-- Set correct Data Source -->
+{% if site.modified_resume_data contains "summaryData" %}
+<!-- Check if automatically included modified Data should be replaced with default Data  -->
+{% if page.overrideResumeData contains "summaryData" %}
+{% assign DataLocation = site.data.defaultResumeData.summaryData %}
+<!-- Use modified Data -->
+{% else %}
+{% assign DataLocation = site.summaryData %}
+{% endif %}
+<!-- If none of the above true use default Data -->
+{% else %}
+{% assign DataLocation = site.data.defaultResumeData.summaryData %}
+{% endif %}
+
+<div class="summary-element element-block">
+    <!-- SWITCH: unless "page.includeSummaryElementTitle" is set to "true", the summary element title
+    will NOT be included. This means DEFAULT is not to include the element title. -->
+    {% if page.includeSummaryElementTitle %}
+    <div class="element-head summary-element-head">
+        <div class="summary-element-title element-title">Summary</div>
+    </div>
+    {% endif %}
+
+    <!-- Sub-SWITCH: if "page.includeSummaryElementTitle" is set to "true" and the summary element title
+    is included, the class "summary-element-border" will be dropped so that the "element-head" border can
+    replace the one added by "summary-element-border" -->
+    <div class="summary-element-body element-body">
+        <div class="summary-element-content" {% unless page.includeSummaryElementTitle %}class="summary-element-border"
+            {% endunless %}>
+            <div class="cover-letter-head">
+                <p class="letter-head-date">
+                    {{ "now" | date: "%B %e, %Y" }}
+                </p>
+                <p class="letter-head-salutation">
+                    {{DataLocation.head.salutation}},
+                </p>
+            </div>
+            <div class="cover-letter-body">
+                {% for paragraph in DataLocation.summary %}
+                <p class="summary-paragraph">{{paragraph}}</p>
+                {% endfor %}
+            </div>
+            <div class="cover-letter-foot">
+                <div class="letter-foot-closing">
+                    {{DataLocation.foot.closing}},
+                </div>
+                <div class="letter-foot-signature">
+                    {{DataLocation.foot.signature}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

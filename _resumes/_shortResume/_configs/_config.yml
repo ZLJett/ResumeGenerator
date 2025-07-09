@@ -45,7 +45,7 @@ include:
 # ARGs: file names in resume's _data directory without extension and MUST be in double quotation marks,
 # e.g. ["contactInfoData"]
 # DEFAULT VALUE empty list, i.e. []
-modified_resume_data: ["minorProjectsData","certsData","communityServiceData","professionalBackgroundData","educationData","majorProjectsData","skillSetsData"]
+modified_resume_data: ["summaryData","minorProjectsData","certsData","communityServiceData","professionalBackgroundData","educationData","majorProjectsData","skillSetsData"]
 
 # RESUME TEMPLATE FILES: All resume specific Templates files, i.e. modified Templates, in the 
 # resume's "_includes" directory
