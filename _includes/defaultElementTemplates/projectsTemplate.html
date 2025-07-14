@@ -55,7 +55,7 @@ so that the Element can be moved down onto the next PDF page if necessary -->
                         <div class="project-github-link-desc">GitHub: </div>
                         <!-- SWITCH: unless the project has a source link, do NOT include the link symbol -->
                         {% unless job.sourceLink == "" %}
-                        <a href="{{project.githubLink}}" class="background-source-entry-value link-icon-box">
+                        <a href="{{project.githubLink}}" class="project-github-entry-value link-icon-box">
                             <img class="link-icon" src="assets/svg/link-horizontal-blue-bold.svg"></a>
                         {% endunless %}
                         <a href="{{project.githubLink}}"

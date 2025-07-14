@@ -134,7 +134,7 @@ skipMinorProjectCategory: ["Web-Development_Projects", "Python_Projects"]
 # data file but with all whitespace replaced with underscores, e.g. "Etch-a-Sketch_Webpage"
 skipMinorProject: ["Calculator_Webpage", "Etch-a-Sketch_Webpage", "Rock_Paper_Scissors_Webpage", "Budgeting_App_Project"]
 
-# Include Minor Projects Element'e Title, i.e. "Minor Projects" at top os Element
+# Include Minor Projects Element'e Title, i.e. "Minor Projects" at top of Element
 includeMinorProjectsElementTitle: true
 
 # Change default divider (" &ndash; ") between Minor Project Name and Minor Project Link

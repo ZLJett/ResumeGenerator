@@ -1,4 +1,5 @@
-<!-- Complete revamp of Minor Project Section into a list format -->
+<!-- MODIFICATIONS FOR THIS RESUME: rework of list Minor Project Section to include all categories in 
+single line -->
 <!-- The Minor Projects Templates file uses only data from "minorProjectsData.json" which is designed 
 to 'slot' under the HTML produced by "projectsTemplate.html". The goal is that this template can be 
 dropped when I move past the point of including 'minor projects' on my resume. -->
@@ -72,6 +73,10 @@ so that the Element can be moved down onto the next PDF page if necessary -->
             {% endunless %}
             {% endfor %}
         </div>
+        {%- unless forloop.last -%}
+        <hr class="minor-project-section-divider">
+        {%- endunless -%}
+
         {% endunless %}
         {% endfor %}
     </div>
