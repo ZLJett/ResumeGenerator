@@ -1,3 +1,6 @@
+<!-- Special variation of Contact Info Template for Short Resume Head. Removed Contact info 
+titles for Phone and Email. -->
+
 <!-- Set correct Data Source -->
 {% if site.modified_resume_data contains "contactInfoData" %}
 <!-- Check if automatically included modified Data should be replaced with default Data  -->
@@ -31,17 +34,17 @@
         {% assign phoneNum = "PhoneNum" %}
         {% unless page.skipContactEntry contains phoneNum %}
         <div class="contact-section-entry">
-            <div class="contact-entry-desc">Phone: </div>
             <div class="contact-entry-value">{{SecretDataLocation.phone}}</div>
         </div>
+        <hr class="contact-section-divider">
         {% endunless %}
 
         {% assign emailAdd = "EmailAdd" %}
         {% unless page.skipContactEntry contains emailAdd %}
         <div class="contact-section-entry">
-            <div class="contact-entry-desc">Email: </div>
             <a href="mailto:{{SecretDataLocation.email}}" class="contact-entry-value">{{SecretDataLocation.email}}</a>
         </div>
+        <hr class="contact-section-divider">
         {% endunless %}
 
         {% assign currLocation = "CurrLocation" %}
@@ -50,6 +53,7 @@
             <!-- DEFAULT is just location value, no description, i.e. no "Location: value" -->
             <div class="contact-entry-value">{{SecretDataLocation.location}}</div>
         </div>
+        <hr class="contact-section-divider">
         {% endunless %}
 
         {% for website in DataLocation.websites %}
@@ -58,15 +62,15 @@
         file -->
         {% unless page.skipContactWebsite contains website.websiteDesc %}
         <div class="contact-section-entry contact-section-links">
-            <div class="contact-entry-desc">{{website.websiteDesc}}: </div>
-            <!-- SWITCH: unless the project has a source link, do NOT include the link symbol -->
-            {% unless job.sourceLink == "" %}
             <a href="{{website.websiteLink}}" class="contact-entry-value">
                 <img class="link-icon" src="assets/svg/link-horizontal-blue-bold.svg">
             </a>
-            {% endunless %}
-            <a href="{{website.websiteLink}}" class="contact-entry-value">{{website.websiteLinkValue}}</a>
+            <a href="{{website.websiteLink}}" class="contact-entry-value">
+                {{website.websiteDesc}}
+            </a>
         </div>
+        {%- unless forloop.last -%}
+        <hr class="contact-section-divider">{%- endunless -%}
         {% endunless %}
 
         {% endfor %}

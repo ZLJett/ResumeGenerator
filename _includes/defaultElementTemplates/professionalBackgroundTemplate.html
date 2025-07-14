@@ -67,9 +67,14 @@ so that the Element can be moved down onto the next PDF page if necessary -->
             Background Source Link will NOT be included. This means DEFAULT is not to include the 
             Professional Background Source Link. -->
             {% if page.includeBackgroundSourceLink %}
-            <div class="background-source-link-block">
+            <div class="background-source-link-block link-block">
                 {% assign BackgroundSourceLinkDesc = job.backgroundSourceLinkDesc| default: "" %}
                 <div class="background-source-link-desc">{{BackgroundSourceLinkDesc}}</div>
+                <!-- SWITCH: unless the job has a source link, do NOT include the link symbol -->
+                {% unless job.sourceLink == "" %}
+                <a href="{{job.sourceLink}}" class="background-source-entry-value link-icon-box">
+                    <img class="link-icon" src="assets/svg/link-horizontal-blue-bold.svg"></a>
+                {% endunless %}
                 <a href="{{job.sourceLink}}" class="background-source-entry-value">{{job.sourceLinkValue}}</a>
             </div>
             {% endif %}

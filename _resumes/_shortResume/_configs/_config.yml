@@ -18,7 +18,7 @@
 # ONLY be changed from here!
 # NOTE: The "resumeTitleTemplate" and the "contactInfoTemplate" are not included here as they
 # are added together as DEFAULT content by resumeHeadTemplate.html
-default_resume_contents: [summaryTemplate, skillSetsTemplate, professionalBackgroundTemplate, projectsTemplate, minorProjectsTemplate, certsTemplate, educationTemplate, communityServiceTemplate, awardsTemplate]
+default_resume_contents: [resumeHeadTemplate, summaryTemplate, skillSetsTemplate, professionalBackgroundTemplate, projectsTemplate, minorProjectsTemplate, certsTemplate, educationTemplate, communityServiceTemplate, awardsTemplate]
 
 # GOOGLE FONTS: Set any google fonts that need to be added as a <link> tag inside the 'webpage' <head>
 # in the "defaultHeadContents.html" template. 

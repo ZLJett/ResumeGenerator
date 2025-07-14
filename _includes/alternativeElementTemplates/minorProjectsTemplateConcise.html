@@ -1,4 +1,4 @@
-<!-- MODIFICATIONS FOR THIS RESUME: complete revamp of Minor Project Section into a list format -->
+<!-- Complete revamp of Minor Project Section into a list format -->
 <!-- The Minor Projects Templates file uses only data from "minorProjectsData.json" which is designed 
 to 'slot' under the HTML produced by "projectsTemplate.html". The goal is that this template can be 
 dropped when I move past the point of including 'minor projects' on my resume. -->
@@ -53,10 +53,15 @@ so that the Element can be moved down onto the next PDF page if necessary -->
             {% unless page.skipMinorProject contains CurrentProject %}
             <div class="minor-project-category-list-element">
                 {% assign MinorProjectListDivider = page.minorProjectListDivider | default: ";" %}
-                <div class="minor-project-github-link-block">
+                <div class="minor-project-github-link-block link-block">
+                    <!-- SWITCH: unless the project has a source link, do NOT include the link symbol -->
+                    {% unless job.sourceLink == "" %}
+                    <a href="{{project.githubLink}}" class="background-source-entry-value link-icon-box">
+                        <img class="link-icon" src="assets/svg/link-horizontal-blue-bold.svg"></a>
+                    {% endunless %}
                     <!-- Adds section devider, defeult ";", between each entry unless it is the last entry -->
                     <a href="{{project.githubLink}}" class="minor-project-github-entry-value">
-                        @{{project.name}}{%- unless forloop.last -%}{{MinorProjectListDivider}}{%- endunless -%}
+                        {{project.name}}{%- unless forloop.last -%}{{MinorProjectListDivider}}{%- endunless -%}
                     </a>
                 </div>
             </div>

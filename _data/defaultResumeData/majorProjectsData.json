@@ -6,7 +6,7 @@
         "technologies": [],
         "summary": "Developed an easy to use personal resume generation tool utilizing Jekyll and the Liquid template language to automate the creation of tailored resumes for each job application. A simple Bash script orchestrates the process, enabling streamlined generation of both interactive web previews or final PDFs.",
         "highlights": [],
-        "githubLinkValue": "@Resume Generator",
+        "githubLinkValue": "Resume Generator",
         "githubLink": "https://github.com/ZLJett/ResumeGenerator"
     },
     {
@@ -16,7 +16,7 @@
         "technologies": [],
         "summary": "A financial trade routing system built for a practical development exercise designed by a senior developer who worked in that industry. It was built in a Java/Camel based tech stack and supported: XSLT based XML conversion, JPA/Hibernate based database management, JSON based application configuration, and a JUnit based testing suite. As part of the exercise, I was wholly responsible for designing the routing application, including the evaluation, selection, and integration of 3rd party technologies.",
         "highlights": [],
-        "githubLinkValue": "@Trade Message Router",
+        "githubLinkValue": "Trade Message Router",
         "githubLink": "https://github.com/ZLJett/trade-message-router"
     }
 ]

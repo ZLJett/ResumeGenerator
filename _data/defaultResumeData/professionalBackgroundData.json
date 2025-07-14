@@ -6,7 +6,7 @@
         "startDate": "Jan. 2025",
         "endDate": "Current",
         "backgroundSourceLinkDesc": "Steam: ",
-        "sourceLinkValue": "@Game Demo",
+        "sourceLinkValue": "Game Demo",
         "sourceLink": "https://store.steampowered.com/app/2571840/Defense_of_Nations/",
         "summary": "Developed core mechanics and designed new content for a game built on the Unity3D engine. Effectively integrated complex new features and systems into an established codebase, making crucial independent design and implementation decisions. Utilized Agile (Kanban) and Git for collaborative development, actively participating in project planning to define design and content scope and determine achievable deadlines.",
         "highlights": []

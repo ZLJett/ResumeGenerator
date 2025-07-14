@@ -29,6 +29,21 @@ body {
     width: 100%;
 }
 
+.link-icon {
+    width: 1.35em; // 1.05em;
+    height: 1.35em; // 1.05em;
+    // Center link icon
+    margin-top: -1.1pt;
+}
+
+.link-icon-box {
+    margin-bottom: -4.9px;
+}
+
+a {
+    text-decoration: none;
+}
+
 
 // Resume head
 .resume-head {
@@ -68,6 +83,10 @@ body {
 
 .contact-entry-desc {
     margin-right: 6px;
+}
+
+.contact-section-links {
+    margin-bottom: -3pt;
 }
 
 // Element Heads

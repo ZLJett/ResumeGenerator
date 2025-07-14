@@ -11,7 +11,7 @@
                 "highlights": [
                     "Features: Keyboard inputs, built-in user error handling, and history tracker."
                 ],
-                "githubLinkValue": "@Calculator Page",
+                "githubLinkValue": "Calculator Page",
                 "githubLink": "https://github.com/ZLJett/calculator-page",
                 "sourceLinkValue": "@The Odin Project",
                 "sourceLink": "https://www.theodinproject.com/lessons/foundations-calculator"
@@ -25,7 +25,7 @@
                 "highlights": [
                     "Features: Styled like classic Etch-a-Sketch, user can easily increase or decrease drawing canvas dimensions."
                 ],
-                "githubLinkValue": "@Etch A Sketch",
+                "githubLinkValue": "Etch A Sketch",
                 "githubLink": "https://github.com/ZLJett/Etch-a-Sketch",
                 "sourceLinkValue": "@The Odin Project",
                 "sourceLink": "https://www.theodinproject.com/lessons/foundations-etch-a-sketch"
@@ -39,7 +39,7 @@
                 "highlights": [
                     "Features: Displays images of user selections with delay to keep surprise."
                 ],
-                "githubLinkValue": "@Rock Paper Scissors Game",
+                "githubLinkValue": "Rock Paper Scissors Game",
                 "githubLink": "https://github.com/ZLJett/UI-rock-paper-scissors",
                 "sourceLinkValue": "@The Odin Project",
                 "sourceLink": "https://www.theodinproject.com/lessons/foundations-rock-paper-scissors"
@@ -58,7 +58,7 @@
                 "highlights": [
                     "Features: Tracks debts and credits to account, displays percentage spent by category as bar chart."
                 ],
-                "githubLinkValue": "@Budget Tool",
+                "githubLinkValue": "Budget Tool",
                 "githubLink": "https://github.com/ZLJett/Budget-App-Project",
                 "sourceLinkValue": "@freeCodeCamp",
                 "sourceLink": "https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-budget-app-project/build-a-budget-app-project"
