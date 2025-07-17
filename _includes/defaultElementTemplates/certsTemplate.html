@@ -20,7 +20,7 @@ so that the Element can be moved down onto the next PDF page if necessary -->
 <div class="certs-element element-block" {% if page.certElementTopMargin>0 %}
     style="margin-top:{{page.certElementTopMargin}}px" {% endif%}>
     <div class="element-head">
-        <div class="certs-element-title element-title">Certifications</div>
+        <div class="certs-element-title element-title">Certifications & Courses</div>
     </div>
 
     <div class="certs-element-body element-body">
@@ -46,7 +46,14 @@ so that the Element can be moved down onto the next PDF page if necessary -->
                     <div class="cert-title">{{cert.name}}</div>
                     {% assign CertTitleDivider = page.certTitleDivider | default: " &ndash; " %}
                     <div class="cert-title-divider">{{CertTitleDivider}}</div>
-                    <div class="cert-issuer">{{cert.issuer}}</div>
+                    <div class="cert-issuer">
+                        <!-- SWITCH: if the cert does not have a source link, do NOT include the link symbol -->
+                        {% if cert.certLink.size > 0 %}
+                        <a href="{{cert.certLink}}" class="cert-link-value link-icon-box">
+                            <img class="link-icon" src="assets/svg/link-horizontal-blue-bold.svg"></a>
+                        {% endif %}
+                        <a href="{{cert.certLink}}" class="cert-link-value">{{cert.issuer}}</a>
+                    </div>
                 </div>
                 <div class="cert-date">{{cert.endDate}}</div>
             </div>

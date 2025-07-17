@@ -59,11 +59,11 @@ so that the Element can be moved down onto the next PDF page if necessary -->
             <div class="minor-project-category-list-element">
                 {% assign MinorProjectListDivider = page.minorProjectListDivider | default: ";" %}
                 <div class="minor-project-github-link-block link-block">
-                    <!-- SWITCH: unless the project has a source link, do NOT include the link symbol -->
-                    {% unless job.sourceLink == "" %}
+                    <!-- SWITCH: if the project does not have a source link, do NOT include the link symbol -->
+                    {% if project.githubLink.size > 0 %}
                     <a href="{{project.githubLink}}" class="minor-project-github-entry-value link-icon-box">
                         <img class="link-icon" src="assets/svg/link-horizontal-blue-bold.svg"></a>
-                    {% endunless %}
+                    {% endif %}
                     <!-- Adds section devider, defeult ";", between each entry unless it is the last entry -->
                     <a href="{{project.githubLink}}" class="minor-project-github-entry-value">
                         {{project.name}}{%- unless forloop.last -%}{{MinorProjectListDivider}}{%- endunless -%}

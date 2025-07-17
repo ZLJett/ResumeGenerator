@@ -59,12 +59,12 @@
         {% unless page.skipContactWebsite contains website.websiteDesc %}
         <div class="contact-section-entry contact-section-links">
             <div class="contact-entry-desc">{{website.websiteDesc}}: </div>
-            <!-- SWITCH: unless the project has a source link, do NOT include the link symbol -->
-            {% unless job.sourceLink == "" %}
+            <!-- SWITCH: if the project does not have a source link, do NOT include the link symbol -->
+            {% if website.websiteLink.size > 0 %}
             <a href="{{website.websiteLink}}" class="contact-entry-value">
                 <img class="link-icon" src="assets/svg/link-horizontal-blue-bold.svg">
             </a>
-            {% endunless %}
+            {% endif %}
             <a href="{{website.websiteLink}}" class="contact-entry-value">{{website.websiteLinkValue}}</a>
         </div>
         {% endunless %}

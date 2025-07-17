@@ -70,11 +70,11 @@ so that the Element can be moved down onto the next PDF page if necessary -->
             <div class="background-source-link-block link-block">
                 {% assign BackgroundSourceLinkDesc = job.backgroundSourceLinkDesc| default: "" %}
                 <div class="background-source-link-desc">{{BackgroundSourceLinkDesc}}</div>
-                <!-- SWITCH: unless the job has a source link, do NOT include the link symbol -->
-                {% unless job.sourceLink == "" %}
+                <!-- SWITCH: if the job does not have a source link, do NOT include the link symbol -->
+                {% if job.sourceLink.size > 0 %}
                 <a href="{{job.sourceLink}}" class="background-source-entry-value link-icon-box">
                     <img class="link-icon" src="assets/svg/link-horizontal-blue-bold.svg"></a>
-                {% endunless %}
+                {% endif %}
                 <a href="{{job.sourceLink}}" class="background-source-entry-value">{{job.sourceLinkValue}}</a>
             </div>
             {% endif %}
