@@ -26,9 +26,17 @@ separate section. -->
 so that the Element can be moved down onto the next PDF page if necessary -->
 <div class="service-element element-block" {% if page.serviceElementTopMargin>0 %}
     style="margin-top:{{page.serviceElementTopMargin}}px" {% endif%}>
+    <!-- SWITCH: if "page.communityServiceAndAwardsTitle" is set to "true", will use the alternative
+    "Community Service & Awards" title for the section. Otherwise, will use the standard section title. -->
+    {% if page.communityServiceAndAwardsTitle == true %}
+    <div class="element-head">
+        <div class="service-element-title element-title">Community Service & Awards</div>
+    </div>
+    {% else %}
     <div class="element-head">
         <div class="service-element-title element-title">Community Service</div>
     </div>
+    {% endif %}
 
     <div class="service-element-body element-body">
         <!-- * Loop through community service Section Entries -->

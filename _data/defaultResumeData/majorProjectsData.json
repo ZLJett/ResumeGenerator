@@ -1,7 +1,7 @@
 [
     {
         "name": "Personal Resume Generator",
-        "endDate": "Nov. 2024",
+        "endDate": "Ongoing",
         "takeaways": [],
         "technologies": [],
         "summary": "Developed an easy to use personal resume generation tool utilizing Jekyll and the Liquid template language to automate the creation of tailored resumes for each job application. A simple Bash script orchestrates the process, enabling streamlined generation of both interactive web previews or final PDFs.",

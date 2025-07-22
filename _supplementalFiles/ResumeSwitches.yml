@@ -314,6 +314,9 @@ modifyServiceSectionMargins:
   - section: Trustee
     margin: 100 # 0 applies default spacing to each Element
 
+# Change the Element title from the usual "Community Service" to "Community Service & Awards"
+communityServiceAndAwardsTitle: true
+
 # Skip Community Service section, i.e. do not include "Trustee" in the Element 
 # ARGs: each Community Service role is the "role" value for the Community Service in the 
 # "communityServiceData.json" data file but with all whitespace replaced with underscores, 

@@ -3,39 +3,40 @@
     "skill_title": "Disciplines",
     "skills": [
       "Object-Oriented Programming",
-      "Web-Development",
-      "Data Transformation",
       "Debugging",
       "Testing",
-      "Agile/Sprint Planning"
+      "Agile/Sprint Planning",
+      "Data Transformation",
+      "Web-Development"
     ]
   },
   {
     "skill_title": "Languages",
     "skills": [
-      "Python",
-      "Java",
-      "C",
       "C#",
-      "JavaScript",
+      "Java",
       "HTML",
       "CSS",
+      "JavaScript",
+      "Liquid Template Language",
       "Bash Scripting",
+      "C",
+      "Python",
       "PowerShell Scripting"
     ]
   },
   {
     "skill_title": "Environments",
     "skills": [
-      "Linux",
-      "Windows",
       ".NET",
+      "Windows",
+      "Linux",
       "Visual Studio",
       "VSCode",
       "IntelliJ",
+      "GCP",
       "Oracle VM VirtualBox",
-      "Compiler Explorer",
-      "GCP"
+      "Compiler Explorer"
     ]
   },
   {
@@ -51,7 +52,10 @@
       "Saxon XSLT",
       "Jackson XML/JSON",
       "JUnit5",
-      "Unity3D"
+      "Jekyll Static Site Generator",
+      "Unity3D",
+      "JSON",
+      "YAML"
     ]
   }
 ]
