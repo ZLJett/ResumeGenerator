@@ -1,0 +1,14 @@
+// Modifications to preview webpage base styles to make print-to-PDF output match
+@media print {
+    @page {
+        size: 8.5in 11in;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    .display-margins {
+        padding: 0 0 0 0;
+    }
+}

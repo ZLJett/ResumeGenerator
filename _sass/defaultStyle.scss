@@ -1,9 +1,10 @@
 // Resume overall
 html,
 body {
-    font-size: 9.5pt; // 9.5pt
-    overflow-x: hidden;
     font-family: "Arial", sans-serif;
+    font-size: 9.5pt; // 9.5pt
+    text-align: justify;
+    overflow-x: hidden;
 }
 
 body {
@@ -13,19 +14,31 @@ body {
     width: 100vw;
     min-height: 100vh;
     overflow: hidden;
-    background-color: white;
     margin: 0 0 0 0;
+    // Set color for 'grey-zone' around page
+    background-color: rgb(42, 42, 46)
+}
+
+// This adds print-to-pdf sized margins to preview webpage
+.display-margins {
+    height: 10.2in;
+    width: 7.7in;
+    padding: 0.4in 0.4in 0.4in 0.4in;
+    background-color: white;
 }
 
 .main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 98vw; // 98 keeps edge of page from cutting off
+    background-color: white;
+    height: 10.2in;
+    width: 7.7in;
 }
 
 .element-block {
-    max-width: 800px;
+    // Max-width is set to appx. width of usable space on page when printed
+    max-width: 7.7in;
     width: 100%;
 }
 
@@ -50,7 +63,8 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 800px;
+    // Max-width is set to appx. width of usable space on page when printed
+    max-width: 7.7in;
     width: 100%;
 }
 

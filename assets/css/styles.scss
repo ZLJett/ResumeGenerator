@@ -13,3 +13,4 @@
     @import "{{ entry }}";
     {%- endfor -%}
 {% endif %}
+@import "{{ site.print_stylesheet }}";
