@@ -258,8 +258,8 @@ done
 # Default resume name is name of resume directory with underscore removed and first 
 # letter capitalized with date/time added, e.g. TestResume_24-10-30_05:38:17
 defaultResumeName="${SOURCE:1}"
-date=$(date '+%y-%m-%d_%H-%M-%S')
-defaultResumeName="${defaultResumeName^}_"${date}
+date=$(date '+%m-%d-%y_%H-%M-%S')
+defaultResumeName=${date}"_${defaultResumeName^}"
 targetFile=${resumeDirectory}"/_outputResumes/"${defaultResumeName}".pdf"
 
 # Function to run Print-to-PDF once server is running 
