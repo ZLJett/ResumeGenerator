@@ -1,0 +1,42 @@
+# MODIFICATIONS FOR THIS RESUME: shortened summary for "Graduate Assistant" Entry as well as a new 
+# summary emphasizing soft skills
+professionalBackgroundData:
+  - position: Game Designer & Programmer
+    company: The Goodship Friendship
+    location: ""
+    startDate: "Jan. 2025"
+    endDate: "Present"
+    backgroundSourceLinkDesc: "Steam: "
+    sourceLinkValue: "Game Demo"
+    sourceLink: "https://store.steampowered.com/app/2571840/Defense_of_Nations/"
+    summary: "Led the development of core mechanics and new content, strategically integrating complex 
+      features and systems into existing frameworks. Evaluated potential impacts and made crucial 
+      independent design and implementation decisions that optimized project outcomes. Drove transparent 
+      communication in project planning using Agile (Kanban) to optimize design and content scope, refine 
+      achievable deadlines, and drive continuous process improvement."
+    highlights: []
+  - position: Graduate Assistant
+    company: Wright State University
+    location: Fairborn, OH
+    startDate: "2018"
+    endDate: "2019"
+    backgroundSourceLinkDesc: ""
+    sourceLinkValue: ""
+    sourceLink: ""
+    summary: "Supported multiple undergraduate courses as a Graduate Assistant through managing and 
+      organizing course materials, preparing and grading tests, and providing direct support to 
+      students in my office hours. This required dynamic collaboration with faculty and departmental 
+      staff to proactively diagnose, mitigate, and implement adaptive solutions during a period of 
+      intense and unprecedented challenge for the university."
+    highlights: []
+  - position: Assistant-Director of Communication
+    company: Cedar Apartments Student Association
+    location: University of Washington, Seattle, WA
+    startDate: "2014"
+    endDate: "2015"
+    backgroundSourceLinkDesc: ""
+    sourceLinkValue: ""
+    sourceLink: ""
+    summary: Produced all official communications for the Student Association at the
+      University of Washington's Cedar Apartments.
+    highlights: []

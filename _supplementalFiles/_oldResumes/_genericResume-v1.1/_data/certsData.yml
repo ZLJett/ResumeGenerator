@@ -1,0 +1,41 @@
+# MODIFICATIONS FOR THIS RESUME: dropped some highlights and added in contents from "Scientific Computing" highlights
+# to main summary, then rewrote it. Changed highlights of "Google IT" and "Preparing for Google" to be a single 
+# desctription of all highlights. Fliped order order to place more recent first.
+certsData:
+  - name: "Preparing for Google Cloud Certification: Cloud Engineer"
+    issuer: Google
+    endDate: Dec. 2021
+    summary:
+      - Online non-credit Professional Certificate authorized by Google and
+        offered through Coursera
+    highlights:
+      - "Courses Included: Essential Google Cloud Infrastructure: Core Services, Elastic Google 
+      Cloud Infrastructure: Scaling and Automation"
+    certId: 23D7RQW57S2G
+    certLinkValue: Coursera Certificate
+    certLink: https://www.coursera.org/account/accomplishments/specialization/LTPLSJNZEA8P
+  - name: Scientific Computing with Python
+    issuer: freeCodeCamp
+    endDate: Oct. 2021
+    summary: "This comprehensive Python course covered: advanced data structures,
+      networking, regular expressions, relational databases (including SQLite),
+      and data visualization."
+    highlights:
+      - Networking with Python
+      - Regular Expressions
+      - Relational Databases and SQLite
+    certId: zljett-scwp
+    certLinkValue: freeCodeCamp Certificate
+    certLink: https://freecodecamp.org/certification/zljett/scientific-computing-with-python-v7
+  - name: Google IT Automation with Python
+    issuer: Google Cloud
+    endDate: Jul. 2021
+    summary:
+      - Online non-credit Professional Certificate authorized by Google and
+        offered through Coursera.
+    highlights:
+      - "Courses Included: Using Python to Interact with the Operating System, Troubleshooting
+      and Debugging Techniques"
+    certId: LTPLSJNZEA8P
+    certLinkValue: Coursera Certificate
+    certLink: https://www.coursera.org/account/accomplishments/specialization/23D7RQW57S2G

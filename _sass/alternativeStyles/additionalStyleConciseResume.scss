@@ -1,0 +1,194 @@
+// Change Font Style and Size
+html,
+body {
+    font-size: 10.5pt; // 9.5pt
+    font-family: "Tinos", serif;
+    line-height: 1;
+}
+
+.element-title {
+    font-family: "Playfair Display", serif;
+    font-size: 14pt; // 16pt
+}
+
+.link-block {
+    font-size: 10pt;
+}
+
+
+// Modify Resume Head to make it more concise
+.resume-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.resume-title-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 386px // 360px
+}
+
+.resume-title {
+    font-family: "Playfair Display", serif;
+    font-size: 19pt; // 17pt
+    font-weight: 500;
+}
+
+.professional-title-divider {
+    font-family: "Playfair Display", serif;
+    font-size: 19pt;
+    font-weight: 600;
+}
+
+.professional-title {
+    font-family: "Playfair Display", serif;
+    font-size: 19pt;
+    margin-top: 0px; // -8px
+    margin-left: 0px; // 85pt
+}
+
+.contact-element-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-element {
+    width: 630px; // 270px
+    margin-right: 0px; // 25px
+}
+
+.contact-entry-desc {
+    margin-right: 2px;
+}
+
+// Increase space between Contact Info section and Summary section
+.contact-section-links {
+    margin-bottom: 0pt;
+}
+
+// Add line between each entry in Contact Info
+hr {
+    display: block;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 0px;
+}
+
+.contact-section-divider,
+.minor-project-section-divider {
+    height: 9.5pt;
+    border-left: 2px solid rgb(79, 129, 189);
+}
+
+// Vertically align Contact Info links with rest of contact information
+.contact-section-links {
+    margin-top: 4pt;
+    // Remove default
+    margin-bottom: 0t;
+}
+
+// Link icon style
+.link-icon {
+    // Center link icon
+    margin-top: -1.8pt; //.6
+}
+
+
+// Remove excess space between different sections
+// Cut down space between all sections
+.element-block {
+    margin-bottom: 2.5px; // 4.5px
+}
+
+// Between Summary and Contact Info
+.summary-element {
+    margin-top: -10px;
+}
+
+// Between Professional Background and Projects
+.projects-element {
+    margin-top: -4px;
+}
+
+// Between Education and Community Service
+.service-element {
+    margin-top: -3px;
+}
+
+.project-summary-body,
+.minor-project-summary-body,
+.cert-summary-body,
+.education-summary-body,
+.background-summary-body,
+.service-summary-body,
+.award-summary-body {
+    margin-top: 0pt; // 1pt
+}
+
+
+// Return missing space underneath section titles
+.element-head {
+    padding-bottom: 2px;
+}
+
+
+// Remove any excess bottom margins to stop extra page from being added to PDF
+.service-section-entry {
+    margin-bottom: 0;
+}
+
+// This selector was used for above purpose, however in newer resume format it
+// adds excess space below the element
+// .service-element {
+//     margin-bottom: 0;
+// }
+
+.awards-element {
+    margin-bottom: 0;
+}
+
+
+// Minor Projects section modifications
+.minor-project-list-entry-title {
+    margin-left: 0px;
+}
+
+.minor-projects-element-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: none;
+    // Space out minor projects line
+    max-width: 668px; // 660
+}
+
+
+// Education section modifications
+.education-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: none;
+    align-items: center;
+}
+
+.education-highlights {
+    display: flex;
+    flex-direction: row;
+    justify-content: none;
+}
+
+.education-thesis-link-block {
+    margin-left: 0px;
+    align-self: flex-end;
+}
+
+.education-thesis-link-desc {
+    font-weight: normal;
+}

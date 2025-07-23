@@ -1,0 +1,41 @@
+# MODIFICATIONS FOR THIS RESUME: dropped "Windows" from "Environments"
+skillSetsData:
+  - skill_title: Disciplines
+    skills:
+      - Object-Oriented Programming
+      - Web-Development
+      - Data Transformation
+      - Testing
+      - Agile/Sprint Planning
+  - skill_title: Languages
+    skills:
+      - Python
+      - Java
+      - C
+      - C#
+      - JavaScript
+      - HTML
+      - CSS
+      - Bash Scripting
+  - skill_title: Environments
+    skills:
+      - Linux
+      - Visual Studio
+      - .NET
+      - VSCode
+      - IntelliJ
+      - Oracle VM VirtualBox
+      - Compiler Explorer
+      - GCP
+  - skill_title: Tools
+    skills:
+      - Git
+      - Maven
+      - Spring Boot
+      - Apache Camel
+      - JPA
+      - Hibernate
+      - H2 SQL
+      - Saxon XSLT
+      - Jackson XML/JSON
+      - JUnit5

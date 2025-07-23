@@ -1,0 +1,63 @@
+# MODIFICATIONS FOR THIS RESUME: shortened summary for "Calculator Webpage" and "Etch-a-Sketch Webpage" entries
+minorProjectsData:
+  - category: Web-Development Projects
+    projects:
+      - name: Calculator Webpage
+        endDate: Aug. 2022
+        takeaways:
+        technologies:
+        summary: "Designed a calculator webpage offering complete functionality 
+          with full keyboard support. Features an undo function, a history 
+          tracker to review past calculations, and incorporates robust user 
+          error handling to ensure all inputs have clear responses."
+        highlights:
+          - "Features: Keyboard inputs, built-in error handling, and history
+            tracker."
+        githubLinkValue: "@Calculator Page"
+        githubLink: https://github.com/ZLJett/calculator-page
+        sourceLinkValue: "@The Odin Project"
+        sourceLink: https://www.theodinproject.com/lessons/foundations-calculator
+      - name: Etch-a-Sketch Webpage
+        endDate: Jul. 2022
+        takeaways: []
+        technologies: []
+        summary: "Created a web-based Etch-a-Sketch that replicates the classic look but
+          with a mouse-based interface and customizable pixel density drawing canvas to 
+          allow for both enhanced usability and precise detail work."
+        highlights:
+          - "Features: Styled like classic Etch-a-Sketch, user can easily increase or decrease drawing canvas dimensions."
+        githubLinkValue: "@Etch A Sketch"
+        githubLink: https://github.com/ZLJett/Etch-a-Sketch
+        sourceLinkValue: "@The Odin Project"
+        sourceLink: https://www.theodinproject.com/lessons/foundations-etch-a-sketch
+      - name: Rock Paper Scissors Webpage
+        endDate: Jun. 2022
+        takeaways: []
+        technologies: []
+        summary: "Built a browser-based version of Rock, Paper, Scissors with an enhanced
+          user experience by using visual representations of player choices through stock 
+          images and incorporating a timed delay to build suspense before revealing the 
+          computer's selection."
+        highlights:
+          - "Features: Displays images of player inputs with delay to keep
+            surprise."
+        githubLinkValue: "@Rock Paper Scissors Game"
+        githubLink: https://github.com/ZLJett/UI-rock-paper-scissors
+        sourceLinkValue: "@The Odin Project"
+        sourceLink: https://www.theodinproject.com/lessons/foundations-rock-paper-scissors
+  - category: Python Projects
+    projects:
+      - name: Budgeting Tool
+        endDate: Oct. 2021
+        takeaways: []
+        technologies: []
+        summary: "Developed a small budgeting tool that tracks income, expenses, and transfers 
+          across multiple categories. The tool includes custom visualizations to display 
+          budget activity and can generate a bar chart that highlights spending trends."
+        highlights:
+          - "Features: Tracks debts and credits to account, displays percentage
+            spent by category as bar chart."
+        githubLinkValue: "@Budget Tool"
+        githubLink: https://github.com/ZLJett/Budget-App-Project
+        sourceLinkValue: "@freeCodeCamp"
+        sourceLink: https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-budget-app-project/build-a-budget-app-project

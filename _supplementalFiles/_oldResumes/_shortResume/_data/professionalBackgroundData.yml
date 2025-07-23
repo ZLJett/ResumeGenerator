@@ -1,0 +1,39 @@
+# MODIFICATIONS FOR THIS RESUME: shortened summary for "Graduate Assistant" Entry
+professionalBackgroundData:
+  - position: Game Designer & Programmer
+    company: The Goodship Friendship
+    location: ""
+    startDate: "Jan. 2025"
+    endDate: "Present"
+    backgroundSourceLinkDesc: "Steam: "
+    sourceLinkValue: "@Game Demo"
+    sourceLink: "https://store.steampowered.com/app/2571840/Defense_of_Nations/"
+    summary: "Developed core mechanics and designed new content for a game built on the Unity3D engine.
+        Effectively integrated complex new features and systems into an established codebase, making 
+        crucial independent design and implementation decisions. Utilized Agile (Kanban) and Git for 
+        collaborative development, actively participating in project planning to define design and 
+        content scope and determine achievable deadlines."
+    highlights: []
+  - position: Graduate Assistant
+    company: Wright State University
+    location: Fairborn, OH
+    startDate: "2018"
+    endDate: "2019"
+    backgroundSourceLinkDesc: ""
+    sourceLinkValue: ""
+    sourceLink: ""
+    summary: "Supported multiple undergraduate courses through managing and organizing course materials, 
+      preparing and grading tests, as well as providing essential student support and maintaining course 
+      integrity and function during a faculty strike."
+    highlights: []
+  - position: Assistant-Director of Communication
+    company: Cedar Apartments Student Association
+    location: University of Washington, Seattle, WA
+    startDate: "2014"
+    endDate: "2015"
+    backgroundSourceLinkDesc: ""
+    sourceLinkValue: ""
+    sourceLink: ""
+    summary: Produced all official communications for the Student Association at the
+      University of Washington's Cedar Apartments.
+    highlights: []

@@ -1,0 +1,13 @@
+# MODIFICATIONS FOR THIS RESUME: Changed issuer of "Hornaday Award" to add "badge" info in an aesthetically 
+# pleasing way
+awardsData:
+  - name: William T. Hornaday Award
+    issuer: Silver Badge
+    endDate: "2011"
+    summary: "Recognized for a significant contribution to environmental conservation by leading and executing conservation project to protect local salmon spawning habitat."
+    highlights: []
+  - name: Eagle Scout
+    issuer: Boy Scouts of America
+    endDate: "2011"
+    summary: ""
+    highlights: []

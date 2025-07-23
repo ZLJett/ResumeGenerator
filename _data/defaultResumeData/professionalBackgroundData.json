@@ -8,7 +8,7 @@
         "backgroundSourceLinkDesc": "Steam: ",
         "sourceLinkValue": "Game Demo",
         "sourceLink": "https://store.steampowered.com/app/2571840/Defense_of_Nations/",
-        "summary": "Developed core mechanics and designed new content for a game built on the Unity3D engine. Effectively integrated complex new features and systems into an established codebase, making crucial independent design and implementation decisions. Utilized Agile (Kanban) and Git for collaborative development, actively participating in project planning to define design and content scope and determine achievable deadlines.",
+        "summary": "Developed core mechanics and designed new content for a Unity3D game, quickly mastering an under-documented C# codebase and the Unity engine with limited prior experience. Independently designed, implemented, and tested complex features and systems: leading a complete overhaul of the game's health/damage balance. Utilized Agile (Kanban) and Git for collaborative development, proactively shaping project planning to define design/content scope and determine achievable deadlines.",
         "highlights": []
     },
     {
@@ -20,7 +20,7 @@
         "backgroundSourceLinkDesc": "",
         "sourceLinkValue": "",
         "sourceLink": "",
-        "summary": "Supported multiple undergraduate courses as a Graduate Assistant through managing and organizing course materials, preparing and grading tests, and providing direct support to students in my office hours. This required dynamic collaboration with faculty and departmental staff to proactively diagnose, mitigate, and implement adaptive solutions during a period of intense and unprecedented challenge for the university.",
+        "summary": "Managed course materials, organized and graded assessments, and provided support and advice to students. Dynamically collaborated with faculty and staff to uphold educational standards and provide leadership to students during a faculty strike.",
         "highlights": []
     },
     {
@@ -32,7 +32,7 @@
         "backgroundSourceLinkDesc": "",
         "sourceLinkValue": "",
         "sourceLink": "",
-        "summary": "Produced all official advertising materials for the Student Association at the University of Washington's Cedar Apartments.",
+        "summary": "Created all official communications to 300+ residents, delivering key information and fostering community engagement.",
         "highlights": []
     }
 ]

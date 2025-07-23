@@ -18,7 +18,7 @@
 # ONLY be changed from here!
 # NOTE: The "resumeTitleTemplate" and the "contactInfoTemplate" are not included here as they
 # are added together as DEFAULT content by resumeHeadTemplate.html
-default_resume_contents: [resumeHeadTemplate, summaryTemplate, skillSetsTemplate, projectsTemplate, minorProjectsTemplate, certsTemplate, educationTemplate, professionalBackgroundTemplate, communityServiceTemplate, awardsTemplate]
+default_resume_contents: [resumeHeadTemplate, summaryTemplate, educationTemplate, professionalBackgroundTemplate, communityServiceTemplate, awardsTemplate,  projectsTemplate]
 
 # GOOGLE FONTS: Set any google fonts that need to be added as a <link> tag inside the 'webpage' <head>
 # in the "defaultHeadContents.html" template. 
@@ -39,20 +39,20 @@ google_fonts:
 # ARG: Resume Source Directory is the name of any directory in the "_resumes" directory
 include: 
 - _resumes
-- _testResume    # Resume Source Directory
+- _genericBoeingResume    # Resume Source Directory
 
 # RESUME DATA FILES: All resume specific Data files, i.e. modified Data, in the resume's "_data" directory
 # ARGs: file names in resume's _data directory without extension and MUST be in double quotation marks,
 # e.g. ["contactInfoData"]
 # DEFAULT VALUE empty list, i.e. []
-modified_resume_data: []
+modified_resume_data: ["summaryData","minorProjectsData","certsData","communityServiceData","professionalBackgroundData","educationData","majorProjectsData","skillSetsData"]
 
 # RESUME TEMPLATE FILES: All resume specific Templates files, i.e. modified Templates, in the 
 # resume's "_includes" directory
 # ARGs: file names in resume's _data directory without extension, e.g. [resumeTitleTemplate] (Note:
 # these do not need to be in double quotation marks).
 # DEFAULT VALUE empty list, i.e. []
-modified_resume_templates: []
+modified_resume_templates: [projectsTemplate]
 
 
 # CHANGE STYLE OPTIONS: 
@@ -84,12 +84,21 @@ additional_styles: true
 # DEFAULT VALUE: "defaultStyle", e.g. "defaultStyle.scss" is included as "defaultStyle"
 main_stylesheet: defaultStyle
 
+# PRINT STYLESHEET:  This is the last stylesheet included by "styles.scss" and is intended to contain just
+# the style content necessary to adjust the base resume style seen in the preview webpage to match the final
+# print-to-PDF output. This file is either intend to be "printStyle.scss" or a file in 
+# in the resume's "_sass" directory (hence why the "load_paths:" option below will be set to the "_sass" 
+# directory of the resume when "replace_default_style:" is set to "true").
+# ARG: the name of a stylesheet either in the root or the resume's own "_sass" directory, without file extension.
+# DEFAULT VALUE: "printStyle", e.g. "printStyle.scss" is included as "printStyle"
+print_stylesheet: printStyle
+
 # The "load_paths" option allows for the use of stylesheets, i.e. "scss partials" outside of the root "_sass"
 # directory, but this option does not actually change what will load. What is loaded is determined by the 
 # @include statements in "assets/css/styles.scss" which are set by the other style options in this config file.
 # DEFAULT VALUE empty list, i.e. []
 sass:
-  load_paths: [_resumes/_testResume/_sass]    # AUTOMATICALLY GENERATED
+  load_paths: [_resumes/_genericBoeingResume/_sass]    # AUTOMATICALLY GENERATED
   sass_dir: _sass    # STATIC
   style: compressed    # STATIC
 

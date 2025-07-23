@@ -1,0 +1,69 @@
+<!-- MODIFICATIONS FOR THIS RESUME: compleate revamp of Minor Project Section into a list format -->
+<!-- The Minor Projects Templates file uses only data from "minorProjectsData.json" which is designed 
+to 'slot' under the HTML produced by "projectsTemplate.html". The goal is that this template can be 
+dropped when I move past the point of including 'minor projects' on my resume. -->
+
+<!-- Set correct Data Source -->
+{% if site.modified_resume_data contains "minorProjectsData" %}
+<!-- Check if automatically included modified Data should be replaced with default Data  -->
+{% if page.overrideResumeData contains "minorProjectsData" %}
+{% assign DataLocation = site.data.defaultResumeData.minorProjectsData %}
+<!-- Use modified Data -->
+{% else %}
+{% assign DataLocation = site.minorProjectsData %}
+{% endif %}
+<!-- If none of the above true use default Data -->
+{% else %}
+{% assign DataLocation = site.data.defaultResumeData.minorProjectsData %}
+{% endif %}
+
+<!-- Generate list of minor project Section Entries that should be modified -->
+{% assign modifiedMinorProjects = page.modifiedMinorProject | map: "name" %}
+
+<!-- SWITCH: if "page.minorProjectElementTopMargin" exists its value will be added to the top margin of the whole Element
+so that the Element can be moved down onto the next PDF page if necessary -->
+<div class="minor-projects-element element-block" {% if page.minorProjectElementTopMargin>0 %}
+    style="margin-top:{{page.minorProjectElementTopMargin}}px" {% endif%}>
+    <div class="minor-project-list-element-head">
+        <div class="minor-project-list-element-title">Minor Projects</div>
+    </div>
+
+    <div class="minor-projects-element-body element-body">
+        <!-- * Loop through categories of minor projects. -->
+        {% for projectCategory in DataLocation %}
+        <!-- Setup each variable used in minor project category loop -->
+        {% assign CurrentCategory = projectCategory.category | replace: " ", "_" %}
+        <!-- SWITCH: if "minor project category" in "page.skipMinorProjectCategory: []" then minor project 
+        Section Entry Category will be skipped. 
+        Note: ARGs: each minor project category is the "category" value for the project in the 
+        "minorProjectsData.json" data file but with all whitespace replaced with underscores, 
+        e.g. "Web-Development_Projects" -->
+        {% unless page.skipMinorProjectCategory contains CurrentCategory %}
+        <div class="minor-project-list-entry">
+            <div class="minor-project-list-entry-title">{{projectCategory.category}}:</div>
+            <!-- * Loop through minor projects in category. -->
+            {% for project in projectCategory.projects %}
+            <!-- Setup each variable used in minor projects loop -->
+            {% assign CurrentProject = project.name | replace: " ", "_" %}
+            <!-- SWITCH: if "minor project" in "page.skipMinorProject: []" then minor project Section Entry 
+            will be skipped. 
+            Note: each minor project name is the "name" value for the minor project in the 
+            "minorProjectsData.json" data file but with all whitespace replaced with underscores, 
+            e.g. "Etch-a-Sketch_Webpage" -->
+            {% unless page.skipMinorProject contains CurrentProject %}
+            <div class="minor-project-category-list-element">
+                {% assign MinorProjectListDivider = page.minorProjectListDivider | default: ";" %}
+                <div class="minor-project-github-link-block">
+                    <!-- Adds section devider, defeult ";", between each entry unless it is the last entry -->
+                    <a href="{{project.githubLink}}" class="minor-project-github-entry-value">
+                        @{{project.name}}{%- unless forloop.last -%}{{MinorProjectListDivider}}{%- endunless -%}
+                    </a>
+                </div>
+            </div>
+            {% endunless %}
+            {% endfor %}
+        </div>
+        {% endunless %}
+        {% endfor %}
+    </div>
+</div>

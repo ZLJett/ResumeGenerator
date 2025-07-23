@@ -1,19 +1,18 @@
 ### Base Config File ###
-# This Resume _config.yml file MUST be included with below AUTOMATICALLY GENERATED 
-# variables in each resume directory in its _configs directory for CreateResumes.sh to be 
-# able to add config variables
+# This base _config.yml file is included in all resumes.
 # Config Notes:
 #    "DEFAULT VALUES" listed before each config variable show settings for generating a 
 #     resume with default contents.
-#    "STATIC" marked config variables should NOT be changed
+#    "STATIC" marked config variables should NOT be changed.
 
 ###############################################################################
 # STATIC CONFIG OPTIONS:
-# All config variables in below section should never need to be changed
+# All config variables in below section should never need to be changed.
 
-# Front Matter Defaults 
-#   Note: scope "_resumes/" and permalink "/" are what allow Resume Source Directory to be a 
-#   directory in _resumes. Without these it does not work.  
+# Base Front Matter Defaults:
+#   Note: scope "_resumes/" and permalink "/" are what allow a Resume's Source Directory to be 
+#   in the "_resumes" directory instead of the usual Jekyll Source Directory location 
+#   in Root.
 defaults:
  -
    scope:

@@ -1,0 +1,58 @@
+# MODIFICATIONS FOR THIS RESUME: dropped item from "research papers" highlight, added MA degree concentration
+educationData:
+  - school: Wright State University
+    location: Fairborn, OH
+    degree: Master of Arts
+    major: History
+    minors: []
+    endDate: Dec. 2020
+    summary: ""
+    detailedHighlights:
+      - highlight: Outstanding Graduate Student &ndash; 2021
+        details: []
+      - highlight: Presented research papers at two conferences
+        details:
+          - '"Negotiating Absolutism: Cooperation and Conscription in the
+            Swedish Fiscal-Military State, 1683-1685," presented to Wright 
+            State Graduate Research Symposium, Fairborn, Ohio, April 2017'
+          - '"Negotiating for Efficiency: Conscription, Adaptation, and Reform in
+            the Swedish Empire," presented to University of Toledo History
+            Colloquium, Toledo, Ohio, November 2017'
+    thesisDesc: Master's Thesis
+    thesisValue: OhioLINK Electronic Theses & Dissertations Center
+    thesisLink: http://rave.ohiolink.edu/etdc/view?acc_num=wright1605200125756442
+  - school: University of Washington
+    location: Seattle, WA
+    degree: Bachelors of Arts
+    major: History
+    minors:
+      - Scandinavian Area Studies
+      - Swedish Language
+    endDate: Aug. 2015
+    summary: ""
+    detailedHighlights:
+      - highlight: "Dean&rsquo;s List: Winter, Spring &ndash; 2014, Autumn, Winter,
+          Spring &ndash; 2015"
+        details: []
+      - highlight: Study abroad at Uppsala International Summer Session (UISS) &ndash;
+          Summer 2015
+        details:
+          - Received Foreign Language and Area Studies (FLAS) Fellowship
+    thesisDesc: ""
+    thesisValue: ""
+    thesisLink: ""
+  - school: Everett Community College
+    location: Everett, WA
+    degree: Associate of Arts and Sciences
+    major: ""
+    minors:
+      - Oceanography
+    endDate: Jun. 2012
+    summary: ""
+    detailedHighlights:
+      - highlight: Attended Everett Community College's Ocean Research College Academy
+          (O.R.C.A.)
+        details: []
+    thesisDesc: ""
+    thesisValue: ""
+    thesisLink: ""

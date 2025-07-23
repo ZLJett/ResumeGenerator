@@ -7,9 +7,7 @@
       "Online non-credit Professional Certificate authorized by Google and offered through Coursera"
     ],
     "highlights": [
-      "Essential Google Cloud Infrastructure: Core Services",
-      "Elastic Google Cloud Infrastructure: Scaling and Automation",
-      "Architecting with Google Kubernetes Engine: Foundations"
+      "Application Deployment, Cloud Infrastructure & Storage, Docker, Infrastructure as Code, Kubernetes, Load Balancing, VMs"
     ],
     "certId": "23D7RQW57S2G",
     "certLinkValue": "Coursera Certificate",
@@ -23,9 +21,7 @@
       "FreeCodeCamp certification covering the fundamentals of Python up to complex data structures, networking, relational databases, and data visualization."
     ],
     "highlights": [
-      "Networking with Python",
-      "Regular Expressions",
-      "Relational Databases and SQLite"
+      "Data Structures, Data Visualization, File I/O, OOP, RegEx, Relational Database Design, SQLite, Web Services (APIs, JSON)"
     ],
     "certId": "zljett-scwp",
     "certLinkValue": "freeCodeCamp Certificate",
@@ -39,9 +35,7 @@
       "Online non-credit Professional Certificate authorized by Google and offered through Coursera."
     ],
     "highlights": [
-      "Automating Real-World Tasks with Python",
-      "Using Python to Interact with the Operating System",
-      "Troubleshooting and Debugging Techniques"
+      "Configuration Management, CICD/DevOps, Puppet, RESTful APIs, Test Driven Development, Troubleshooting/Debugging"
     ],
     "certId": "LTPLSJNZEA8P",
     "certLinkValue": "Coursera Certificate",
