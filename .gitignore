@@ -12,3 +12,5 @@ _data/secretData.yml
 _supplementalFiles/_secretSupplementalFiles
 # Ignore all Resume directories
 **/_resumes
+# Ignore archived resume directories
+_supplementalFiles/_archivedResumes

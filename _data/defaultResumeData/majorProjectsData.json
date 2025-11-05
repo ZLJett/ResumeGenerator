@@ -14,7 +14,7 @@
         "endDate": "Jan. 2024",
         "takeaways": [],
         "technologies": [],
-        "summary": "Engineered a robust and scalable financial trade routing system for a practical development exercise designed by a senior fin-tech developer. Implemented using a Java (Spring Boot) tech-stack, utilizing Apache Camel enterprise integration patterns, XSLT for XML transformation, and JPA/Hibernate with an embedded H2 database. Exceeded project guidelines by designing a modular, adaptable system using JSON-based configuration, enabling dynamic alteration of message processing pipelines. Proactively optimized memory usage of loading large configuration file with Jackson JSON's selective deserialization. Ensured system integrity with comprehensive JUnit test coverage, including full database entry validation.",
+        "summary": "Engineered a robust and scalable financial trade routing system for a practical development exercise designed by a senior fin-tech developer. Implemented using a Java (Spring Boot) tech-stack, utilizing Apache Camel enterprise integration patterns, XSLT for XML transformation, and JPA/Hibernate with an embedded H2 SQL database. Exceeded project guidelines by designing a modular, adaptable system using JSON-based configuration, enabling dynamic alteration of message processing pipelines. Proactively optimized memory usage of loading large configuration file with Jackson JSON's selective deserialization. Ensured system integrity with comprehensive JUnit test coverage, including full database entry validation.",
         "highlights": [],
         "githubLinkValue": "Trade Message Router",
         "githubLink": "https://github.com/ZLJett/trade-message-router"
