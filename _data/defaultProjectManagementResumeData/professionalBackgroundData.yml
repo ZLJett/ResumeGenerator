@@ -1,0 +1,38 @@
+# MODIFICATIONS FOR THIS RESUME: shortened summary for "Graduate Assistant" Entry
+professionalBackgroundData:
+  - position: Project Manager
+    company: The Goodship Friendship
+    location: ""
+    startDate: "Jan. 2025"
+    endDate: "Present"
+    backgroundSourceLinkDesc: "Steam: "
+    sourceLinkValue: "Game Demo"
+    sourceLink: "https://store.steampowered.com/app/2571840/Defense_of_Nations/"
+    summary: ""
+    highlights: 
+      - "Actively shaped team Agile planning and proactively collaborated on project design/content scope to establish achievable deadlines, manage project requirements, and enhance overall product quality."
+      - "Assisted in strategic project development by leading a comprehensive overhaul of the system's core balance, applying a methodical approach to data analysis and optimization to enhance system adaptability and future scalability."
+      - "Applied strong independent problem-solving skills to design, implement, and test complex new system features, mastering a complex new technical environment and contributing to overall project quality in less than three months."
+  - position: Graduate Assistant
+    company: Wright State University
+    location: Dayton, OH
+    startDate: "2018"
+    endDate: "2019"
+    backgroundSourceLinkDesc: ""
+    sourceLinkValue: ""
+    sourceLink: ""
+    summary: ""
+    highlights: 
+      - "Coordinated logistical and operational support for three large undergraduate courses (200+ students): managing course materials, organizing and grading assessments, and providing advice and support to students."
+      - "Dynamically collaborated with faculty and staff to proactively diagnose, mitigate, and facilitate adaptive solutions to ensure the continuing operation of multiple classes and other departmental responsibilities during a period of intense and unprecedented challenge for the university, a faculty strike."
+  - position: Assistant-Director of Communication
+    company: Cedar Apartments Student Association
+    location: University of Washington, Seattle, WA
+    startDate: "2014"
+    endDate: "2015"
+    backgroundSourceLinkDesc: ""
+    sourceLinkValue: ""
+    sourceLink: ""
+    summary: ""
+    highlights: 
+    - "Created all official communications to 300+ residents, delivering key information and fostering community engagement."

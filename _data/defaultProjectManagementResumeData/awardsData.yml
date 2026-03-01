@@ -1,0 +1,17 @@
+# MODIFICATIONS FOR THIS RESUME: Changed issuer of "Hornaday Award" to add "badge" info in an aesthetically 
+# pleasing way
+awardsData:
+  - name: "William T. Hornaday Award, Silver Badge"
+    issuer: "Boy Scouts of America"
+    endDate: "2011"
+    summary: ""
+    highlights: 
+      - "Recognized for outstanding contributions to environmental conservation, coordinated with a local environmental group and county park services to establish requirements for a successful salmon spawning habitat restoration initiative, encompassing site scouting, project planning, and resource organization."
+      - "Managed all project phases, including comprehensive risk assessments and mitigation planning (e.g., safety protocols, summer heat mitigation, equipment logistics), coordinating scheduling, and thorough project documentation."
+  - name: "Eagle Scout"
+    issuer: "Boy Scouts of America"
+    endDate: "2011"
+    summary: ""
+    highlights: 
+      - "Managed the complete design, construction, and installation of a children's play area awning, coordinating with various stakeholders to define requirements and establish project schedules."
+      - "Applied strong time management, facilitation, and organizational skills to effectively communicate with and direct a team of 12+ youth, ensuring successful project completion."

@@ -1,15 +1,16 @@
 <!-- Set correct Data Source -->
+{% assign DataDirectory = site.resume_default_data_directory %}
 {% if site.modified_resume_data contains "skillSetsData" %}
 <!-- Check if automatically included modified Data should be replaced with default Data  -->
 {% if page.overrideResumeData contains "skillSetsData" %}
-{% assign DataLocation = site.data.defaultResumeData.skillSetsData %}
+{% assign DataLocation = site.data.[DataDirectory].skillSetsData.skillSetsData %}
 <!-- Use modified Data -->
 {% else %}
 {% assign DataLocation = site.skillSetsData %}
 {% endif %}
 <!-- If none of the above true use default Data -->
 {% else %}
-{% assign DataLocation = site.data.defaultResumeData.skillSetsData %}
+{% assign DataLocation = site.data.[DataDirectory].skillSetsData.skillSetsData %}
 {% endif %}
 
 <div class="skills-element element-block">

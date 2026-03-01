@@ -9,6 +9,12 @@
 # STATIC CONFIG OPTIONS:
 # All config variables in below section should never need to be changed.
 
+# Base Default Data Directory: If a resume's _config.yml file does not have the 
+# "resume_default_data_directory:" config option set, this directory will be used by 
+# default.
+# ARGS: Resume Default Data Directory is the name of any directory in the "_data" directory
+resume_default_data_directory: "defaultProgrammingResumeData"
+
 # Base Front Matter Defaults:
 #   Note: scope "_resumes/" and permalink "/" are what allow a Resume's Source Directory to be 
 #   in the "_resumes" directory instead of the usual Jekyll Source Directory location 

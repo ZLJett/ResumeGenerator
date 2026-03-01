@@ -1,15 +1,19 @@
+<!-- Special variation of Contact Info Template for Concise Resume Head. Removed Contact info 
+titles for Phone and Email. -->
+
 <!-- Set correct Data Source -->
+{% assign DataDirectory = site.resume_default_data_directory %}
 {% if site.modified_resume_data contains "contactInfoData" %}
 <!-- Check if automatically included modified Data should be replaced with default Data  -->
 {% if page.overrideResumeData contains "contactInfoData" %}
-{% assign DataLocation = site.data.defaultResumeData.contactInfoData %}
+{% assign DataLocation = site.data.[DataDirectory].contactInfoData.contactInfoData %}
 <!-- Use modified Data -->
 {% else %}
 {% assign DataLocation = site.contactInfoData %}
 {% endif %}
 <!-- If none of the above true use default Data -->
 {% else %}
-{% assign DataLocation = site.data.defaultResumeData.contactInfoData %}
+{% assign DataLocation = site.data.[DataDirectory].contactInfoData.contactInfoData %}
 {% endif %}
 
 <!-- Set Secret Data Source -->
@@ -31,17 +35,17 @@
         {% assign phoneNum = "PhoneNum" %}
         {% unless page.skipContactEntry contains phoneNum %}
         <div class="contact-section-entry">
-            <div class="contact-entry-desc">Phone: </div>
             <div class="contact-entry-value">{{SecretDataLocation.phone}}</div>
         </div>
+        <hr class="contact-section-divider">
         {% endunless %}
 
         {% assign emailAdd = "EmailAdd" %}
         {% unless page.skipContactEntry contains emailAdd %}
         <div class="contact-section-entry">
-            <div class="contact-entry-desc">Email: </div>
             <a href="mailto:{{SecretDataLocation.email}}" class="contact-entry-value">{{SecretDataLocation.email}}</a>
         </div>
+        <hr class="contact-section-divider">
         {% endunless %}
 
         {% assign currLocation = "CurrLocation" %}
@@ -50,6 +54,7 @@
             <!-- DEFAULT is just location value, no description, i.e. no "Location: value" -->
             <div class="contact-entry-value">{{SecretDataLocation.location}}</div>
         </div>
+        <hr class="contact-section-divider">
         {% endunless %}
 
         {% for website in DataLocation.websites %}
@@ -58,17 +63,18 @@
         file -->
         {% unless page.skipContactWebsite contains website.websiteDesc %}
         <div class="contact-section-entry contact-section-links">
-            <div class="contact-entry-desc">{{website.websiteDesc}}: </div>
-            <!-- SWITCH: if the project does not have a source link, do NOT include the link symbol -->
-            {% if website.websiteLink.size > 0 %}
             <a href="{{website.websiteLink}}" class="contact-entry-value">
                 <img class="link-icon" src="assets/svg/link-horizontal-blue-bold.svg">
             </a>
-            {% endif %}
-            <a href="{{website.websiteLink}}" class="contact-entry-value">{{website.websiteLinkValue}}</a>
+            <a href="{{website.websiteLink}}" class="contact-entry-value">
+                {{website.websiteDesc}}
+            </a>
         </div>
-        {% endunless %}
+        {%- unless forloop.last -%}
+        <hr class="contact-section-divider">
+        {%- endunless -%}
 
+        {% endunless %}
         {% endfor %}
     </div>
 

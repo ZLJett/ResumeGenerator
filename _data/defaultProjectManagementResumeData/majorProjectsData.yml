@@ -1,0 +1,21 @@
+# MODIFICATIONS FOR THIS RESUME: shortened "summary" of "Personal Resume Generator"
+# Fliped order order to place more recent first.
+majorProjectsData:
+  - name: Personal Resume Generator
+    endDate: Ongoing
+    takeaways:
+    technologies:
+    summary: ""
+    highlights:
+      - "Developed an automated resume generator, continuously applying process improvement to enhance its function, flexibility, and output quality."
+    githubLinkValue: "Resume Generator"
+    githubLink: https://github.com/ZLJett/ResumeGenerator
+  - name: Financial Trade Message Router
+    endDate: Jan. 2024
+    takeaways:
+    technologies:
+    summary: ""
+    highlights:
+      - "Developed and delivered a flexible data routing system, leveraging a SQL database to ensure data integrity, and proactively refined its architecture beyond initial project requirements for modularity and scalability."
+    githubLinkValue: "Trade Message Router"
+    githubLink: https://github.com/ZLJett/trade-message-router

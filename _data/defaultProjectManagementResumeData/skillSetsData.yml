@@ -1,0 +1,28 @@
+# MODIFICATIONS FOR THIS RESUME: dropped "Windows" from "Environments"
+skillSetsData:
+  - skill_title: Organization
+    skills:
+      - Agile Project Management
+      - Time Management & Prioritization
+      - Coordinating Resources
+      - Documentation
+  - skill_title: Communication
+    skills:
+      - Clear Communication
+      - Cross-functional Collaboration
+      - Facilitation
+      - Team Coordination
+      - Professional Writing
+  - skill_title: Problem Solving
+    skills:
+      - Critical Thinking
+      - Problem Identification & Resolution
+      - Analytical Research
+      - Problem Management
+  - skill_title: Tech & Data
+    skills:
+      - Data Analysis & Interpretation
+      - Data Management
+      - Presentations
+      - Database Proficiency (SQL)
+      - Office Suite

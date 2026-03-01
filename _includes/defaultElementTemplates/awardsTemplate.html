@@ -5,17 +5,18 @@ optional, default off, header so that it will appear as if it just part of the
 projects section of the resume, and not its own separate section. -->
 
 <!-- Set correct Data Source -->
+{% assign DataDirectory = site.resume_default_data_directory %}
 {% if site.modified_resume_data contains "awardsData" %}
 <!-- Check if automatically included modified Data should be replaced with default Data  -->
 {% if page.overrideResumeData contains "awardsData" %}
-{% assign DataLocation = site.data.defaultResumeData.awardsData %}
+{% assign DataLocation = site.data.[DataDirectory].awardsData.awardsData %}
 <!-- Use modified Data -->
 {% else %}
 {% assign DataLocation = site.awardsData %}
 {% endif %}
 <!-- If none of the above true use default Data -->
 {% else %}
-{% assign DataLocation = site.data.defaultResumeData.awardsData %}
+{% assign DataLocation = site.data.[DataDirectory].awardsData.awardsData %}
 {% endif %}
 
 <!-- Generate list of award Section Entries that should be modified -->

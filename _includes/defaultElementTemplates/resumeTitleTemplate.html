@@ -1,34 +1,33 @@
 <!-- Set correct Data Source -->
+{% assign DataDirectory = site.resume_default_data_directory %}
 {% if site.modified_resume_data contains "resumeTitleData" %}
 <!-- Check if automatically included modified Data should be replaced with default Data  -->
 {% if page.overrideResumeData contains "resumeTitleData" %}
-{% assign DataLocation = site.data.defaultResumeData.resumeTitleData %}
+{% assign DataLocation = site.data.[DataDirectory].resumeTitleData.resumeTitleData %}
 <!-- Use modified Data -->
 {% else %}
 {% assign DataLocation = site.resumeTitleData %}
 {% endif %}
 <!-- If none of the above true use default Data -->
 {% else %}
-{% assign DataLocation = site.data.defaultResumeData.resumeTitleData %}
+{% assign DataLocation = site.data.[DataDirectory].resumeTitleData.resumeTitleData %}
 {% endif %}
 
 <div class="resume-title-element resume-head-item">
-    <div class="title-element-head">
-        <div class="resume-title">{{ DataLocation.name }}</div>
-    </div>
+
+    <div class="resume-title">{{ DataLocation.name }}</div>
 
     <!-- SWITCH: unless "page.includeProfessionalTitle" is set to "true", the professional title
     will NOT be included. This means DEFAULT is not to include the professional title. -->
     {% if page.includeProfessionalTitle %}
-    <div class="title-element-body">
-        <!-- add in SWITCH COMMENT HERE -->
-        {% if page.includeProfessionalTitleDivider %}
-        {% assign ProfessionalTitleDivider = page.professionalTitleDivider | default: " &ndash; " %}
-        <div class="professional-title-divider">{{ProfessionalTitleDivider}}</div>
-        {% endif %}
-        <div class="professional-title">
-            {{ DataLocation.professional-title }}
-        </div>
+
+    <!-- add in SWITCH COMMENT HERE -->
+    {% if page.includeProfessionalTitleDivider %}
+    {% assign ProfessionalTitleDivider = page.professionalTitleDivider | default: " &ndash; " %}
+    <div class="professional-title-divider">{{ProfessionalTitleDivider}}</div>
+    {% endif %}
+    <div class="professional-title">
+        {{ DataLocation.professional-title }}
     </div>
     {% endif %}
 </div>

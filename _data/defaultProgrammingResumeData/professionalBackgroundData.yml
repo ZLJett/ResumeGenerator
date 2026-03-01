@@ -1,0 +1,44 @@
+# MODIFICATIONS FOR THIS RESUME: shortened summary for "Graduate Assistant" Entry
+professionalBackgroundData:
+  - position: Game Designer & Programmer
+    company: The Goodship Friendship
+    location: ""
+    startDate: "Jan. 2025"
+    endDate: "Present"
+    backgroundSourceLinkDesc: "Steam: "
+    sourceLinkValue: "Game Demo"
+    sourceLink: "https://store.steampowered.com/app/2571840/Defense_of_Nations/"
+    summary: ""
+    highlights: 
+      - "Built core systems and designed new content for a Unity3D game, quickly gaining fluency in an 
+        under-documented C# codebase and the Unity engine with limited prior experience."
+      - "Applied strong  independent problem-solving and systems design skills to retrofit a reload system 
+        into the game’s overall weapon mechanics, design new mission features necessitating a systematic 
+        refactor of all enemies and maps, and complete the implementation of keyboard and mouse controls."
+      - "A Led team in health/damage system rebalancing, using data analysis to improve system adaptability 
+        and scalability. Utilized Agile (Kanban) and Git for collaborative development, proactively shaping 
+        project planning to define feature design and scope while setting achievable deadlines."
+  - position: Graduate Assistant
+    company: Wright State University
+    location: Dayton, OH
+    startDate: "2018"
+    endDate: "2019"
+    backgroundSourceLinkDesc: ""
+    sourceLinkValue: ""
+    sourceLink: ""
+    summary: ""
+    highlights:
+      - "Managed course materials, organized and graded assessments, and provided support and advice 
+        to students. Dynamically collaborated with faculty and staff to uphold educational standards and 
+        maintain leadership to students during a faculty strike."
+  - position: Assistant-Director of Communication
+    company: Cedar Apartments Student Association
+    location: University of Washington, Seattle, WA
+    startDate: "2014"
+    endDate: "2015"
+    backgroundSourceLinkDesc: ""
+    sourceLinkValue: ""
+    sourceLink: ""
+    summary: Produced all official communications for the Student Association at the
+      University of Washington's Cedar Apartments.
+    highlights: []

@@ -1,15 +1,19 @@
+<!-- MODIFICATIONS FOR THIS RESUME: Replaced colon with comma so that, when combined with CSS changes,
+thesis link will appear on same line as highlights and as part of the same list -->
+
 <!-- Set correct Data Source -->
+{% assign DataDirectory = site.resume_default_data_directory %}
 {% if site.modified_resume_data contains "educationData" %}
 <!-- Check if automatically included modified Data should be replaced with default Data  -->
 {% if page.overrideResumeData contains "educationData" %}
-{% assign DataLocation = site.data.defaultResumeData.educationData %}
+{% assign DataLocation = site.data.[DataDirectory].educationData.educationData %}
 <!-- Use modified Data -->
 {% else %}
 {% assign DataLocation = site.educationData %}
 {% endif %}
 <!-- If none of the above true use default Data -->
 {% else %}
-{% assign DataLocation = site.data.defaultResumeData.educationData %}
+{% assign DataLocation = site.data.[DataDirectory].educationData.educationData %}
 {% endif %}
 
 <!-- Generate list of education Section Entries that should be modified -->
@@ -126,7 +130,7 @@ so that the Element can be moved down onto the next PDF page if necessary -->
                 {% if entry.thesisLink == true or page.includeEducationThesisLink %}
                 <div class="education-thesis-link-block">
                     {% if education.thesisLink.size > 0 %}
-                    <div class="education-thesis-link-desc">{{education.thesisDesc}}: </div>
+                    <div class="education-thesis-link-desc">{{education.thesisDesc}}</div>
                     <a href="{{education.thesisLink}}" class="education-thesis-link-value link-icon-box">
                         <img class="link-icon" src="assets/svg/link-horizontal-blue-bold.svg"></a>
                     {% endif %}
@@ -182,7 +186,7 @@ so that the Element can be moved down onto the next PDF page if necessary -->
                 {% if page.includeEducationThesisLink %}
                 <div class="education-thesis-link-block">
                     {% if education.thesisLink.size > 0 %}
-                    <div class="education-thesis-link-desc">{{education.thesisDesc}}: </div>
+                    <div class="education-thesis-link-desc">{{education.thesisDesc}}, </div>
                     <a href="{{education.thesisLink}}" class="education-thesis-link-value link-icon-box">
                         <img class="link-icon" src="assets/svg/link-horizontal-blue-bold.svg"></a>
                     {% endif %}

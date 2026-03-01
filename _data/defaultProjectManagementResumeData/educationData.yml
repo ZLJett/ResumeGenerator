@@ -1,0 +1,43 @@
+# MODIFICATIONS FOR THIS RESUME: dropped "research papers" highlight
+educationData:
+  - school: Wright State University
+    location: Dayton, OH
+    degree: Master of Arts
+    major: History
+    minors: []
+    endDate: Dec. 2020
+    summary: ""
+    detailedHighlights:
+      - highlight: Outstanding Graduate Student &ndash; 2021; Presented research papers at two academic conferences
+        details: []
+    thesisDesc: ""
+    thesisValue: Master's Thesis
+    thesisLink: http://rave.ohiolink.edu/etdc/view?acc_num=wright1605200125756442
+  - school: University of Washington
+    location: Seattle, WA
+    degree: Bachelors of Arts
+    major: History
+    minors: []
+    endDate: Aug. 2015
+    summary: ""
+    detailedHighlights:
+      - highlight: "Dean&rsquo;s List: Winter, Spring &ndash; 2014, Autumn, Winter, Spring &ndash; 2015; Received Foreign Language and Area Studies Fellowship"
+        details: []
+    thesisDesc: ""
+    thesisValue: ""
+    thesisLink: ""
+  - school: Everett Community College
+    location: Everett, WA
+    degree: Associate of Arts and Sciences
+    major: ""
+    minors: []
+    endDate: Jun. 2012
+    summary: ""
+    detailedHighlights:
+      - highlight: "<strong>Minor:</strong> Oceanography"
+        details: []
+      - highlight: "Attended Everett Community College's Ocean Research College Academy (O.R.C.A.)"
+        details: []
+    thesisDesc: ""
+    thesisValue: ""
+    thesisLink: ""

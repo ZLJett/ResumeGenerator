@@ -1,0 +1,40 @@
+# MODIFICATIONS FOR THIS RESUME: dropped some highlights and added in contents from "Scientific Computing" highlights
+# to main summary, then rewrote it. Changed highlights of "Google IT" and "Preparing for Google" to be a single 
+# description of all highlights. Flipped order order to place more recent first.
+certsData:
+  - name: "Preparing for Google Cloud Certification: Cloud Engineer"
+    issuer: "Coursera (Google)"
+    endDate: Dec. 2021
+    summary:
+      - Online non-credit Professional Certificate authorized by Google and
+        offered through Coursera
+    highlights:
+      - "Application Deployment, Cloud Infrastructure & Storage, Docker, 
+      Infrastructure as Code, Kubernetes, Load Balancing, VMs"
+    certId: 23D7RQW57S2G
+    certLinkValue: Coursera Certificate
+    certLink: https://www.coursera.org/account/accomplishments/specialization/LTPLSJNZEA8P
+  - name: Scientific Computing with Python
+    issuer: freeCodeCamp
+    endDate: Oct. 2021
+    summary: "Course topics: advanced data structures,
+      networking, regular expressions, relational databases (SQLite),
+      and data visualization."
+    highlights:
+      - "Data Structures, Data Visualization, File I/O, OOP, RegEx, Relational Database Design, 
+      SQLite, Web Services (APIs, JSON)"
+    certId: zljett-scwp
+    certLinkValue: freeCodeCamp Certificate
+    certLink: https://freecodecamp.org/certification/zljett/scientific-computing-with-python-v7
+  - name: Google IT Automation with Python
+    issuer: "Coursera (Google Cloud)"
+    endDate: Jul. 2021
+    summary:
+      - Online non-credit Professional Certificate authorized by Google and
+        offered through Coursera.
+    highlights:
+      - "Configuration Management, CICD/DevOps, Puppet, RESTful APIs, 
+      Test Driven Development, Troubleshooting/Debugging"
+    certId: LTPLSJNZEA8P
+    certLinkValue: Coursera Certificate
+    certLink: https://www.coursera.org/account/accomplishments/specialization/23D7RQW57S2G
