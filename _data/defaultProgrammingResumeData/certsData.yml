@@ -1,6 +1,3 @@
-# MODIFICATIONS FOR THIS RESUME: dropped some highlights and added in contents from "Scientific Computing" highlights
-# to main summary, then rewrote it. Changed highlights of "Google IT" and "Preparing for Google" to be a single 
-# description of all highlights. Flipped order order to place more recent first.
 certsData:
   - name: "Preparing for Google Cloud Certification: Cloud Engineer"
     issuer: "Coursera (Google)"

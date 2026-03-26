@@ -10,11 +10,11 @@ This Resume Generator requires a local install of Ruby and Jekyll on a Linux sys
 Each resume has three layers of content, starting from the top level: 
 1. **Elements**, e.g. Education or Projects, which are made up of Sections. Elements are generated from Template files that are stored in the "_includes" directories. 
 2. **Section Entries**, e.g. Calculator Webpage or Financial Trade Message Router, each of which is composed of a number of: Data Entries. 
-3. **Data Entries**, e.g. Position or Dates. Data is stored in "_data" directories in either .yml or .json files. 
+3. **Data Entries**, e.g. Position or Dates. Data is stored in "_data" directories in either .yml or .json files.
 
 ### Basic Function:
 This Resume Generator is designed around several core principles:
-1. **DEFAULT content**: All data (_data), templates (_includes), and styles (_sass) in the root directory will generate a 'default' or generic version of themselves from which all other more specific resumes content can be derived. Due to the way the "Resume Source Directory," i.e. the resume directory, is selected in the Resume config file, when the resume is generated these default, data, templates, and styles will be used **unless** there are any Resume specific versions of those same files in the resume's directory (see "Auto-Addition of Modified Files" below) </br>
+1. **DEFAULT content**: All data (_data), templates (_includes), and styles (_sass) in the root directory will generate a 'default' or generic resume from which all other more specific resumes content can be derived. Due to the way the "Resume Source Directory," i.e. the resume directory, is selected in the Resume config file, when the resume is generated these default, data, templates, and styles will be used **unless** there are any Resume specific versions of those same files in the resume's directory (see "Auto-Addition of Modified Files" below) </br>
 The two resumes "_baseResume" and "_shortResume" are both intended to be 'generic' resumes generated with only this default data (though "_shortResume" is intended to restrict its contents to keep to a length of a single page). 
 2. **Resume Directories**: The resume for each individual company/position is put under the _Resumes directory, e.g. "_baseResume" and "_shortResume". This allows the each resume to keep its own contents, i.e. its own _data, _includes, and _sass separate from all other resumes.
 3. **Auto-Addition of Modified Files**: If any new data files, templates, or stylesheets are added to a specific resume's directory, the resume setup/generation program, CreateResumes.sh, will make sure the modified files replace, or in the case of stylesheets add onto, their default equivalents when the resume is generated. For example, if a different template were created for the Education Element (i.e. educationTemplate.html) of the file (say one that places the school below the summary) and placed it in that resumes _includes directory under the same name (i.e. educationTemplate.html), it would automatically replace the default Education Element when the resume was generated. </br>
@@ -56,7 +56,7 @@ This **MUST CONTAIN** a file named "_config.yml" as CreateResumes.sh, **REQUIRES
 2. **_data and _includes directories**: These contain any modified Data or Template files for the resume. </br>
 These **MUST** exist as CreateResumes.sh, **REQUIRES** them; **HOWEVER**, they do NOT need to have any contents. </br>
 **NOTE**: In a resume's directory, _data is really a 'config directory' added to the 'website generation' by CreateResumes.sh, and cannot be used at all like the regular _data directory. ***THIS MEANS that all resume Data files are in YAML and must contain a top level YAML object with the same name as the file, i.e. "skillSetData:"***
-**SEE** "_ymlDefaultResumeData" in "_supplementalFiles" directory for examples of how YAML modified Data files are formatted.
+**SEE** "_defaultYmlResumeData" in "_supplementalFiles" directory for examples of how YAML modified Data files are formatted.
 3. **_outputResumes directory**: This directory is where CreateResumes.sh deposits any PDFs it generated for the Resume. See "CreateResumes.sh" notes below for more on how this directory is used. </br>
 **.gitignore**: All of the different resumes should have their "_outputResume" directories ignored by git as their contents are not relevant to the function of the program. For a complete example resume see "exampleCompleteTestResume.pdf" in the "_supplementalFiles" directory.
 4. **_sass directory**: This directory allows for the resume to have its own ***Resume Styles*** in addition to/modifying, or completely replacing, the default style (i.e. "_sass/defaultStyle.scss"). These additional .scss files are added in alphabetical order by CreateResumes.sh to the "additional_stylesheets:" config option in the resume's config file and from there added by the @import statements in "assets/css/styles.scss" to the resume. **NOTE**: "defaultStyle.scss" is ALWAYS loaded first, meaning that all .scss files in the resume's _sass directory will come after and thus can override the default stylesheet's styles. </br> 
@@ -73,8 +73,9 @@ File names also **MUST** match root directory names, i.e. contactInfoData.yml an
 ### Resume Config File Setup:
 Each resume **MUST** have own config file. This file is mainly used by CreateResume.sh to automatically set a number of resume details based on user inputs to CreateRunner.sh and/or the contents of the various sub-directories in the resume's directory (i.e. _data, _includes, and _sass). ***For the complete details on each of these and how they work in conjunction with CreateResumes.sh and the rest of the program see comments attached to each*** (e.g. **SEE** the comments in "_sampleResumeConfigTemplate.yml" in "_supplementalFiles" directory). </br>
 While most of the config variables in the resume config file are automatically generated, however some important options must be hand set:
-1. **Resume Contents and Order**: The config variable "default_resume_contents:" is the list of Element Templates used by defaultContents.html to generate the Resume. ***NOTE: This list is the ORDER the Elements will appear in on the Resume. Element order can ONLY be changed from here!***
-2. **Google Fonts**: This config variable, "google_fonts:", is a list of all Google Fonts to be added as \<link> tags inside the 'webpage' \<head> in the "defaultHeadContents.html" template. Any fonts that are not "default" to Chrome (such as the "Arial" font used in "defaultStyle.scss") that are used in any of the root or resume stylesheets should be added here.
+1. **Default Data Directory**: The config variable "resume_default_data_directory:" is the default source of Resume Data used in the Resume if there are no resume specific Data files in the resume's "_data" directory.
+2. **Resume Contents and Order**: The config variable "default_resume_contents:" is the list of Element Templates used by defaultContents.html to generate the Resume. ***NOTE: This list is the ORDER the Elements will appear in on the Resume. Element order can ONLY be changed from here!***
+3. **Google Fonts**: This config variable, "google_fonts:", is a list of all Google Fonts to be added as \<link> tags inside the 'webpage' \<head> in the "defaultHeadContents.html" template. Any fonts that are not "default" to Chrome (such as the "Arial" font used in "defaultStyle.scss") that are used in any of the root or resume stylesheets should be added here.
 
 **Static Options**: Some options, in one of the config files or other specific files, such as "defaultLayout.html" or "assets/css/styles.scss" are noted as STATIC or as 'generally STATIC'. These are options meant to be permanently left alone, e.g. such as "_layouts/defaultLayout.html" or "_includes/defaultPageElements/defaultHeadContents.html", which contains no actual resume content, just the shell of the 'webpage' and some style related elements (such as the font imports). All actual page content comes from index.md so no other/child layouts or 'webpage' heads should be needed. 
 
@@ -121,3 +122,29 @@ CreateResumes.sh **MUST** be run in project root to function correctly. Files ar
 | ------------------------- | -------------------------------------------- |
 | **Generate for Viewing**: | bash CreateResumes.sh -s _testResume         |
 | **Print-to-PDF**:         | bash CreateResumes.sh -s _testResume --print |
+
+
+## Other Notes
+
+### Updating Old Format Resumes to New Data System:
+Because of the change from a single default data directory to multiple default directories for different types of resumes all old resumes must be updated to the work with the new system before they can be reused.
+1. The old resume's Config File **MUST** have "resume_default_data_directory:" config variable added. Note: if this config variable is missed, the NEW templates will use the base default data directory set in the root level config file, which is "default Programming Resume Data".
+2. Data files do **not** need to be changed, they will work as normal.
+3. All of the old resume's Templates **MUST** have the below items added to each Template, otherwise they will try to pull their data from the old "defaultResumeData" data directory that no longer exists. </br>
+Each modified line is indicated with an `-->`. Note, that in the example below the section `educationData.educationData` **must** have both instances of 'educationData' replaced with the name of the data file the template needs to pull data from. For example, in the communityServiceTemplate it would be `communityServiceData.communityServiceData`. (Note: this repeat format may seem superfluous, but it allows for the .yml data files in both the root _data directory and in the individual resumes _data directories to share a format. All that `educationData.educationData` is really saying is pull from the educationData.yml file's educationData object).
+```                        
+          <!-- Set correct Data Source -->
+          {% assign DataDirectory = site.resume_default_data_directory %}
+-->     {% if site.modified_resume_data contains "educationData" %}
+          <!-- Check if automatically included modified Data should be replaced with default Data  -->
+          {% if page.overrideResumeData contains "educationData" %}
+-->     {% assign DataLocation = site.data.[DataDirectory].educationData.educationData %}
+          <!-- Use modified Data -->
+          {% else %}
+          {% assign DataLocation = site.educationData %}
+          {% endif %}
+          <!-- If none of the above true use default Data -->
+          {% else %}
+-->     {% assign DataLocation = site.data.[DataDirectory].educationData.educationData %}
+          {% endif %}
+```

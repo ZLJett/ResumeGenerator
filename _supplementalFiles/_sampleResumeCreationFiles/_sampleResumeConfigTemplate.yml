@@ -11,6 +11,11 @@
 # HAND SET CONFIG OPTIONS:
 # All config variables in below section are not automatically generated and must be changed by hand
 
+# DEFAULT DATA DIRECTORY: This is the default source of Resume Data used in the Resume if there are 
+# no resume specific Data files in the resume's "_data" directory.
+# ARGS: Resume Default Data Directory is the name of any directory in the "_data" directory
+resume_default_data_directory: "defaultProgrammingResumeData"
+
 # RESUME CONTENT AND ORDER: This is the list of Element Templates used by defaultContents.html 
 # to generate the Resume. This is usually STATIC but this option allows for switching to a 
 # different Resume organization without deleting the previous one.
@@ -22,7 +27,7 @@ default_resume_contents: [summaryTemplate, skillSetsTemplate, projectsTemplate, 
 
 # GOOGLE FONTS: Set any google fonts that need to be added as a <link> tag inside the 'webpage' <head>
 # in the "defaultHeadContents.html" template. 
-# Args: the link option is the link for the 'href' link provided by google fonts in their automatically 
+# ARGs: the link option is the link for the 'href' link provided by google fonts in their automatically 
 # generated <link> tag, while the name option is not used and is only there for improving readability. 
 google_fonts:
   - name: "Lusitana"
@@ -83,6 +88,15 @@ additional_styles: true
 # ARG: the name of a stylesheet either in the root or the resume's own "_sass" directory, without file extension.
 # DEFAULT VALUE: "defaultStyle", e.g. "defaultStyle.scss" is included as "defaultStyle"
 main_stylesheet: defaultStyle
+
+# PRINT STYLESHEET: This is the last stylesheet included by "styles.scss" and is intended to contain just
+# the style content necessary to adjust the base resume style seen in the preview webpage to match the final
+# print-to-PDF output. This file is either intend to be "printStyle.scss" or a file in 
+# in the resume's "_sass" directory (hence why the "load_paths:" option below will be set to the "_sass" 
+# directory of the resume when "replace_default_style:" is set to "true").
+# ARG: the name of a stylesheet either in the root or the resume's own "_sass" directory, without file extension.
+# DEFAULT VALUE: "printStyle", e.g. "printStyle.scss" is included as "printStyle"
+print_stylesheet: printStyle
 
 # The "load_paths" option allows for the use of stylesheets, i.e. "scss partials" outside of the root "_sass"
 # directory, but this option does not actually change what will load. What is loaded is determined by the 

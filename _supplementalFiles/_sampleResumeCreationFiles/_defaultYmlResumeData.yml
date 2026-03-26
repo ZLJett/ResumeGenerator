@@ -1,0 +1,82 @@
+contactInfoData:
+  phone: ""
+  email: ""
+  location: ""
+  websites:
+    - websiteDesc: ""
+      websiteLinkValue: ''
+      websiteLink: ''
+summaryData:
+    summary: ""
+skillSetsData:
+  - skill_title: ""
+    skills: []
+majorProjectsData:
+  - name: ""
+    endDate: ""
+    takeaways: []
+    technologies: []
+    summary: ""
+    highlights: []
+    githubLinkValue: ""
+    githubLink: ""
+minorProjectsData:
+  - category: ""
+    projects:
+      - name: ""
+        endDate: ""
+        takeaways: []
+        technologies: []
+        summary: ""
+        highlights: []
+        githubLinkValue: ""
+        githubLink: ""
+        sourceLinkValue: ""
+        sourceLink: ""
+certsData:
+  - name: ""
+    issuer: ""
+    endDate: ""
+    summary: []
+    highlights: []
+    certId: ""
+    certLinkValue: ""
+    certLink: ""
+educationData:
+  - school: ""
+    location: ""
+    degree: ""
+    major: ""
+    minors: []
+    endDate: ""
+    summary: ""
+    detailedHighlights:
+      - highlight: ""
+        details: []
+    thesisDesc: ""
+    thesisValue: ""
+    thesisLink: ""
+professionalBackgroundData:
+  - position: ""
+    company: ""
+    location: ""
+    startDate: ""
+    endDate: ""
+    backgroundSourceLinkDesc: ""
+    sourceLinkValue: ""
+    sourceLink: ""
+    summary: ""
+    highlights: []
+communityServiceData:
+  - role: ""
+    organization: ""
+    startDate: ""
+    endDate: ""
+    summary: ""
+    highlights: []
+awardsData:
+  - name: ""
+    issuer: ""
+    endDate: ""
+    summary: ""
+    highlights: []
